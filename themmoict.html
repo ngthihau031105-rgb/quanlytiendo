@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Thêm Công Trình Mới</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Times+New+Roman&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "retro-bg": "#FDFBF8", // Light warm beige background (Ánh xạ từ background-light)
+              "retro-surface": "#EAE5DF", // Slightly darker surface (Tông màu gần bg, sáng hơn)
+              "retro-border": "#2a221c", // Dark brown border (Ánh xạ từ background-dark)
+              "retro-text": "#4f311c", // Main dark brown text (Ánh xạ từ text-light)
+              "retro-subtext": "#8B7D72", // Subdued brown text (Tông màu trung tính, sẫm hơn text-dark)
+              "retro-primary": "#8B542A", // Muted brown/Orange for accents (Ánh xạ từ primary)
+              "retro-secondary": "#5C7E7E", // Muted slate blue/cyan for secondary accents
+              "retro-success": "#638459", // Muted deep green
+              "retro-warning": "#B88C4A", // Muted gold/ochre
+              "retro-danger": "#A05F5F", // Muted rust red
+            },
+            fontFamily: {
+              display: ["'Times New Roman'", "Times New Roman"],
+              body: ["'Times New Roman'", "Times New Roman"],
+            },
+            borderRadius: {
+              DEFAULT: "0px",
+              lg: "0px",
+              xl: "0px",
+              full: "9999px",
+            },
+            boxShadow: {
+              retro: "4px 4px 0px 0px #2C2C2C",
+              "retro-sm": "2px 2px 0px 0px #2C2C2C",
+              "retro-inset": "inset 2px 2px 0px 0px #B0B0B0",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="bg-retro-bg font-body text-retro-text">
+    <div class="flex min-h-screen w-full">
+      <aside
+        class="flex w-64 flex-col border-r-4 border-retro-border bg-retro-surface p-4"
+      >
+        <div class="flex items-center gap-3 mb-8">
+          <div
+            class="bg-retro-primary p-2 text-retro-surface border-2 border-retro-border"
+          >
+            <span class="material-symbols-outlined !text-2xl"
+              >construction</span
+            >
+          </div>
+          <h1 class="text-xl font-bold font-display uppercase tracking-wider">
+            HỆ THỐNG QUẢN LÝ TIẾN ĐỘ
+          </h1>
+        </div>
+        <div class="flex flex-col justify-between flex-grow">
+          <div class="flex flex-col gap-2">
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Tongquan.html"
+            >
+              <span class="material-symbols-outlined">dashboard</span>
+              <p class="text-base font-medium">Tổng quan</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Qlycongtrinh.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base">Công trình</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Qlyhangmuc.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base font-medium">Hạng mục</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Qlytiendo.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base font-medium">Tiến độ</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Qlynhanvien.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base font-medium">Nhân viên</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Baocao.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base font-medium">Báo cáo</p>
+            </a>
+
+            <div
+              class="flex items-center gap-3 p-3 mt-4 border-t-2 border-retro-border"
+            >
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover size-10 border-2 border-retro-border"
+                data-alt="Avatar of Hoàng An"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWSx9iC2u_5281W0W6LPCVO3V9h1BEly4caTzCe3dzEvC2S1JI22womgxVJT7uP-nOCz_uwQ9acxSDylCAJalTvnpyVwOYLjPq8cOeDhQmqzMI_I2VtUsVJOZoWs6miYleqew3JE8wDG_VkPou6fKSd2d5_rToznGhrTTDMAsoOkdlMirFtVPz1JvlsNHaPUOBRN3WTiD-Jv5lI-b-SH2oG2HcfX4B1zMheqaBee9Qup6y8iCpHInhO1VLkLVcvy_3fty1Z7QeapzV');
+                "
+              ></div>
+              <div class="flex flex-col">
+                <h1 class="text-base font-bold">Hoàng An</h1>
+                <p class="text-sm text-retro-subtext">Quản lý tiến độ</p>
+              </div>
+              <a
+                class="ml-auto text-retro-subtext hover:text-retro-text"
+                href="#"
+              >
+                <span class="material-symbols-outlined">logout</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main class="flex-1 p-8">
+        <div class="w-full max-w-4xl mx-auto">
+          <div class="mb-8">
+            <h1 class="text-3xl font-display font-bold text-retro-primary">
+              Thêm Công Trình Mới
+            </h1>
+            <p class="text-retro-subtext mt-2 text-base">
+              Vui lòng điền đầy đủ thông tin chi tiết cho công trình mới bên
+              dưới.
+            </p>
+            <!-- Column menu: show DB columns for quick reference and focus navigation -->
+            <div class="mt-4">
+              <div id="columnMenu" class="flex flex-wrap gap-3 items-center">
+                <div class="px-3 py-2 border-2 border-retro-border bg-retro-surface text-sm font-semibold cursor-pointer" data-focus="mact">MACT (mã)</div>
+                <div class="px-3 py-2 border-2 border-retro-border bg-retro-surface text-sm font-semibold cursor-pointer" data-focus="project-name">TENCT (tên công trình)</div>
+                <div class="px-3 py-2 border-2 border-retro-border bg-retro-surface text-sm font-semibold cursor-pointer" data-focus="project-location">DIADIEM (địa điểm)</div>
+                <div class="px-3 py-2 border-2 border-retro-border bg-retro-surface text-sm font-semibold cursor-pointer" data-focus="start-date">NGAYBD (ngày bắt đầu)</div>
+                <div class="px-3 py-2 border-2 border-retro-border bg-retro-surface text-sm font-semibold cursor-pointer" data-focus="end-date">NGAYKT (ngày kết thúc)</div>
+                <div class="px-3 py-2 border-2 border-retro-border bg-retro-surface text-sm font-semibold cursor-pointer" data-focus="project-budget">NGANSACH (ngân sách)</div>
+                <div class="px-3 py-2 border-2 border-retro-border bg-retro-surface text-sm font-semibold cursor-pointer" data-focus="project-description">MOTA (mô tả)</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-retro-surface border-4 border-retro-border shadow-retro p-8"
+          >
+            <form id="addProjectForm" class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6" method="POST">
+              <div id="formError" style="display:none;color:#e74c3c;padding:8px;border:1px solid #e74c3c;background:#fdecea;margin-bottom:8px;border-radius:4px;" class="md:col-span-2"></div>
+              <div class="md:col-span-2">
+                <label class="block text-base font-bold mb-2" for="mact"
+                  >Mã Công Trình (MACT)</label
+                >
+                <input
+                  name="mact"
+                  id="mact"
+                  class="w-full text-base bg-retro-surface border-2 border-retro-border p-2 focus:ring-retro-primary focus:border-retro-primary shadow-retro-inset"
+                  type="text"
+                />
+              </div>
+
+              <div class="md:col-span-2">
+                <label class="block text-base font-bold mb-2" for="project-name"
+                  >Tên Công Trình</label
+                >
+                <input
+                  name="name"
+                  class="w-full text-base bg-retro-surface border-2 border-retro-border p-2 focus:ring-retro-primary focus:border-retro-primary shadow-retro-inset"
+                  id="project-name"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-base font-bold mb-2"
+                  for="project-location"
+                  >Địa Điểm</label
+                >
+                <input
+                  name="location"
+                  class="w-full text-base bg-retro-surface border-2 border-retro-border p-2 focus:ring-retro-primary focus:border-retro-primary shadow-retro-inset"
+                  id="project-location"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-base font-bold mb-2"
+                  for="project-budget"
+                  >Ngân Sách Ước Tính (VND)</label
+                >
+                <input
+                  name="budget"
+                  inputmode="numeric"
+                  class="w-full text-base bg-retro-surface border-2 border-retro-border p-2 focus:ring-retro-primary focus:border-retro-primary shadow-retro-inset"
+                  id="project-budget"
+                  placeholder="Ví dụ: 5.000.000.000"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="block text-base font-bold mb-2" for="start-date"
+                  >Ngày Bắt Đầu Dự Kiến</label
+                >
+                <input
+                  name="start_date"
+                  class="w-full text-base bg-retro-surface border-2 border-retro-border p-2 focus:ring-retro-primary focus:border-retro-primary shadow-retro-inset"
+                  id="start-date"
+                  type="date"
+                />
+              </div>
+              <div>
+                <label class="block text-base font-bold mb-2" for="end-date"
+                  >Ngày Hoàn Thành Dự Kiến</label
+                >
+                <input
+                  name="end_date"
+                  class="w-full text-base bg-retro-surface border-2 border-retro-border p-2 focus:ring-retro-primary focus:border-retro-primary shadow-retro-inset"
+                  id="end-date"
+                  type="date"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label
+                  class="block text-base font-bold mb-2"
+                  for="project-description"
+                  >Mô Tả Công Trình</label
+                >
+                <textarea
+                  name="description"
+                  class="w-full text-base bg-retro-surface border-2 border-retro-border p-2 focus:ring-retro-primary focus:border-retro-primary shadow-retro-inset"
+                  id="project-description"
+                  rows="5"
+                ></textarea>
+              </div>
+              <div
+                class="md:col-span-2 flex justify-end items-center gap-4 pt-4 mt-4 border-t-2 border-retro-border border-dashed"
+              >
+                <button
+                  onclick="history.back()"
+                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden h-10 px-4 bg-retro-bg text-retro-text text-base font-bold leading-normal tracking-wide gap-2 border-2 border-retro-border shadow-retro-sm active:shadow-none active:translate-x-0.5 active:translate-y-0.5"
+                  type="button"
+                >
+                  <span class="truncate">HỦY</span>
+                </button>
+                <button
+                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden h-10 px-4 bg-retro-primary text-retro-surface text-base font-bold leading-normal tracking-wide gap-2 border-2 border-retro-border shadow-retro-sm active:shadow-none active:translate-x-0.5 active:translate-y-0.5"
+                  type="submit"
+                >
+                  <span class="material-symbols-outlined !text-lg">add</span>
+                  <span class="truncate">TẠO CÔNG TRÌNH</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      function showFormError(msg) {
+        const e = document.getElementById('formError');
+        e.textContent = msg || '';
+        e.style.display = msg ? 'block' : 'none';
+      }
+      const budgetInput = document.getElementById('project-budget');
+      if (budgetInput) {
+        budgetInput.addEventListener('focus', function () { this.value = (this.value || '').replace(/[^0-9\-\.]/g, ''); });
+        budgetInput.addEventListener('blur', function () {
+          const v = (this.value || '').trim(); if (!v) return; const normalized = v.replace(/,/g, '.').replace(/[^0-9\.\-]/g, ''); const n = parseFloat(normalized); if (!isNaN(n)) this.value = new Intl.NumberFormat('vi-VN').format(n);
+        });
+      }
+      document.getElementById('addProjectForm').addEventListener('submit', async function (ev) {
+        ev.preventDefault(); showFormError(''); const form = ev.currentTarget; const btn = form.querySelector('button[type="submit"]'); const originalText = btn.textContent;
+        const nameEl = form.querySelector('[name="name"]');
+        const startEl = form.querySelector('[name="start_date"]') || form.querySelector('#start-date');
+        const endEl = form.querySelector('[name="end_date"]') || form.querySelector('#end-date');
+        const budgetEl = form.querySelector('[name="budget"]') || form.querySelector('#project-budget');
+        if (!nameEl) { showFormError('Tên công trình là bắt buộc. (name field missing)'); return; }
+        const name = (nameEl.value || '').trim();
+        const startDate = startEl ? startEl.value : '';
+        const endDate = endEl ? endEl.value : '';
+        const budgetRaw = budgetEl ? (budgetEl.value || '') : '';
+        if (!name) { showFormError('Tên công trình là bắt buộc.'); return; }
+        if (!startDate || !endDate) { showFormError('Vui lòng cung cấp Ngày bắt đầu và Ngày hoàn thành.'); return; }
+        if (new Date(startDate) > new Date(endDate)) { showFormError('Ngày hoàn thành phải lớn hơn hoặc bằng ngày bắt đầu.'); return; }
+        let budgetNumeric = ''; if (budgetRaw && budgetRaw.trim() !== '') { budgetNumeric = budgetRaw.replace(/[^0-9\-\.]/g, ''); const parts = budgetNumeric.split('.'); if (parts.length > 2) budgetNumeric = parts.slice(0, parts.length - 1).join('') + '.' + parts[parts.length - 1]; }
+        btn.disabled = true; btn.textContent = 'Đang lưu...'; const fd = new FormData(form); if (budgetNumeric !== '') fd.set('budget', budgetNumeric); else fd.delete('budget'); const data = new URLSearchParams(fd);
+        try {
+          const res = await fetch('/quanlytiendo/save_project.php', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }, body: data.toString(), credentials: 'same-origin' });
+          const text = await res.text(); let json; try { json = JSON.parse(text); } catch (e) { json = { success:false, error: 'Phản hồi không hợp lệ', raw: text }; }
+          console.log('save_project response', json);
+          if (json && json.success) {
+            // notify other tabs/pages via BroadcastChannel
+            try { const bc = new BroadcastChannel('projects_channel'); if (json.data) bc.postMessage(json.data); }
+            catch(e){ console.warn('BroadcastChannel failed', e); }
+            alert('Tạo công trình thành công.');
+            // redirect back to list
+            window.location.href = '/quanlytiendo/Qlycongtrinh.html';
+          }
+          else { showFormError(json && json.error ? json.error : 'Không lưu được công trình.'); }
+        } catch (err) { showFormError('Lỗi kết nối: ' + (err && err.message ? err.message : err)); }
+        finally { btn.disabled = false; btn.textContent = originalText; }
+      });
+    </script>
+    
+    <script>
+      // Column menu focus: click a menu item to focus corresponding input
+      (function(){
+        const menu = document.getElementById('columnMenu');
+        if (!menu) return;
+        menu.addEventListener('click', function(e){
+          const item = e.target.closest('[data-focus]');
+          if (!item) return;
+          const id = item.getAttribute('data-focus');
+          if (!id) return;
+          const el = document.getElementById(id);
+          if (!el) return;
+          el.focus();
+          if (typeof el.select === 'function') el.select();
+        });
+      })();
+    </script>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tổng quan - Hệ thống Quản lý Tiến độ</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="/quanlytiendo/assets/rbac.js" defer></script>
+    <script src="/quanlytiendo/assets/show_profile.js" defer></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "retro-bg": "#FDFBF8",
+              "retro-surface": "#EAE5DF",
+              "retro-border": "#2a221c",
+              "retro-text": "#4f311c",
+              "retro-subtext": "#8B7D72",
+              "retro-primary": "#8B542A",
+              "retro-secondary": "#5C7E7E",
+              "retro-success": "#638459",
+              "retro-warning": "#B88C4A",
+              "retro-danger": "#A05F5F",
+            },
+            fontFamily: {
+              display: ["'Times New Roman'", "serif"],
+              body: ["'Times New Roman'", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #eae5df;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #8b542a;
+        border-radius: 4px;
+      }
+      .pixel-bar {
+        background-image: repeating-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.2) 4px,
+          transparent 4px,
+          transparent 8px
+        );
+      }
+    </style>
+  </head>
+  <body
+    class="bg-retro-bg font-body text-retro-text h-screen overflow-hidden flex"
+  >
+    <aside
+      class="flex w-64 flex-col border-r-4 border-retro-border bg-retro-surface p-4 h-full shrink-0"
+    >
+      <div class="flex items-center gap-3 mb-8">
+        <div
+          class="bg-retro-primary p-2 text-retro-surface border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c]"
+        >
+          <span class="material-symbols-outlined !text-2xl">construction</span>
+        </div>
+        <h1
+          class="text-xl font-bold font-display uppercase tracking-wider leading-6"
+        >
+          HỆ THỐNG<br />QUẢN LÝ TIẾN ĐỘ
+        </h1>
+      </div>
+
+      <div class="flex flex-col gap-2 flex-1 overflow-y-auto">
+        <a
+          class="flex items-center gap-3 px-3 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c]"
+          href="tongquan.html"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <p class="text-base font-bold">Tổng quan</p>
+        </a>
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlycongtrinh.html"
+        >
+          <span class="material-symbols-outlined">domain</span>
+          <p class="text-base font-medium">Công trình</p>
+        </a>
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlyhangmuc.html"
+        >
+          <span class="material-symbols-outlined">category</span>
+          <p class="text-base font-medium">Hạng mục</p>
+        </a>
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlytiendo.html"
+        >
+          <span class="material-symbols-outlined">trending_up</span>
+          <p class="text-base font-medium">Tiến độ</p>
+        </a>
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlynhanvien.html"
+        >
+          <span class="material-symbols-outlined">group</span>
+          <p class="text-base font-medium">Nhân viên</p>
+        </a>
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="baocao.html"
+        >
+          <span class="material-symbols-outlined">assessment</span>
+          <p class="text-base font-medium">Báo cáo</p>
+        </a>
+      </div>
+
+      <div class="mt-auto pt-4 border-t-4 border-retro-border/20">
+        <!-- profile removed -->
+        <button
+          id="logoutBtn"
+          class="w-full flex items-center justify-center gap-2 bg-[#9F5F46] hover:bg-[#8a4f38] text-[#EAE5DF] font-bold py-2.5 px-4 border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c] transition-all"
+        >
+          <span class="material-symbols-outlined text-xl">logout</span>
+          <span class="uppercase tracking-wide text-sm">Đăng xuất</span>
+        </button>
+        <script>
+          document
+            .getElementById("logoutBtn")
+            .addEventListener("click", function () {
+              if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+                window.location.href = "logout.php";
+              }
+            });
+        </script>
+      </div>
+    </aside>
+
+    <main class="flex-1 p-8 overflow-y-auto h-full bg-retro-bg">
+      <div class="max-w-7xl mx-auto pb-10">
+        <div
+          class="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-retro-primary/20"
+        >
+          <div class="flex flex-col">
+            <p class="text-4xl font-display font-bold text-retro-primary">
+              Tổng quan
+            </p>
+            <p class="text-retro-text/70 mt-2 font-medium text-lg">
+              Tổng quan tiến độ các công trình xây dựng.
+            </p>
+          </div>
+          <div
+            class="bg-retro-surface border-2 border-retro-border px-4 py-2 font-bold shadow-[2px_2px_0px_0px_#2a221c]"
+          >
+            <span id="currentDate">--/--/----</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div
+            class="flex flex-col gap-2 p-5 bg-retro-surface border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c]"
+          >
+            <p class="text-lg font-bold text-retro-subtext uppercase">
+              Đang thi công
+            </p>
+            <p
+              class="text-5xl font-bold font-display text-retro-text"
+              id="kpi-active"
+            >
+              ...
+            </p>
+            <p
+              class="text-retro-success text-sm font-bold flex items-center gap-1 mt-auto"
+            >
+              <span class="material-symbols-outlined text-lg">domain</span> Công
+              trình hoạt động
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-2 p-5 bg-retro-surface border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c]"
+          >
+            <p class="text-lg font-bold text-retro-subtext uppercase">
+              Hạng mục trễ
+            </p>
+            <p
+              class="text-5xl font-bold font-display text-retro-danger"
+              id="kpi-late"
+            >
+              ...
+            </p>
+            <p
+              class="text-retro-danger text-sm font-bold flex items-center gap-1 mt-auto"
+            >
+              <span class="material-symbols-outlined text-lg">warning</span> Cần
+              xử lý gấp
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-2 p-5 bg-retro-surface border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c]"
+          >
+            <p class="text-lg font-bold text-retro-subtext uppercase">
+              Sắp đến hạn
+            </p>
+            <p
+              class="text-5xl font-bold font-display text-retro-warning"
+              id="kpi-soon"
+            >
+              ...
+            </p>
+            <p
+              class="text-retro-warning text-sm font-bold flex items-center gap-1 mt-auto"
+            >
+              <span class="material-symbols-outlined text-lg"
+                >hourglass_top</span
+              >
+              Trong 7 ngày tới
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-2 p-5 bg-retro-surface border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c]"
+          >
+            <p class="text-lg font-bold text-retro-subtext uppercase">
+              Tiến độ TB
+            </p>
+            <p
+              class="text-5xl font-bold font-display text-retro-secondary"
+              id="kpi-avg"
+            >
+              ...%
+            </p>
+            <p
+              class="text-retro-secondary text-sm font-bold flex items-center gap-1 mt-auto"
+            >
+              <span class="material-symbols-outlined text-lg">trending_up</span>
+              Toàn hệ thống
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 flex flex-col gap-6">
+            <div
+              class="border-2 border-retro-border bg-retro-surface p-6 shadow-[4px_4px_0px_0px_#2a221c]"
+            >
+              <h3
+                class="text-2xl font-bold mb-6 font-display text-retro-primary border-b-2 border-retro-border/20 pb-2"
+              >
+                Công trình trọng điểm (Top 3)
+              </h3>
+              <div class="flex flex-col gap-6" id="project-list">
+                <div class="text-center italic text-retro-subtext">
+                  Đang tải dữ liệu...
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="border-2 border-retro-border bg-retro-surface p-6 shadow-[4px_4px_0px_0px_#2a221c]"
+            >
+              <h3
+                class="text-2xl font-bold mb-4 font-display text-retro-primary"
+              >
+                Hạng mục hoàn thành (1 năm gần nhất)
+              </h3>
+              <div
+                class="flex items-end justify-between h-48 pt-4 border-l-2 border-b-2 border-retro-border px-4 gap-2"
+                id="chart-container"
+              ></div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-1">
+            <div
+              class="border-2 border-retro-border bg-retro-surface p-6 shadow-[4px_4px_0px_0px_#2a221c] h-full flex flex-col"
+            >
+              <div
+                class="flex justify-between items-center mb-6 border-b-2 border-retro-border/20 pb-2"
+              >
+                <h3
+                  class="text-2xl font-bold font-display text-retro-danger flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined">warning</span> Trễ hạn
+                </h3>
+                <a
+                  class="text-sm font-bold text-retro-primary hover:underline"
+                  href="qlytiendo.html"
+                  >Xem tất cả</a
+                >
+              </div>
+
+              <div
+                class="flex flex-col gap-4 flex-1 overflow-y-auto max-h-[500px]"
+                id="late-list"
+              >
+                <div class="text-center italic text-retro-subtext">
+                  Không có hạng mục trễ hạn.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.getElementById("currentDate").innerText =
+        new Date().toLocaleDateString("vi-VN");
+
+      async function loadDashboard() {
+        try {
+          // Try specialized dashboard API first
+          let json = null;
+          try {
+            const res = await fetch("api_dashboard.php");
+            json = await res.json();
+          } catch (e) {
+            json = null;
+          }
+
+          if (json && json.success) {
+            const data = json.data;
+            document.getElementById("kpi-active").innerText = data.kpi_active;
+            document.getElementById("kpi-late").innerText = data.kpi_late;
+            document.getElementById("kpi-soon").innerText = data.kpi_soon;
+            document.getElementById("kpi-avg").innerText = data.kpi_avg + "%";
+
+            const pjContainer = document.getElementById("project-list");
+            if (data.projects.length > 0) {
+              pjContainer.innerHTML = data.projects
+                .map((p) => {
+                  const pct = parseInt(p.percent || 0);
+                  let color = "text-retro-secondary",
+                    bgClass = "bg-retro-secondary";
+                  if (pct < 30) {
+                    color = "text-retro-danger";
+                    bgClass = "bg-retro-danger";
+                  } else if (pct < 70) {
+                    color = "text-retro-warning";
+                    bgClass = "bg-retro-warning";
+                  } else {
+                    color = "text-retro-success";
+                    bgClass = "bg-retro-success";
+                  }
+                  return `
+                  <div class="flex flex-col gap-2">
+                    <div class="flex justify-between items-end">
+                      <div>
+                        <p class="font-bold text-base text-retro-text">${p.TENCT}</p>
+                        <p class="text-xs text-retro-subtext italic">Trạng thái: ${p.TRANGTHAI}</p>
+                      </div>
+                      <span class="text-lg font-bold ${color}">${pct}%</span>
+                    </div>
+                    <div class="w-full bg-white h-4 border-2 border-retro-border">
+                      <div class="${bgClass} h-full pixel-bar border-r-2 border-retro-border" style="width: ${pct}%"></div>
+                    </div>
+                  </div>`;
+                })
+                .join("");
+            }
+
+            const chartContainer = document.getElementById("chart-container");
+            chartContainer.innerHTML = (data.chart || [])
+              .map((c, index) => {
+                const barColor =
+                  index % 2 === 0 ? "bg-retro-primary" : "bg-retro-secondary";
+                return `
+                <div class="flex flex-col items-center flex-1 gap-1 group h-full justify-end">
+                  <div class="w-full ${barColor} border-2 border-retro-border pixel-bar opacity-80 group-hover:opacity-100 transition-all relative" style="height: ${c.height}%">
+                    <span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">${c.value} HM</span>
+                  </div>
+                  <span class="text-xs font-bold text-retro-subtext">${c.label}</span>
+                </div>`;
+              })
+              .join("");
+
+            const lateContainer = document.getElementById("late-list");
+            if ((data.late_list || []).length > 0) {
+              lateContainer.innerHTML = data.late_list
+                .map(
+                  (item) => `
+                <div class="bg-retro-bg border-2 border-retro-border p-3 shadow-sm hover:translate-x-1 transition-transform cursor-pointer">
+                  <p class="font-bold text-base text-retro-text">${item.TENHM}</p>
+                  <p class="text-xs text-retro-subtext mb-2">${item.TENCT}</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold px-2 py-1 bg-retro-danger text-white border border-retro-border">TRỄ ${item.days_late} NGÀY</span>
+                    <span class="text-xs font-bold text-retro-subtext truncate max-w-[100px]" title="${item.ten_nv}">PT: ${item.ten_nv}</span>
+                  </div>
+                </div>`
+                )
+                .join("");
+            }
+
+            return; // done using specialized API
+          }
+
+          // Fallback: compute from list_* endpoints
+          const [pRes, hRes, nRes, tRes] = await Promise.all([
+            fetch("list_projects.php?pageSize=1000"),
+            fetch("list_hangmuc.php?pageSize=1000"),
+            fetch("list_nhanvien.php?pageSize=1000"),
+            fetch("list_tiendo.php?pageSize=1000"),
+          ]);
+
+          const [pJson, hJson, nJson, tJson] = await Promise.all([
+            pRes.json().catch(() => ({ success: false })),
+            hRes.json().catch(() => ({ success: false })),
+            nRes.json().catch(() => ({ success: false })),
+            tRes.json().catch(() => ({ success: false })),
+          ]);
+
+          const projects = pJson.success ? pJson.data : [];
+          const hangmucs = hJson.success ? hJson.data : [];
+          const nhanviens = nJson.success ? nJson.data : [];
+          const tiendos = tJson.success ? tJson.data : [];
+
+          // KPI calculations
+          const kpi_active = projects.filter(
+            (r) =>
+              ((r.status || r.trangthai || "") + "")
+                .toLowerCase()
+                .includes("đang") ||
+              ((r.status || "") + "").toLowerCase().includes("active")
+          ).length;
+          const late_from_tiendo = tiendos.filter(
+            (r) =>
+              r.late ||
+              r.trehan ||
+              ((r.status || "") + "").toLowerCase().includes("chậm")
+          ).length;
+          const late_from_hm = hangmucs.filter(
+            (r) =>
+              r.late ||
+              r.trehan ||
+              ((r.status || "") + "").toLowerCase().includes("chậm")
+          ).length;
+          const kpi_late = late_from_tiendo + late_from_hm;
+
+          const now = new Date();
+          const withinDays = (dStr, days) => {
+            if (!dStr) return false;
+            const d = new Date(dStr);
+            if (isNaN(d)) return false;
+            const diff = (d - now) / (1000 * 60 * 60 * 24);
+            return diff >= 0 && diff <= days;
+          };
+          const soonFromT = tiendos.filter((r) =>
+            withinDays(r.end_date || r.NGAYKTTT || r.NGAYKT, 7)
+          ).length;
+          const soonFromHM = hangmucs.filter((r) =>
+            withinDays(r.end_date || r.NGAYKTTT || r.NGAYKT, 7)
+          ).length;
+          const kpi_soon = soonFromT + soonFromHM;
+
+          const avgPct = Math.round(
+            tiendos.reduce(
+              (s, r) => s + (Number(r.progress || r.PHANTRAM || 0) || 0),
+              0
+            ) / (tiendos.length || 1)
+          );
+
+          document.getElementById("kpi-active").innerText = kpi_active;
+          document.getElementById("kpi-late").innerText = kpi_late;
+          document.getElementById("kpi-soon").innerText = kpi_soon;
+          document.getElementById("kpi-avg").innerText = avgPct + "%";
+
+          // Top 3 projects by average progress
+          const projMap = {};
+          tiendos.forEach((r) => {
+            const key =
+              r.congtrinh || r.project || r.project_id || r.MACT || "Unknown";
+            projMap[key] = projMap[key] || { sum: 0, count: 0 };
+            projMap[key].sum += Number(r.progress || r.PHANTRAM || 0) || 0;
+            projMap[key].count += 1;
+          });
+          const projArr = Object.keys(projMap).map((k) => ({
+            key: k,
+            avg: Math.round(projMap[k].sum / (projMap[k].count || 1)),
+          }));
+          projArr.sort((a, b) => b.avg - a.avg);
+          const top3 = projArr.slice(0, 3).map((p) => {
+            const meta =
+              projects.find(
+                (x) => (x.code || x.MACT || x.MACT || x.MACT) == p.key
+              ) ||
+              projects.find((x) => x.TENCT || x.ten || x.name || "") ||
+              {};
+            return {
+              name: meta.TENCT || meta.ten || meta.name || p.key,
+              percent: p.avg,
+              status: meta.TRANGTHAI || meta.status || "",
+            };
+          });
+
+          const pjContainer = document.getElementById("project-list");
+          if (top3.length > 0) {
+            pjContainer.innerHTML = top3
+              .map((p) => {
+                const pct = p.percent || 0;
+                let color = "text-retro-secondary",
+                  bg = "bg-retro-secondary";
+                if (pct < 30) {
+                  color = "text-retro-danger";
+                  bg = "bg-retro-danger";
+                } else if (pct < 70) {
+                  color = "text-retro-warning";
+                  bg = "bg-retro-warning";
+                } else {
+                  color = "text-retro-success";
+                  bg = "bg-retro-success";
+                }
+                return `
+                <div class="flex flex-col gap-2">
+                  <div class="flex justify-between items-end">
+                    <div>
+                      <p class="font-bold text-base text-retro-text">${p.name}</p>
+                      <p class="text-xs text-retro-subtext italic">Trạng thái: ${p.status}</p>
+                    </div>
+                    <span class="text-lg font-bold ${color}">${pct}%</span>
+                  </div>
+                  <div class="w-full bg-white h-4 border-2 border-retro-border">
+                    <div class="${bg} h-full pixel-bar border-r-2 border-retro-border" style="width:${pct}%"></div>
+                  </div>
+                </div>`;
+              })
+              .join("");
+          } else
+            pjContainer.innerHTML =
+              '<p class="text-center italic text-retro-subtext">Chưa có công trình nào đang thực hiện.</p>';
+
+          // Chart container: completed hạng mục per last 12 months (1 year)
+          const months = [];
+          for (let i = 11; i >= 0; i--) {
+            const d = new Date();
+            d.setMonth(d.getMonth() - i);
+            months.push(
+              `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`
+            );
+          }
+          const completedByMonth = months.map((m) => 0);
+          tiendos.forEach((r) => {
+            const p = Number(r.progress || r.PHANTRAM || 0) || 0;
+            if (p >= 100) {
+              const dateStr =
+                r.completed_date ||
+                r.NGAYKTTT ||
+                r.end_date ||
+                r.updated_at ||
+                r.updated ||
+                "";
+              if (dateStr) {
+                const d = new Date(dateStr);
+                const key = `${d.getFullYear()}-${String(
+                  d.getMonth() + 1
+                ).padStart(2, "0")}`;
+                const idx = months.indexOf(key);
+                if (idx >= 0) completedByMonth[idx]++;
+              }
+            }
+          });
+          const maxVal = Math.max(...completedByMonth, 1);
+          const chartHtml = months
+            .map((m, i) => {
+              const h = Math.round((completedByMonth[i] / maxVal) * 100);
+              return `
+              <div class="flex flex-col items-center flex-1 gap-1 group h-full justify-end">
+                <div class="w-full bg-retro-primary border-2 border-retro-border pixel-bar opacity-80" style="height:${h}%"></div>
+                <span class="text-xs font-bold text-retro-subtext">${
+                  m.split("-")[1]
+                }/${m.split("-")[0]}</span>
+              </div>`;
+            })
+            .join("");
+          document.getElementById("chart-container").innerHTML = chartHtml;
+
+          // Late list: from tiendo where late flag or status includes 'chậm'
+          const lateItems = tiendos.filter(
+            (r) =>
+              r.late ||
+              r.trehan ||
+              ((r.status || "") + "").toLowerCase().includes("chậm")
+          );
+          const lateContainer = document.getElementById("late-list");
+          if (lateItems.length > 0) {
+            lateContainer.innerHTML = lateItems
+              .map((it) => {
+                const name =
+                  it.MAHM ||
+                  it.hangmuc ||
+                  it.category ||
+                  it.TENHM ||
+                  it.name ||
+                  "Hạng mục";
+                const proj = it.congtrinh || it.project || it.MACT || "";
+                const days = it.days_late || it.daysLate || it.days || "";
+                const person = it.ten_nv || it.assignee || it.person || "";
+                return `
+                <div class="bg-retro-bg border-2 border-retro-border p-3 shadow-sm hover:translate-x-1 transition-transform cursor-pointer">
+                  <p class="font-bold text-base text-retro-text">${name}</p>
+                  <p class="text-xs text-retro-subtext mb-2">${proj}</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold px-2 py-1 bg-retro-danger text-white border border-retro-border">TRỄ ${
+                      days || "?"
+                    } NGÀY</span>
+                    <span class="text-xs font-bold text-retro-subtext truncate max-w-[100px]" title="${person}">PT: ${person}</span>
+                  </div>
+                </div>`;
+              })
+              .join("");
+          } else {
+            lateContainer.innerHTML =
+              '<div class="text-center py-4 bg-retro-success/10 border-2 border-retro-success text-retro-success font-bold rounded">Tuyệt vời! Không có hạng mục trễ hạn.</div>';
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      function logout() {
+        if (confirm("Bạn có muốn đăng xuất không?")) {
+          window.location.reload();
+        }
+      }
+
+      // Chạy khi load trang
+      loadDashboard();
+    </script>
+  </body>
+</html>

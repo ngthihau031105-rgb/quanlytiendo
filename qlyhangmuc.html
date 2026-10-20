@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quản lý Hạng mục</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Times+New+Roman&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "retro-bg": "#FDFBF8",
+              "retro-surface": "#EAE5DF",
+              "retro-border": "#2a221c",
+              "retro-text": "#4f311c",
+              "retro-subtext": "#8B7D72",
+              "retro-primary": "#8B542A",
+              // Status colors pastel style
+              "status-green-bg": "#dcfce7",
+              "status-green-text": "#166534",
+              "status-red-bg": "#fee2e2",
+              "status-red-text": "#991b1b",
+              "status-yellow-bg": "#fef9c3",
+              "status-yellow-text": "#854d0e",
+              "status-blue-bg": "#dbeafe",
+              "status-blue-text": "#1e40af",
+              "status-gray-bg": "#f3f4f6",
+              "status-gray-text": "#374151",
+            },
+            fontFamily: {
+              display: ["'Times New Roman'", "serif"],
+              body: ["'Times New Roman'", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="/quanlytiendo/assets/show_profile.js" defer></script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #eae5df;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #8b542a;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4f311c;
+      }
+    </style>
+  </head>
+  <body class="bg-retro-bg font-body text-retro-text">
+    <div class="flex min-h-screen w-full">
+      <aside
+        class="flex w-64 flex-col border-r-4 border-retro-border bg-retro-surface p-4 h-screen sticky top-0 overflow-hidden"
+      >
+        <div class="flex items-center gap-3 mb-8 shrink-0">
+          <div
+            class="bg-retro-primary p-2 text-retro-surface border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c]"
+          >
+            <span class="material-symbols-outlined !text-2xl"
+              >construction</span
+            >
+          </div>
+          <h1
+            class="text-xl font-bold font-display uppercase tracking-wider leading-6"
+          >
+            HỆ THỐNG<br />QUẢN LÝ TIẾN ĐỘ
+          </h1>
+        </div>
+
+        <div class="flex flex-col gap-2 flex-1 overflow-y-auto">
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Tongquan.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >dashboard</span
+            >
+            <p class="text-base font-medium">Tổng quan</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Qlycongtrinh.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >domain</span
+            >
+            <p class="text-base">Công trình</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border shadow-retro-sm"
+            href="Qlyhangmuc.html"
+          >
+            <span class="material-symbols-outlined">category</span>
+            <p class="text-base font-bold">Hạng mục</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Qlytiendo.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >trending_up</span
+            >
+            <p class="text-base font-medium">Tiến độ</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Qlynhanvien.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >group</span
+            >
+            <p class="text-base font-medium">Nhân viên</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Baocao.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >assessment</span
+            >
+            <p class="text-base font-medium">Báo cáo</p>
+          </a>
+        </div>
+
+        <div class="mt-auto pt-4 border-t-4 border-retro-border/20">
+          <!-- profile removed -->
+          <button
+            id="logoutBtn"
+            class="w-full flex items-center justify-center gap-2 bg-[#9F5F46] hover:bg-[#8a4f38] text-[#EAE5DF] font-bold py-2.5 px-4 border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c] transition-all"
+          >
+            <span class="material-symbols-outlined text-xl">logout</span>
+            <span class="uppercase tracking-wide text-sm">Đăng xuất</span>
+          </button>
+          <script>
+            document
+              .getElementById("logoutBtn")
+              .addEventListener("click", function () {
+                if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+                  window.location.href = "logout.php";
+                }
+              });
+          </script>
+        </div>
+      </aside>
+
+      <main class="flex-1 p-8 overflow-x-hidden">
+        <div
+          class="layout-content-container flex flex-col w-full max-w-7xl mx-auto"
+        >
+          <div
+            class="flex flex-wrap justify-between items-center gap-4 mb-6 border-b border-retro-primary/20 pb-4"
+          >
+            <div class="flex flex-col gap-2">
+              <p class="text-retro-primary text-4xl font-bold leading-tight">
+                Quản lý Hạng mục
+              </p>
+              <p
+                class="text-retro-text/70 text-base font-normal leading-normal"
+              >
+                Quản lý và theo dõi tất cả các hạng mục trong các công trình.
+              </p>
+            </div>
+            <button
+              id="createHMBtn"
+              onclick="openModal('addModal')"
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden h-10 px-4 bg-retro-primary text-retro-surface text-base font-bold leading-normal tracking-wide gap-2 border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c] active:shadow-none active:translate-x-0.5 active:translate-y-0.5 hover:bg-retro-primary/90 transition-all"
+            >
+              <span class="material-symbols-outlined !text-lg">add_circle</span>
+              <span class="truncate uppercase">Tạo hạng mục</span>
+            </button>
+          </div>
+
+          <div class="mb-6 grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div class="lg:col-span-9">
+              <div
+                class="flex w-full h-10 items-stretch border-2 border-retro-border bg-retro-bg shadow-[2px_2px_0px_0px_#B4A596]"
+              >
+                <div
+                  class="flex items-center justify-center pl-3 pr-2 text-retro-subtext border-r border-retro-border/20"
+                >
+                  <span class="material-symbols-outlined">search</span>
+                </div>
+                <input
+                  id="searchInput"
+                  class="flex-1 bg-transparent border-none focus:ring-0 text-retro-text placeholder-retro-subtext/70 text-base px-3"
+                  placeholder="Tìm kiếm tên hoặc mã hạng mục..."
+                />
+              </div>
+            </div>
+            <!-- Removed Trạng thái and Sort controls per request; search expanded to occupy space -->
+          </div>
+
+          <div class="w-full">
+            <div
+              class="flex overflow-hidden border-2 border-retro-border bg-[#F5EFE7]"
+            >
+              <table class="w-full text-left border-collapse">
+                <thead
+                  class="bg-retro-primary/20 border-b-2 border-retro-border"
+                >
+                  <tr>
+                    <th
+                      class="px-4 py-3 text-retro-text w-24 text-sm font-bold uppercase border-r border-retro-border/20"
+                    >
+                      Mã HM
+                    </th>
+                    <th
+                      class="px-4 py-3 text-retro-text text-sm font-bold uppercase border-r border-retro-border/20"
+                    >
+                      Tên Hạng Mục
+                    </th>
+                    <th
+                      class="px-4 py-3 text-retro-text w-1/5 text-sm font-bold uppercase border-r border-retro-border/20"
+                    >
+                      Công Trình
+                    </th>
+                    <th
+                      class="px-4 py-3 text-retro-text w-32 text-sm font-bold uppercase border-r border-retro-border/20"
+                    >
+                      MANV
+                    </th>
+                    <th
+                      class="px-4 py-3 text-retro-text w-28 text-sm font-bold uppercase border-r border-retro-border/20"
+                    >
+                      Bắt đầu
+                    </th>
+                    <th
+                      class="px-4 py-3 text-retro-text w-28 text-sm font-bold uppercase border-r border-retro-border/20"
+                    >
+                      Kết thúc
+                    </th>
+                    <th
+                      class="px-4 py-3 text-retro-text w-32 text-center text-sm font-bold uppercase border-r border-retro-border/20"
+                    >
+                      Trạng Thái
+                    </th>
+                    <th
+                      class="px-4 py-3 text-retro-text w-36 text-center text-sm font-bold uppercase"
+                    >
+                      Hành động
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  id="tableBody"
+                  class="divide-y divide-retro-border/30"
+                ></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- pagination removed -->
+        </div>
+      </main>
+      <script>
+        // RBAC enforcement: centralized role check + dynamic removal of delete controls
+        async function getUserRole() {
+          try {
+            const r = await fetch("/quanlytiendo/current_user.php", {
+              credentials: "include",
+            });
+            const j = await r.json();
+            if (j && j.success && j.user && j.user.role) return j.user.role;
+          } catch (e) {
+            /* ignore */
+          }
+          return null;
+        }
+
+        // fetch whole current user object (cached)
+        window.__currentUser = null;
+        async function getCurrentUser() {
+          if (window.__currentUser) return window.__currentUser;
+          try {
+            const r = await fetch("/quanlytiendo/current_user.php", {
+              credentials: "include",
+            });
+            const j = await r.json();
+            if (j && j.success && j.user) {
+              window.__currentUser = j.user;
+              return j.user;
+            }
+          } catch (e) {}
+          return null;
+        }
+
+        function removeDeletes(root) {
+          try {
+            const scope = root && root.querySelector ? root : document;
+            scope
+              .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+              .forEach((el) => el.remove());
+            scope
+              .querySelectorAll(
+                '[onclick*="deleteItemHM("] , [onclick*="deleteProject("] , [onclick*="deleteItem("]'
+              )
+              .forEach((el) => el.remove());
+            scope.querySelectorAll("button, a").forEach((el) => {
+              const t = (el.textContent || "").toUpperCase();
+              if (t.includes("XÓA") || t.includes("XOA")) el.remove();
+            });
+            // also sweep table cells for inline handlers
+            scope.querySelectorAll("td").forEach((td) => {
+              const del =
+                td.querySelector('[onclick*="deleteItemHM("]') ||
+                td.querySelector('[onclick*="deleteProject("]') ||
+                td.querySelector('[onclick*="deleteItem("]');
+              if (del) del.remove();
+            });
+          } catch (e) {
+            /* ignore */
+          }
+        }
+
+        async function enforceDeletePolicy() {
+          const role = await getUserRole();
+          if (role !== "employee") return;
+          // initial sweep
+          removeDeletes(document);
+
+          // observe the main table body for dynamically added rows
+          const tbody = document.getElementById("tableBody");
+          if (tbody) {
+            const mo = new MutationObserver((mutations) => {
+              for (const m of mutations) {
+                if (m.addedNodes && m.addedNodes.length) {
+                  // check added nodes and their descendants
+                  m.addedNodes.forEach((n) => removeDeletes(n));
+                }
+              }
+            });
+            mo.observe(tbody, { childList: true, subtree: true });
+          }
+        }
+
+        // run enforcement (non-blocking)
+        enforceDeletePolicy();
+        // hide create button for employees and prevent opening add modal
+        (async function hideCreateForEmployees() {
+          try {
+            const user = await getCurrentUser();
+            if (!user) return;
+            const role = (user.role || "").toLowerCase();
+            if (["employee", "user", "nhanvien", "staff"].includes(role)) {
+              const createBtn = document.getElementById("createHMBtn");
+              if (createBtn) createBtn.remove();
+            }
+          } catch (e) {}
+        })();
+        // also add a global observer to catch any dynamically inserted delete controls
+        (async function globalDeleteSweep() {
+          try {
+            const r = await getUserRole();
+            if (!r) return;
+            const isEmployee = [
+              "employee",
+              "user",
+              "nhanvien",
+              "staff",
+            ].includes(r);
+            if (!isEmployee) return;
+            const removeFn = (root) => {
+              try {
+                const scope = root && root.querySelector ? root : document;
+                scope
+                  .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+                  .forEach((el) => el.remove());
+                scope.querySelectorAll("button, a").forEach((el) => {
+                  const t = (el.textContent || "").toUpperCase();
+                  if (t.includes("XÓA") || t.includes("XOA")) el.remove();
+                });
+                scope.querySelectorAll("[onclick]").forEach((el) => {
+                  const v = (el.getAttribute("onclick") || "").toString();
+                  if (
+                    v.includes("deleteItemHM(") ||
+                    v.includes("deleteProject(") ||
+                    v.includes("deleteItem(")
+                  )
+                    el.remove();
+                });
+              } catch (e) {}
+            };
+            removeFn(document);
+            const mo = new MutationObserver((ms) => {
+              ms.forEach((m) => {
+                if (m.addedNodes && m.addedNodes.length)
+                  m.addedNodes.forEach((n) => {
+                    if (n.nodeType === 1) removeFn(n);
+                  });
+              });
+            });
+            mo.observe(document.body, { childList: true, subtree: true });
+          } catch (e) {}
+        })();
+      </script>
+      <script>
+        // Cache current user role to make delete checks immediate
+        window.__currentUserRole = null;
+        (async function () {
+          try {
+            const r = await getUserRole();
+            if (r) window.__currentUserRole = r;
+          } catch (e) {}
+        })();
+      </script>
+    </div>
+
+    <div
+      id="addModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal('addModal')"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-2xl shadow-[8px_8px_0px_0px_#2a221c] p-0 flex flex-col max-h-[90vh]"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3
+            id="modalTitle"
+            class="text-xl font-bold uppercase text-retro-primary"
+          >
+            Thêm Hạng Mục Mới
+          </h3>
+          <button
+            onclick="closeModal('addModal')"
+            class="text-retro-text hover:text-retro-danger font-bold text-xl"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="p-6 overflow-y-auto">
+          <form id="hangmucForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input type="hidden" id="hm_id" />
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Mã Hạng Mục <span class="text-retro-danger">*</span></label
+              >
+              <input
+                type="text"
+                id="hm_code"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary placeholder-retro-subtext/50"
+                placeholder="VD: HM001"
+              />
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Tên Hạng Mục <span class="text-retro-danger">*</span></label
+              >
+              <input
+                type="text"
+                id="hm_name"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary placeholder-retro-subtext/50"
+                placeholder="VD: Thi công móng..."
+              />
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Công Trình <span class="text-retro-danger">*</span></label
+              >
+              <select
+                id="hm_project"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              >
+                <option value="">-- Chọn công trình --</option>
+                <option value="Vinhomes Grand Park">Vinhomes Grand Park</option>
+                <option value="Sun Grand City">Sun Grand City</option>
+                <option value="Ecopark Hưng Yên">Ecopark Hưng Yên</option>
+              </select>
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1">MANV</label>
+              <select
+                id="hm_manager"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              >
+                <option value="">-- Chọn MANV --</option>
+              </select>
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Ngày Bắt Đầu (Dự kiến)</label
+              >
+              <input
+                type="date"
+                id="hm_start"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              />
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Ngày Kết Thúc (Dự kiến)</label
+              >
+              <input
+                type="date"
+                id="hm_end"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              />
+            </div>
+
+            <div class="col-span-2">
+              <label class="block text-sm font-bold mb-1">Trạng Thái</label>
+              <select
+                id="hm_status"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              >
+                <option value="Chưa thực hiện">Chưa thực hiện</option>
+                <option value="Đang thực hiện">Đang thực hiện</option>
+                <option value="Tạm dừng">Tạm dừng</option>
+                <option value="Chậm tiến độ">Chậm tiến độ</option>
+                <option value="Hoàn thành">Hoàn thành</option>
+                <option value="Đã hủy">Đã hủy</option>
+              </select>
+            </div>
+
+            <div class="col-span-2">
+              <label class="block text-sm font-bold mb-1">Mô tả chi tiết</label>
+              <textarea
+                id="hm_desc"
+                rows="4"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary placeholder-retro-subtext/50"
+                placeholder="Mô tả công việc, yêu cầu kỹ thuật..."
+              ></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div
+          class="p-4 border-t-2 border-retro-border bg-retro-surface flex justify-end gap-3"
+        >
+          <button
+            onclick="closeModal('addModal')"
+            class="px-4 py-2 border-2 border-retro-border font-bold hover:bg-retro-border hover:text-retro-surface transition-colors"
+          >
+            Hủy bỏ
+          </button>
+          <button
+            onclick="saveHangMuc()"
+            class="px-4 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border font-bold shadow-[2px_2px_0px_0px_#2a221c] active:shadow-none active:translate-x-0.5 active:translate-y-0.5 hover:bg-retro-primary/90"
+          >
+            LƯU THÔNG TIN
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="detailsModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal('detailsModal')"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-xl shadow-[8px_8px_0px_0px_#2a221c] p-0"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3 class="text-xl font-bold uppercase text-retro-text">
+            Chi tiết Hạng Mục
+          </h3>
+          <button
+            onclick="closeModal('detailsModal')"
+            class="text-retro-text hover:text-retro-danger font-bold text-xl"
+          >
+            &times;
+          </button>
+        </div>
+        <div id="detailContent" class="p-6 space-y-4 text-retro-text"></div>
+        <div
+          class="p-4 border-t-2 border-retro-border bg-retro-surface flex justify-end"
+        >
+          <button
+            onclick="closeModal('detailsModal')"
+            class="px-4 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border font-bold shadow-sm"
+          >
+            Đóng
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Load hangmuc list from server and wire CRUD to endpoints
+      let dataHangMuc = [];
+
+      async function loadProjectsForSelect() {
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/list_projects.php?pageSize=200",
+            { credentials: "include" }
+          );
+          if (!resp.ok) {
+            console.error("list_projects.php HTTP", resp.status);
+            return;
+          }
+          const json = await resp.json().catch(() => null);
+          if (!json || !json.success) return;
+          const sel = document.getElementById("hm_project");
+          if (!sel) return;
+          sel.innerHTML = '<option value="">-- Chọn công trình --</option>';
+          (json.data || []).forEach((r) => {
+            const opt = document.createElement("option");
+            opt.value = r.id; // MACT or id
+            opt.textContent = r.name || r.TENCT || r.id;
+            sel.appendChild(opt);
+          });
+        } catch (e) {
+          console.error("Không thể tải danh sách công trình", e);
+        }
+      }
+
+      // Load employees into MANV select
+      async function loadEmployeesForSelect() {
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/list_nhanvien.php?pageSize=500",
+            { credentials: "include" }
+          );
+          if (!resp.ok) {
+            console.error("list_nhanvien.php HTTP", resp.status);
+            return;
+          }
+          const js = await resp.json().catch(() => null);
+          if (!js || !js.success) return;
+          const sel = document.getElementById("hm_manager");
+          if (!sel) return;
+          sel.innerHTML = '<option value="">-- Chọn MANV --</option>';
+          (js.data || js).forEach((r) => {
+            const code = r.MANV || r.manv || r.id || r.MA || "";
+            const name = r.TENNV || r.ten || r.name || "";
+            const opt = document.createElement("option");
+            opt.value = code;
+            opt.textContent = (code ? code + " - " : "") + (name || "");
+            sel.appendChild(opt);
+          });
+        } catch (e) {
+          console.error("Không thể tải danh sách nhân viên", e);
+        }
+      }
+
+      async function fetchHangMucList() {
+        const q = document.getElementById("searchInput").value || "";
+        const statusEl = document.getElementById("statusFilter");
+        const sortEl = document.getElementById("dateSort");
+        const status = statusEl ? statusEl.value || "" : "";
+        const sort = sortEl ? sortEl.value || "" : "";
+        const params = new URLSearchParams();
+        if (q) params.set("q", q);
+        if (status) params.set("status", status);
+        // map sort to API if needed; list_hangmuc.php supports pageSize
+        params.set("pageSize", "200");
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/list_hangmuc.php?" + params.toString(),
+            { credentials: "include" }
+          );
+          if (!resp.ok) {
+            const txt = await resp.text().catch(() => "(no body)");
+            console.error("list_hangmuc.php HTTP error", resp.status, txt);
+            showToast(
+              `Lỗi HTTP ${resp.status} khi lấy dữ liệu hạng mục`,
+              "danger"
+            );
+            return;
+          }
+          let json = null;
+          try {
+            json = await resp.json();
+          } catch (e) {
+            const txt = await resp.text().catch(() => "(no body)");
+            console.error("list_hangmuc.php returned non-JSON", txt);
+            showToast("Lỗi: server trả về dữ liệu không hợp lệ", "danger");
+            return;
+          }
+          if (!json || !json.success) {
+            console.error("list_hangmuc.php error payload", json);
+            const errMsg =
+              json && json.error ? json.error : "Lỗi khi lấy dữ liệu hạng mục";
+            showToast(errMsg, "danger");
+            return;
+          }
+          // map rows to UI items
+          dataHangMuc = (json.data || []).map((r) => ({
+            id: r.id || r.MAHM || r.mahm || r.code,
+            code: r.code || r.MAHM || r.mahm || r.id,
+            name: r.name || r.ten || r.TEN || r.TENHM || r.TENHM || r.name,
+            project:
+              r.project_name ||
+              r.TENCT ||
+              r.congtrinh_name ||
+              r.congtrinh ||
+              r.project_id ||
+              "",
+            manager:
+              r.manager ||
+              r.MANV ||
+              r.manv ||
+              r.MAN_NV ||
+              r.nguoi_phu_trach ||
+              r.nguoi ||
+              "",
+            // possible manager user id stored on record
+            users_id:
+              r.users_id ||
+              r.user_id ||
+              r.manager_user_id ||
+              r.manager_users_id ||
+              r.usersid ||
+              r.userId ||
+              null,
+            start:
+              r.start_date ||
+              r.NGAYBD ||
+              r.NGAYBATDAU ||
+              r.ngaybd ||
+              r.NGAYBATDAU ||
+              "",
+            end:
+              r.end_date ||
+              r.NGAYKT ||
+              r.NGAYKETTHUC ||
+              r.ngaykt ||
+              r.NGAYKETTHUC ||
+              r.end_date ||
+              "",
+            status: r.status || r.trangthai || r.TRANGTHAI || r.status || "",
+            desc: r.description || r.mota || r.MOTA || "",
+          }));
+          await renderTable(dataHangMuc);
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối server", "danger");
+        }
+      }
+
+      // RENDER TABLE
+      async function renderTable(data) {
+        const tbody = document.getElementById("tableBody");
+        tbody.innerHTML = "";
+        if (!data || data.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="8" class="p-8 text-center text-retro-subtext italic">Không tìm thấy dữ liệu phù hợp.</td></tr>`;
+          return;
+        }
+        const role = await getUserRole();
+        const isEmployee =
+          role && ["employee", "user", "nhanvien", "staff"].includes(role);
+        data.forEach((item) => {
+          let statusClass = "";
+          switch (item.status) {
+            case "Hoàn thành":
+              statusClass = "bg-status-green-bg text-status-green-text";
+              break;
+            case "Chậm tiến độ":
+              statusClass = "bg-status-red-bg text-status-red-text";
+              break;
+            case "Đang thực hiện":
+              statusClass = "bg-status-blue-bg text-status-blue-text";
+              break;
+            case "Tạm dừng":
+              statusClass = "bg-status-yellow-bg text-status-yellow-text";
+              break;
+            case "Chưa thực hiện":
+              statusClass = "bg-status-gray-bg text-status-gray-text";
+              break;
+            case "Đã hủy":
+              statusClass = "bg-gray-200 text-gray-500 line-through";
+              break;
+            default:
+              statusClass = "bg-gray-100 text-gray-800";
+          }
+          const tr = document.createElement("tr");
+          tr.className = "hover:bg-retro-primary/5 transition-colors group";
+          tr.innerHTML = `
+            <td class="px-4 py-3 border-r border-retro-border/20 font-mono text-sm">${
+              item.code || ""
+            }</td>
+            <td class="px-4 py-3 border-r border-retro-border/20 font-bold text-retro-primary text-sm">${
+              item.name || ""
+            }</td>
+            <td class="px-4 py-3 border-r border-retro-border/20 text-sm">${
+              item.project || ""
+            }</td>
+            <td class="px-4 py-3 border-r border-retro-border/20 text-sm text-retro-subtext font-medium">${
+              item.manager || ""
+            }</td>
+            <td class="px-4 py-3 border-r border-retro-border/20 text-sm text-retro-subtext">${formatDate(
+              item.start || ""
+            )}</td>
+            <td class="px-4 py-3 border-r border-retro-border/20 text-sm text-retro-subtext">${formatDate(
+              item.end || ""
+            )}</td>
+            <td class="px-4 py-3 border-r border-retro-border/20 text-center"><span class="inline-block px-3 py-1 text-xs font-bold rounded ${statusClass}">${
+            item.status || ""
+          }</span></td>
+            <td class="px-4 py-3 text-center">
+              <div class="flex items-center justify-center gap-2 opacity-100 lg:opacity-70 group-hover:opacity-100 transition-opacity">
+                <button onclick="viewDetailHM('${
+                  item.id
+                }')" class="p-1.5 border border-retro-border rounded bg-white hover:bg-retro-secondary hover:text-white" title="Chi tiết"><span class="material-symbols-outlined text-lg">visibility</span></button>
+                <button onclick="editItemHM('${
+                  item.id
+                }')" class="p-1.5 border border-retro-border rounded bg-white hover:bg-retro-primary hover:text-white" title="Sửa"><span class="material-symbols-outlined text-lg">edit</span></button>
+                <button onclick="deleteItemHM('${
+                  item.id
+                }')" class="p-1.5 border border-retro-border rounded bg-white hover:bg-retro-danger hover:text-white" title="Xóa"><span class="material-symbols-outlined text-lg">delete</span></button>
+              </div>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+        renderPagination(data.length);
+        // ensure delete controls removed for employees after dynamic render
+        hideDeleteButtonsIfEmployee();
+      }
+
+      // HELPERS
+      function formatDate(dateString) {
+        if (!dateString) return "";
+        const [y, m, d] = dateString.split("-");
+        return `${d}/${m}/${y}`;
+      }
+
+      // Return normalized user role string (lowercase) or null
+      async function getUserRole() {
+        try {
+          const res = await fetch("/quanlytiendo/current_user.php", {
+            credentials: "include",
+          });
+          const js = await res.json();
+          if (js && js.success && js.user && js.user.role)
+            return String(js.user.role).toLowerCase();
+        } catch (e) {
+          /* ignore */
+        }
+        return null;
+      }
+
+      // warm cache for role as early as possible
+      window.__currentUserRole = null;
+      (function () {
+        try {
+          getUserRole().then((r) => {
+            if (r) window.__currentUserRole = r;
+          });
+        } catch (e) {}
+      })();
+
+      async function hideDeleteButtonsIfEmployee() {
+        try {
+          const role = await getUserRole();
+          if (!role) return;
+          const isEmployee = ["employee", "user", "nhanvien", "staff"].includes(
+            role
+          );
+          if (!isEmployee) return;
+
+          document
+            .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+            .forEach((e) => e.remove());
+          document.querySelectorAll("button, a").forEach((e) => {
+            const t = (e.textContent || "").toUpperCase();
+            if (t.includes("XÓA") || t.includes("XOA")) e.remove();
+          });
+          document.querySelectorAll("[onclick]").forEach((el) => {
+            const v = (el.getAttribute("onclick") || "").toString();
+            if (
+              v.includes("deleteItemHM(") ||
+              v.includes("deleteItem(") ||
+              v.includes("deleteProject(")
+            )
+              el.remove();
+          });
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      function showToast(msg, type = "success") {
+        const toast = document.getElementById("toast");
+        toast.className = `fixed top-6 right-6 z-50 px-6 py-3 rounded border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c] font-bold transition-all transform duration-300 ${
+          type === "success"
+            ? "bg-retro-primary text-white"
+            : "bg-status-red-text text-white"
+        }`;
+        toast.innerText = msg;
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 3000);
+      }
+
+      function renderPagination(totalItems) {
+        // pagination removed — kept no-op for compatibility
+      }
+
+      // --- FILTER LOGIC (server-driven) ---
+      function filterData() {
+        // triggers a server fetch with current filters
+        fetchHangMucList();
+      }
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", filterData);
+      const statusEl = document.getElementById("statusFilter");
+      if (statusEl) statusEl.addEventListener("change", filterData);
+      const sortEl = document.getElementById("dateSort");
+      if (sortEl) sortEl.addEventListener("change", filterData);
+
+      // --- MODAL FUNCTIONS ---
+      function openModal(modalId) {
+        // prevent employees from opening the add modal
+        (async function () {
+          if (modalId === "addModal") {
+            try {
+              const user = await getCurrentUser();
+              if (user) {
+                const role = (user.role || "").toLowerCase();
+                if (["employee", "user", "nhanvien", "staff"].includes(role)) {
+                  // Allow employees to open the edit form (view-only). Actual permission
+                  // check is enforced on save/delete — so do not block opening here.
+                  return;
+                }
+              }
+            } catch (e) {}
+          }
+          document.getElementById(modalId).classList.remove("hidden");
+          document.getElementById(modalId).classList.add("flex");
+
+          if (modalId === "addModal") {
+            document.getElementById("modalTitle").innerText =
+              "THÊM HẠNG MỤC MỚI";
+            document.getElementById("hangmucForm").reset();
+            document.getElementById("hm_id").value = "";
+          }
+        })();
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).classList.add("hidden");
+        document.getElementById(modalId).classList.remove("flex");
+      }
+
+      // --- CRUD OPERATIONS (server-backed) ---
+
+      // 1. VIEW DETAIL (fetch single hangmuc)
+      async function viewDetailHM(id) {
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/get_hangmuc.php?id=" + encodeURIComponent(id)
+          );
+          const json = await resp.json();
+          if (!json || !json.success) {
+            console.error("get_hangmuc error", json);
+            showToast(
+              json && json.error ? json.error : "Không thể tải chi tiết",
+              "danger"
+            );
+            return;
+          }
+          const item = json.data || {};
+          // remember last loaded item for later save authorization checks
+          window.__lastLoadedHangMuc = item;
+          const html = `
+            <div class="grid grid-cols-2 gap-4">
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Mã Hạng Mục</span><p class="font-mono text-lg font-bold">${
+                item.code || item.MAHM || item.id || ""
+              }</p></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Trạng thái</span><p class="font-bold text-retro-primary">${
+                item.status || item.TRANGTHAI || ""
+              }</p></div>
+              <div class="col-span-2"><span class="font-bold text-retro-subtext uppercase text-xs">Tên Hạng Mục</span><p class="text-xl font-bold font-display">${
+                item.name || item.TENHM || item.ten || ""
+              }</p></div>
+              <div class="col-span-2 border-t border-retro-border/20 my-1"></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Thuộc Công Trình</span><p>${
+                item.project_name || item.TENCT || item.congtrinh || ""
+              }</p></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">MANV</span><p class="font-bold text-retro-text">${
+                item.manager || ""
+              }</p></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Ngày Bắt Đầu</span><p>${formatDate(
+                item.start || ""
+              )}</p></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Ngày Kết Thúc</span><p>${formatDate(
+                item.end || ""
+              )}</p></div>
+              <div class="col-span-2 bg-retro-surface p-3 border border-retro-border rounded"><span class="font-bold text-retro-subtext uppercase text-xs block mb-1">Mô tả nhiệm vụ</span><p class="italic text-sm">${
+                item.MOTA || item.mota || item.description || item.desc || ""
+              }</p></div>
+            </div>
+          `;
+          document.getElementById("detailContent").innerHTML = html;
+          openModal("detailsModal");
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối", "danger");
+        }
+      }
+
+      // 2. EDIT (load detail then open modal)
+      async function editItemHM(id) {
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/get_hangmuc.php?id=" + encodeURIComponent(id),
+            { credentials: "include" }
+          );
+          const json = await resp.json();
+          if (!json || !json.success) {
+            console.error("get_hangmuc error", json);
+            showToast(
+              json && json.error ? json.error : "Không thể tải dữ liệu",
+              "danger"
+            );
+            return;
+          }
+          const item = json.data || {};
+          // if server indicates non-editable, prevent opening edit modal
+          if (json.editable === false) {
+            showToast("Bạn chỉ có quyền xem chi tiết hạng mục này", "success");
+            // still populate detail modal if requested via view flow; here we are in edit flow, so block edit
+            return;
+          }
+          // RBAC: allow managers to edit; allow employee only if they are the assigned MANV (client-side double-check)
+          try {
+            const user = await getCurrentUser();
+            const role =
+              user && user.role ? String(user.role).toLowerCase() : null;
+            const userManv = user && user.manv ? String(user.manv).trim() : "";
+            const userId =
+              user && (user.id || user.ID) ? String(user.id || user.ID) : null;
+            const itemManager = (item.manager || item.MANV || item.manv || "")
+              .toString()
+              .trim();
+            const isEmployee =
+              role && ["employee", "user", "nhanvien", "staff"].includes(role);
+            const isManagerRole = role && ["manager", "admin"].includes(role);
+            // also support matching by users_id / user_id stored on the category (many schemas differ)
+            const itemManagerUserIds = [
+              item.users_id,
+              item.user_id,
+              item.manager_user_id,
+              item.manager_users_id,
+              item.manager_user,
+              item.userId,
+              item.USER_ID,
+              item.usersid,
+            ]
+              .filter(Boolean)
+              .map(String);
+
+            if (isEmployee && !isManagerRole) {
+              let allowed = false;
+              // match by MANV string
+              if (userManv && itemManager && userManv === itemManager)
+                allowed = true;
+              // match by numeric user id against any returned manager user id fields
+              if (!allowed && userId && itemManagerUserIds.length) {
+                for (const mid of itemManagerUserIds) {
+                  if (mid && mid === userId) {
+                    allowed = true;
+                    break;
+                  }
+                }
+              }
+              // some APIs return manager as numeric in `manager` field — check that too
+              if (
+                !allowed &&
+                userId &&
+                itemManager &&
+                String(Number(itemManager)) === userId
+              )
+                allowed = true;
+
+              if (!allowed) {
+                showToast(
+                  "Bạn không có quyền chỉnh sửa hạng mục này",
+                  "danger"
+                );
+                return;
+              }
+            }
+          } catch (e) {}
+          openModal("addModal");
+          document.getElementById("modalTitle").innerText =
+            "CHỈNH SỬA HẠNG MỤC";
+          document.getElementById("hm_id").value =
+            item.id || item.MAHM || item.mahm || "";
+          document.getElementById("hm_code").value =
+            item.code || item.MAHM || item.mahm || "";
+          document.getElementById("hm_name").value =
+            item.name || item.TENHM || item.ten || "";
+          document.getElementById("hm_project").value =
+            item.congtrinh || item.MACT || item.project_id || "";
+          document.getElementById("hm_manager").value =
+            item.manager || item.nguoi_phu_trach || item.nguoi || "";
+          document.getElementById("hm_start").value =
+            item.start || item.NGAYBD || item.ngaybd || item.start_date || "";
+          document.getElementById("hm_end").value =
+            item.end || item.NGAYKT || item.ngaykt || item.end_date || "";
+          document.getElementById("hm_status").value =
+            item.trangthai || item.TRANGTHAI || item.status || "";
+          document.getElementById("hm_desc").value =
+            item.MOTA || item.mota || item.description || "";
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối", "danger");
+        }
+      }
+
+      // 3. DELETE (server)
+      async function deleteItemHM(id) {
+        if (!confirm("Bạn có chắc chắn muốn xóa hạng mục này không?")) return;
+        try {
+          const role = window.__currentUserRole || (await getUserRole());
+          const isEmployee =
+            role && ["employee", "user", "nhanvien", "staff"].includes(role);
+          if (isEmployee) {
+            showToast("Bạn không có quyền làm điều này", "danger");
+            return;
+          }
+
+          const payload = new URLSearchParams();
+          payload.set("id", id);
+          // also send mahm/code to improve matching on server
+          payload.set("mahm", id);
+          console.debug("delete_hangmuc payload:", payload.toString());
+          const resp = await fetch("/quanlytiendo/delete_hangmuc.php", {
+            method: "POST",
+            credentials: "include",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: payload.toString(),
+          });
+          const json = await resp.json();
+          if (json && json.success) {
+            showToast(json.message || "Xóa hạng mục thành công", "success");
+            fetchHangMucList();
+          } else {
+            showToast((json && json.error) || "Lỗi khi xóa", "danger");
+          }
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối", "danger");
+        }
+      }
+
+      // 4. SAVE (create or update) -> call save_hangmuc.php / update_hangmuc.php
+      async function saveHangMuc() {
+        const id = document.getElementById("hm_id").value.trim();
+        // RBAC: managers can create/update; employees can only update if they are assigned MANV
+        const currentUser = await getCurrentUser();
+        const role =
+          currentUser && currentUser.role
+            ? String(currentUser.role).toLowerCase()
+            : window.__currentUserRole || null;
+        const isEmployee =
+          role && ["employee", "user", "nhanvien", "staff"].includes(role);
+        const userManv =
+          currentUser && currentUser.manv
+            ? String(currentUser.manv).trim()
+            : "";
+        if (isEmployee) {
+          if (!id) {
+            // employees cannot create new hạng mục
+            showToast("Bạn không có quyền tạo hạng mục mới", "danger");
+            return;
+          }
+          // if updating, ensure employee is assigned manager
+          const managerVal =
+            document.getElementById("hm_manager") &&
+            document.getElementById("hm_manager").value
+              ? String(document.getElementById("hm_manager").value).trim()
+              : "";
+          const userId =
+            currentUser && (currentUser.id || currentUser.ID)
+              ? String(currentUser.id || currentUser.ID)
+              : null;
+          // try to detect users_id-like field on the loaded item
+          const li = window.__lastLoadedHangMuc || {};
+          const itemUsersIdField =
+            li.users_id ||
+            li.user_id ||
+            li.manager_user_id ||
+            li.manager_users_id ||
+            li.manager_user ||
+            li.usersid ||
+            li.userId ||
+            null;
+          const matchesByUserId =
+            itemUsersIdField &&
+            userId &&
+            String(itemUsersIdField) === String(userId);
+          // allow if MANV matches OR if users_id matches current user id
+          if (
+            !(userManv && managerVal && userManv === managerVal) &&
+            !matchesByUserId
+          ) {
+            showToast(
+              "Bạn không có quyền lưu thay đổi cho hạng mục này",
+              "danger"
+            );
+            return;
+          }
+        }
+        const code = document.getElementById("hm_code").value.trim();
+        const name = document.getElementById("hm_name").value.trim();
+        if (!code || !name) {
+          alert("Vui lòng nhập Mã và Tên hạng mục!");
+          return;
+        }
+        const payload = new URLSearchParams();
+        payload.set("name", name);
+        payload.set(
+          "congtrinh",
+          document.getElementById("hm_project").value || ""
+        );
+        payload.set("nguoi", document.getElementById("hm_manager").value || "");
+        payload.set("ngaybd", document.getElementById("hm_start").value || "");
+        payload.set("ngaykt", document.getElementById("hm_end").value || "");
+        payload.set("mota", document.getElementById("hm_desc").value || "");
+        payload.set("status", document.getElementById("hm_status").value || "");
+        try {
+          if (id) {
+            payload.set("id", id);
+            // also include code to help server match by MAHM
+            if (code) payload.set("mahm", code);
+            // include MANV for servers that store manager by MANV
+            payload.set(
+              "manv",
+              document.getElementById("hm_manager").value || ""
+            );
+            console.debug("update_hangmuc payload:", payload.toString());
+            const resp = await fetch("/quanlytiendo/update_hangmuc.php", {
+              method: "POST",
+              credentials: "include",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: payload.toString(),
+            });
+            const json = await resp.json();
+            if (json && json.success) {
+              showToast(json.message || "Chỉnh sửa hạng mục thành công");
+              closeModal("addModal");
+              fetchHangMucList();
+            } else {
+              showToast((json && json.error) || "Lỗi khi cập nhật", "danger");
+            }
+          } else {
+            // include code as mahm and include MANV
+            payload.set("mahm", code);
+            payload.set(
+              "manv",
+              document.getElementById("hm_manager").value || ""
+            );
+            const resp = await fetch("/quanlytiendo/save_hangmuc.php", {
+              method: "POST",
+              credentials: "include",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: payload.toString(),
+            });
+            const json = await resp.json();
+            if (json && json.success) {
+              showToast("Thêm mới hạng mục thành công");
+              closeModal("addModal");
+              fetchHangMucList();
+            } else {
+              showToast((json && json.error) || "Lỗi khi thêm mới", "danger");
+            }
+          }
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối", "danger");
+        }
+      }
+
+      // Logout -> redirect to logout.php after confirmation
+      function logout() {
+        if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+          window.location.href = "logout.php";
+        }
+      }
+
+      // Initialize: load projects for select and fetch hangmuc list from DB
+      (async function init() {
+        await loadProjectsForSelect();
+        await loadEmployeesForSelect();
+        await fetchHangMucList();
+      })();
+      // RBAC: hide delete controls for employees
+      document.addEventListener("DOMContentLoaded", async function () {
+        try {
+          const r = await fetch("/quanlytiendo/current_user.php", {
+            credentials: "include",
+          });
+          const j = await r.json();
+          if (j && j.success && j.user) {
+            const role = (j.user.role || "").toLowerCase();
+            if (["employee", "user", "nhanvien", "staff"].includes(role)) {
+              // remove create button
+              const createBtn = document.getElementById("createHMBtn");
+              if (createBtn) createBtn.remove();
+              // remove edit and delete buttons
+              document
+                .querySelectorAll(
+                  'button[title="Sửa"], button[title="Xóa"], a[title="Sửa"], a[title="Xóa"]'
+                )
+                .forEach((e) => e.remove());
+              // remove any elements that have onclick handlers for edit/delete
+              document.querySelectorAll("[onclick]").forEach((el) => {
+                const v = (el.getAttribute("onclick") || "").toString();
+                if (
+                  v.includes("deleteItemHM(") ||
+                  v.includes("editItemHM(") ||
+                  v.includes("deleteItem(") ||
+                  v.includes("editItem(")
+                )
+                  el.remove();
+              });
+            }
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      });
+    </script>
+
+    <!-- Toast / notification element used by showToast() -->
+    <div
+      id="toast"
+      class="hidden fixed top-6 right-6 z-50 px-6 py-3 rounded border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c] font-bold"
+    ></div>
+  </body>
+</html>

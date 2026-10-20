@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Chỉnh Sửa Tiến Độ</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "retro-bg": "#FDFBF8",
+              "retro-surface": "#EAE5DF",
+              "retro-border": "#2a221c",
+              "retro-text": "#4f311c",
+              "retro-subtext": "#8B7D72",
+              "retro-primary": "#8B542A",
+              "retro-secondary": "#5C7E7E",
+              "retro-success": "#638459",
+              "retro-warning": "#B88C4A",
+              "retro-danger": "#A05F5F",
+            },
+            fontFamily: {
+              display: ["Times New Roman", "Times New Roman"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-retro-bg font-body text-retro-text">
+    <div class="flex min-h-screen w-full">
+      <aside class="w-64">
+        <div class="flex flex-col gap-2">
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+            href="Tongquan.html"
+          >
+            <span class="material-symbols-outlined">dashboard</span>
+            <p class="text-base font-medium">Tổng quan</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+            href="Qlycongtrinh.html"
+          >
+            <span class="material-symbols-outlined">bar_chart</span>
+            <p class="text-base">Công trình</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+            href="Qlyhangmuc.html"
+          >
+            <span class="material-symbols-outlined">bar_chart</span>
+            <p class="text-base font-medium">Hạng mục</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+            href="Qlytiendo.html"
+          >
+            <span class="material-symbols-outlined">bar_chart</span>
+            <p class="text-base font-medium">Tiến độ</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+            href="Qlynhanvien.html"
+          >
+            <span class="material-symbols-outlined">bar_chart</span>
+            <p class="text-base font-medium">Nhân viên</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+            href="Baocao.html"
+          >
+            <span class="material-symbols-outlined">bar_chart</span>
+            <p class="text-base font-medium">Báo cáo</p>
+          </a>
+          <a class="ml-auto text-retro-subtext hover:text-retro-text" href="#">
+            <span class="material-symbols-outlined">logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <div class="flex-1 flex flex-col">
+        <header
+          class="flex items-center justify-between px-8 py-4 border-b-2 border-retro-border"
+        >
+          <h1 class="text-2xl font-bold text-retro-text">Quản lý Tiến độ</h1>
+          <div
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-retro-border"
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcqCwgFDZkUrAQ4YKqTccLZ7SFGBNGO65jDePDOTKlEbhsUjrFGRRHxMB0e-9tmUeH-nwfefzOlMnBVqUn0AOjg7n9t8gTMbMHC-xd9n7qMpJqwVPyd2oUQ89jMi8VhyZJ_EpKghuAh95LqhL1czZ4QcHb9--l2gcrjAKFqxZO3VxuAo_9G8qujNovcH09AlK2o6LLuD8Dz8ZFvwtbEuDLbkf17VmobXfN_24l_YwOt_5Hum93B_Q8ks3eDk-fRxRgWDk2i2OkUFz6');
+            "
+          ></div>
+        </header>
+
+        <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col gap-2 mb-8">
+              <p
+                class="text-retro-text text-4xl font-bold leading-tight tracking-wide"
+              >
+                Chỉnh Sửa Tiến Độ
+              </p>
+              <p
+                class="text-retro-text/80 text-base font-normal leading-normal"
+              >
+                Điền thông tin vào biểu mẫu dưới đây để cập nhật tiến độ hạng
+                mục.
+              </p>
+            </div>
+
+            <section
+              class="border-2 border-retro-border bg-white rounded-lg p-6 lg:p-8 shadow-md"
+            >
+              <form>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                  <!-- Hạng mục Dropdown - Hiển thị TÊN, gửi ID -->
+                  <div class="flex flex-col">
+                    <label
+                      class="text-retro-text text-base font-medium leading-normal pb-2"
+                      for="hangmuc"
+                      >Hạng mục</label
+                    >
+                    <div class="relative">
+                      <select
+                        id="hangmuc"
+                        class="form-select w-full appearance-none min-w-0 flex-1 resize-none overflow-hidden rounded-md text-retro-text focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-retro-primary/50 border-2 border-retro-border bg-white h-12 px-3 pr-10 text-base font-normal leading-normal"
+                      >
+                        <option value="">Đang tải danh sách hạng mục...</option>
+                      </select>
+                      <span
+                        class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-retro-text/50 pointer-events-none"
+                        >expand_more</span
+                      >
+                    </div>
+                    <p
+                      class="text-sm text-retro-subtext mt-1"
+                      id="hangmuc-info"
+                    >
+                      Chọn hạng mục để thêm tiến độ
+                    </p>
+                  </div>
+
+                  <!-- Mã Tiến độ -->
+                  <div class="flex flex-col">
+                    <label
+                      class="text-retro-text text-base font-medium leading-normal pb-2"
+                      for="matd"
+                      >Mã Tiến độ (ví dụ: TD001)</label
+                    >
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-retro-text focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-retro-primary/50 border-2 border-retro-border bg-white h-12 placeholder:text-retro-text/50 px-3 text-base font-normal leading-normal"
+                      id="matd"
+                      placeholder="Ví dụ: TD001"
+                      value=""
+                    />
+                    <p class="text-sm text-retro-subtext mt-1">
+                      Mã tiến độ sẽ là mã định danh duy nhất cho bản ghi này.
+                    </p>
+                  </div>
+
+                  <!-- Ngày bắt đầu thực tế -->
+                  <div class="flex flex-col">
+                    <label
+                      class="text-retro-text text-base font-medium leading-normal pb-2"
+                      for="ngaybdtt"
+                      >Ngày bắt đầu thực tế</label
+                    >
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-retro-text focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-retro-primary/50 border-2 border-retro-border bg-white h-12 placeholder:text-retro-text/50 px-3 text-base font-normal leading-normal"
+                      id="ngaybdtt"
+                      type="date"
+                    />
+                  </div>
+
+                  <!-- Ngày hoàn thành thực tế -->
+                  <div class="flex flex-col">
+                    <label
+                      class="text-retro-text text-base font-medium leading-normal pb-2"
+                      for="ngaykttt"
+                      >Ngày hoàn thành thực tế</label
+                    >
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-retro-text focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-retro-primary/50 border-2 border-retro-border bg-white h-12 placeholder:text-retro-text/50 px-3 text-base font-normal leading-normal"
+                      id="ngaykttt"
+                      type="date"
+                    />
+                  </div>
+
+                  <!-- Phần trăm hoàn thành -->
+                  <div class="flex flex-col col-span-1 md:col-span-2">
+                    <label
+                      class="text-retro-text text-base font-medium leading-normal pb-2"
+                      for="completion-percentage"
+                      >Phần trăm hoàn thành</label
+                    >
+                    <select
+                      id="completion-percentage"
+                      class="w-full rounded border-2 border-retro-border px-3 py-2 bg-white text-retro-text h-12 focus:outline-none focus:ring-2 focus:ring-retro-primary/50"
+                    >
+                      <option value="0">0% - Chưa bắt đầu</option>
+                      <option value="25">25% - Khởi công</option>
+                      <option value="50">50% - Đang thực hiện</option>
+                      <option value="75">75% - Gần hoàn thành</option>
+                      <option value="100">100% - Hoàn thành</option>
+                    </select>
+                    <input
+                      type="hidden"
+                      id="statusField"
+                      name="status"
+                      value="pending"
+                    />
+                  </div>
+
+                  <!-- Ghi chú -->
+                  <div class="flex flex-col col-span-1 md:col-span-2">
+                    <label
+                      class="text-retro-text text-base font-medium leading-normal pb-2"
+                      for="ghichu"
+                      >Ghi chú tình trạng thi công</label
+                    >
+                    <textarea
+                      class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-md text-retro-text focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-retro-primary/50 border-2 border-retro-border bg-white min-h-[120px] placeholder:text-retro-text/50 p-3 text-base font-normal leading-normal"
+                      id="ghichu"
+                      placeholder="Nhập ghi chú chi tiết về tình trạng thi công..."
+                    ></textarea>
+                  </div>
+                </div>
+
+                <!-- Buttons -->
+                <div
+                  class="mt-8 flex justify-end gap-4 border-t-2 border-retro-border pt-6"
+                >
+                  <button
+                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-6 bg-gray-200 text-retro-text text-sm font-bold leading-normal border border-retro-border hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                    type="button"
+                    onclick="window.location.href='Qlytiendo.html'"
+                  >
+                    <span class="truncate">Hủy</span>
+                  </button>
+                  <button
+                    id="submitBtn"
+                    type="button"
+                    class="flex min-w-[84px] items-center justify-center overflow-hidden rounded h-10 px-4 bg-retro-primary text-retro-bg text-sm font-bold leading-normal tracking-wide gap-2 border-2 border-retro-border shadow-md hover:bg-retro-primary/90 active:shadow-none active:translate-x-0.5 active:translate-y-0.5"
+                  >
+                    <span
+                      id="submitIcon"
+                      class="material-symbols-outlined !text-lg"
+                      >save</span
+                    >
+                    <span id="submitLabel" class="truncate">LƯU CẬP NHẬT</span>
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        async function loadCategories() {
+          const sel = document.getElementById("hangmuc");
+          const infoEl = document.getElementById("hangmuc-info");
+          try {
+            const res = await fetch("list_hangmuc.php?page=1&pageSize=500");
+            const j = await res.json();
+            console.log("list_hangmuc response:", j);
+
+            sel.innerHTML = "";
+
+            if (!j || !j.success) {
+              sel.innerHTML = '<option value="">(Không có hạng mục)</option>';
+              return;
+            }
+
+            const rows = j.data || [];
+
+            if (rows.length === 0) {
+              sel.innerHTML = '<option value="">(Danh sách trống)</option>';
+              return;
+            }
+
+            // Add default option
+            const defaultOpt = document.createElement("option");
+            defaultOpt.value = "";
+            defaultOpt.textContent = "-- Chọn hạng mục --";
+            sel.appendChild(defaultOpt);
+
+            // Populate dropdown - Hiển thị TÊN HẠNG MỤC, value là ID/MAHM
+            rows.forEach((r) => {
+              const opt = document.createElement("option");
+
+              // Extract data from response
+              const id = r.id || r.ID || r.hangmuc_id || r.HANGMUC_ID || "";
+              const code =
+                (r.code || r.MAHM || r.mahm || r.ma || "")?.toString() || "";
+              const name = r.name || r.ten || r.TEN || r.TENHM || r.title || "";
+              const projectId =
+                r.project_id || r.projectId || r.PROJECT_ID || "";
+              const projectName =
+                r.project_name ||
+                r.projectName ||
+                r.PROJECT_NAME ||
+                r.project ||
+                "";
+              const status = r.status || r.trangthai || r.trang_thai || "";
+              const start = r.start_date || r.startDate || r.NGAYBD || "";
+              const end = r.end_date || r.endDate || r.NGAYKT || "";
+
+              // VALUE: Ưu tiên ID (để gửi về server), fallback sang code
+              opt.value = id || code;
+
+              // Store additional data in dataset
+              opt.dataset.id = id || "";
+              opt.dataset.code = code || "";
+              opt.dataset.name = name || "";
+              opt.dataset.projectId = projectId;
+              opt.dataset.projectName = projectName;
+              opt.dataset.status = status;
+              opt.dataset.start = start;
+              opt.dataset.end = end;
+
+              // HIỂN THỊ: Tên hạng mục (với mã nếu có)
+              let displayText = "";
+              if (name && code) {
+                displayText = `${name} (${code})`;
+              } else if (name) {
+                displayText = name;
+              } else if (code) {
+                displayText = code;
+              } else {
+                displayText = `Hạng mục ${id}`;
+              }
+
+              opt.textContent = displayText;
+              sel.appendChild(opt);
+            });
+
+            // Update info on selection change
+            sel.addEventListener("change", function () {
+              const selectedOpt = this.options[this.selectedIndex];
+              if (!selectedOpt || !selectedOpt.value) {
+                infoEl.textContent = "Chọn hạng mục để thêm tiến độ";
+                infoEl.className = "text-sm text-retro-subtext mt-1";
+                return;
+              }
+
+              const name = selectedOpt.dataset.name || "";
+              const code = selectedOpt.dataset.code || "";
+              const projectName = selectedOpt.dataset.projectName || "";
+
+              let info = name || code || "Đã chọn";
+              if (projectName) info += ` - Công trình: ${projectName}`;
+
+              infoEl.textContent = info;
+              infoEl.className = "text-sm text-retro-primary font-medium mt-1";
+            });
+          } catch (e) {
+            console.error("Lỗi khi tải hạng mục:", e);
+            sel.innerHTML =
+              '<option value="">(Không thể tải hạng mục)</option>';
+          }
+        }
+
+        function mapPercentToStatus(pct) {
+          const n = Number(pct);
+          if (n >= 100) return "completed";
+          if (n >= 75) return "near_complete";
+          if (n >= 50) return "in_progress";
+          if (n >= 25) return "started";
+          return "pending";
+        }
+
+        const pctEl = document.getElementById("completion-percentage");
+        if (pctEl) {
+          pctEl.addEventListener("change", function () {
+            document.getElementById("statusField").value = mapPercentToStatus(
+              this.value
+            );
+          });
+        }
+
+        document
+          .getElementById("submitBtn")
+          .addEventListener("click", async function () {
+            const sel = document.getElementById("hangmuc");
+            const selectedVal = sel.value;
+            const selectedOpt = sel.options[sel.selectedIndex];
+            const matd = document.getElementById("matd").value.trim();
+
+            if (!selectedVal) {
+              alert("Vui lòng chọn Hạng mục");
+              return;
+            }
+            if (!matd) {
+              alert("Vui lòng nhập Mã Tiến độ (MATD)");
+              return;
+            }
+
+            const payload = new URLSearchParams();
+            payload.set("matd", matd);
+
+            // GỬI ID của hạng mục (trong value) VÀ mã MAHM (nếu có)
+            payload.set("hangmuc_id", selectedVal); // Gửi ID
+
+            // Nếu có mã MAHM trong dataset, gửi thêm
+            if (selectedOpt && selectedOpt.dataset.code) {
+              payload.set("mahm", selectedOpt.dataset.code);
+            }
+
+            // Gửi project_id nếu có
+            if (selectedOpt && selectedOpt.dataset.projectId) {
+              payload.set("project_id", selectedOpt.dataset.projectId);
+            }
+
+            payload.set(
+              "start_date",
+              document.getElementById("ngaybdtt").value || ""
+            );
+            payload.set(
+              "end_date",
+              document.getElementById("ngaykttt").value || ""
+            );
+            payload.set(
+              "progress",
+              document.getElementById("completion-percentage").value || "0"
+            );
+            payload.set(
+              "status",
+              document.getElementById("statusField").value || "pending"
+            );
+            payload.set("note", document.getElementById("ghichu").value || "");
+
+            console.log("Payload gửi đi:", Object.fromEntries(payload));
+
+            const submitBtn = document.getElementById("submitBtn");
+            const submitIcon = document.getElementById("submitIcon");
+            const submitLabel = document.getElementById("submitLabel");
+            try {
+              // disable button while sending
+              submitBtn.disabled = true;
+              submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+              submitIcon.textContent = "hourglass_top";
+              submitLabel.textContent = "Đang gửi...";
+
+              // Try multiple possible endpoint paths to avoid absolute-path/connect issues
+              const endpoints = [
+                "save_tiendo.php",
+                "./save_tiendo.php",
+                "quanlytiendo/save_tiendo.php",
+                "/quanlytiendo/save_tiendo.php",
+              ];
+
+              const fetchOptions = {
+                method: "POST",
+                headers: {
+                  "Content-Type":
+                    "application/x-www-form-urlencoded; charset=UTF-8",
+                },
+                body: payload.toString(),
+              };
+
+              // helper to attempt fetch with timeout
+              async function tryFetchWithTimeout(url, opts, timeout = 10000) {
+                const controller = new AbortController();
+                const id = setTimeout(() => controller.abort(), timeout);
+                try {
+                  const res = await fetch(url, {
+                    ...opts,
+                    signal: controller.signal,
+                  });
+                  clearTimeout(id);
+                  return res;
+                } catch (err) {
+                  clearTimeout(id);
+                  throw err;
+                }
+              }
+
+              let res = null;
+              let lastErr = null;
+              for (const ep of endpoints) {
+                try {
+                  // Try relative first, then fallback to absolute
+                  res = await tryFetchWithTimeout(ep, fetchOptions, 10000);
+                  // if we got a network-level response (even 4xx/5xx), stop trying
+                  if (res) break;
+                } catch (err) {
+                  lastErr = err;
+                  console.warn(
+                    "Fetch to",
+                    ep,
+                    "failed:",
+                    err && err.message ? err.message : err
+                  );
+                  continue;
+                }
+              }
+
+              if (!res) {
+                console.error("All endpoints failed", lastErr);
+                alert(
+                  "Không thể kết nối server. Kiểm tra đường dẫn hoặc server đang tắt."
+                );
+                return;
+              }
+
+              // Attempt to parse JSON; if it fails show raw text and status for debugging
+              let j = null;
+              try {
+                j = await res.json();
+              } catch (parseErr) {
+                const txt = await res.text().catch(() => "(no body)");
+                console.error(
+                  "Không thể parse JSON từ server",
+                  parseErr,
+                  "status=",
+                  res.status,
+                  "body=",
+                  txt
+                );
+                alert(
+                  "Lỗi phản hồi từ server (status: " +
+                    res.status +
+                    "). Xem console/server log."
+                );
+                return;
+              }
+
+              console.log("Response từ server:", j);
+
+              if (j && j.success) {
+                alert(j.message || "Lưu tiến độ thành công");
+                try {
+                  localStorage.setItem("dataChanged", Date.now());
+                } catch (e) {}
+                window.location.href = "Qlytiendo.html";
+              } else {
+                alert(j.error || j.message || "Lỗi khi lưu tiến độ");
+              }
+            } catch (e) {
+              console.error("Lỗi khi gửi dữ liệu:", e);
+              alert("Lỗi kết nối: " + (e.message || e));
+            } finally {
+              // re-enable button
+              try {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+                submitIcon.textContent = "save";
+                submitLabel.textContent = "LƯU CẬP NHẬT";
+              } catch (ignore) {}
+            }
+          });
+
+        loadCategories();
+      })();
+    </script>
+  </body>
+</html>

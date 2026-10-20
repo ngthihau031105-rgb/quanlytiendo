@@ -1,0 +1,279 @@
+[2025-12-07 06:41:48] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-07 06:41:48] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-07 15:56:17] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-07 15:56:19] PDO error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-12-07 16:16:22] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-07 16:16:22] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-08 02:26:34] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-08 02:26:34] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-08 03:32:29] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-08 03:32:29] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-08 16:34:08] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-08 16:34:08] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-09 03:57:53] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-09 03:57:54] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-09 06:27:27] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-09 06:27:28] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-09 07:37:23] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-09 07:37:23] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-09 10:50:36] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-09 10:50:36] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-09 13:28:31] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-09 13:28:31] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-10 07:38:42] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-10 07:38:42] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-10 14:37:52] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-10 14:37:52] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-10 15:00:08] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-10 15:00:08] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-10 15:30:21] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-10 15:30:21] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-10 15:31:02] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-11 04:51:25] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-11 04:51:25] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-11 16:46:53] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-11 16:46:53] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-11 18:03:02] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-11 18:03:02] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-12 02:43:56] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-12 02:43:56] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-12 05:31:21] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-12 05:31:22] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-12 11:47:21] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-12 11:47:21] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-12 18:06:46] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-12 18:06:46] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-12 19:27:02] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-12 19:27:02] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-12 20:21:31] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-12 20:21:31] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-12 20:37:33] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-12 20:37:34] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-12 21:12:56] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-12 21:12:58] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-12 21:12:59] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-12 21:13:01] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-12 21:16:29] Received POST: {"email":"hangcan18@gmail.com","password":"employee123","role":"employee"}
+[2025-12-12 21:16:30] Received POST: {"email":"hangcan18@gmail.com","password":"employee123","role":"employee"}
+[2025-12-12 21:16:31] Received POST: {"email":"hangcan18@gmail.com","password":"employee123","role":"employee"}
+[2025-12-12 21:20:10] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-12 21:20:10] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-12 23:45:18] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-12 23:45:18] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-13 14:10:33] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-13 14:10:33] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-13 14:17:35] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:21:01] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:21:02] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:21:03] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:21:03] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:21:04] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:21:32] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:21:33] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:21:33] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:21:37] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:23:31] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:23:32] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:23:32] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:23:32] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:23:33] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:23:33] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:23:36] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-13 14:23:37] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-13 14:24:12] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:24:13] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:24:14] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"employee"}
+[2025-12-13 14:28:55] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-13 14:28:55] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-13 15:18:30] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-13 15:18:30] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-13 15:39:00] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-13 15:39:00] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-15 10:51:29] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-15 10:51:29] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-15 11:28:56] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-15 11:28:56] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-17 14:54:35] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-17 14:54:35] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-18 04:34:58] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-18 04:34:58] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-18 05:13:26] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-18 05:13:26] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 08:58:59] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau0311205@","role":"manager"}
+[2025-12-22 08:59:07] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 08:59:07] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 09:06:08] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 09:06:08] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 14:42:05] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 14:42:05] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 14:45:38] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 14:45:38] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 14:52:28] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 14:52:28] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 15:18:59] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 15:18:59] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 15:19:39] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-22 15:19:39] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-22 15:28:20] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-22 15:28:20] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-22 15:28:59] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 15:28:59] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 15:37:19] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-22 15:37:19] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-22 15:51:44] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-22 15:51:44] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-22 15:53:00] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 15:53:00] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 16:03:26] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-22 16:03:26] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-22 16:27:00] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 16:27:00] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 16:27:17] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-22 16:27:17] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-22 16:39:14] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 16:39:14] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 16:39:37] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-22 16:39:37] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-22 17:14:18] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 17:14:18] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 17:16:55] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-22 17:16:55] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-22 17:17:19] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-22 17:17:19] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 02:27:16] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 02:27:16] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 02:27:38] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-23 02:27:38] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 02:30:54] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 02:30:54] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 02:31:28] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 02:31:28] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 02:36:15] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 02:36:15] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 02:43:57] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-23 02:43:57] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 02:44:11] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 02:44:11] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 02:49:26] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 02:49:26] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 03:00:05] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 03:00:05] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 03:04:44] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 03:04:44] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 03:08:09] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 03:08:09] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 03:08:25] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@","role":"manager"}
+[2025-12-23 03:08:25] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 03:15:21] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn","role":"manager"}
+[2025-12-23 03:15:21] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 04:30:31] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:30:31] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 04:30:44] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 04:30:44] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 04:47:53] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:47:57] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:47:57] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:47:58] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:47:58] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:47:58] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:47:58] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:47:58] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:48:32] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:48:35] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 04:49:09] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 04:49:09] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 04:49:23] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 04:49:23] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 05:04:32] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 05:04:32] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 05:04:48] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 05:04:48] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 05:09:31] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 05:09:31] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 05:14:50] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 05:14:50] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 05:19:32] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 05:19:32] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 05:27:43] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 05:27:43] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 05:46:26] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 05:46:26] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 09:40:08] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 09:40:08] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 09:40:24] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 09:40:24] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 09:51:24] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 09:51:24] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 09:55:21] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 09:55:21] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 10:14:36] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 10:14:36] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 10:25:30] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 10:25:30] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 10:42:57] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 10:42:57] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 10:55:29] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 10:55:29] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 11:00:54] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 11:00:54] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 11:13:02] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-23 11:13:02] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-23 11:15:12] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 11:15:12] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 11:19:59] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 11:19:59] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-23 16:06:18] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-23 16:06:18] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-25 12:46:47] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-25 12:46:47] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-25 12:46:59] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-25 12:46:59] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-25 12:57:35] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-25 12:57:35] Authenticated user id=6 email=hangcan18@gmail.com role=employee
+[2025-12-25 13:13:23] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 13:13:25] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 13:16:53] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 13:16:54] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 13:16:54] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 13:19:48] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 13:19:49] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 13:19:50] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 13:22:32] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 13:22:33] Authenticated user id=7 email=tranbich12@gmail.com role=employee
+[2025-12-25 17:04:19] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-25 17:04:19] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-25 17:04:46] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 17:04:46] Authenticated user id=7 email=tranbich12@gmail.com role=employee
+[2025-12-25 17:10:56] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-25 17:10:56] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-25 17:12:38] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 17:12:38] Authenticated user id=7 email=tranbich12@gmail.com role=employee
+[2025-12-25 17:31:49] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 17:31:49] Authenticated user id=7 email=tranbich12@gmail.com role=employee
+[2025-12-25 17:32:10] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 17:32:10] Authenticated user id=7 email=tranbich12@gmail.com role=employee
+[2025-12-25 17:32:29] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-25 17:32:29] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-25 17:39:08] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 17:39:09] PDO/Conn error: SQLSTATE[HY000] [1049] Unknown database 'quanlytiendo_db'
+[2025-12-25 17:39:11] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 17:39:11] PDO/Conn error: SQLSTATE[HY000] [1049] Unknown database 'quanlytiendo_db'
+[2025-12-25 17:39:39] Received POST: {"email":"hangcan18@gmail.com","password":"abcxyzlmn"}
+[2025-12-25 17:39:39] PDO/Conn error: SQLSTATE[HY000] [1049] Unknown database 'quanlytiendo_db'
+[2025-12-25 17:39:42] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-25 17:39:42] PDO/Conn error: SQLSTATE[HY000] [1049] Unknown database 'quanlytiendo_db'
+[2025-12-25 17:40:47] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-25 17:40:47] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-25 17:40:58] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-25 17:40:58] Authenticated user id=7 email=tranbich12@gmail.com role=employee
+[2025-12-26 10:28:22] Received POST: {"email":"tranbich12@gmail.com","password":"12346789"}
+[2025-12-26 10:28:25] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-26 10:28:25] Authenticated user id=1 email=nguyenhau03112005@gmail.com role=manager
+[2025-12-26 10:58:58] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-26 10:58:58] PDO/Conn error: SQLSTATE[HY000] [1049] Unknown database 'quanlytiendo_db'
+[2025-12-26 10:58:59] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-26 10:58:59] PDO/Conn error: SQLSTATE[HY000] [1049] Unknown database 'quanlytiendo_db'
+[2025-12-26 10:59:15] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-26 10:59:15] PDO/Conn error: SQLSTATE[HY000] [1049] Unknown database 'quanlytiendo_db'
+[2025-12-26 10:59:15] Received POST: {"email":"nguyenhau03112005@gmail.com","password":"Hau03112005@"}
+[2025-12-26 10:59:15] PDO/Conn error: SQLSTATE[HY000] [1049] Unknown database 'quanlytiendo_db'

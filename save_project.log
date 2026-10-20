@@ -1,0 +1,268 @@
+[2025-12-06 20:21:26] REQUEST: GET /quanlytiendo/save_project.php
+[2025-12-06 20:44:49] REQUEST: POST /quanlytiendo/save_project.php
+[2025-12-06 20:44:49] POST: {"name":"Hậu","location":"jhftdrty","budget":"51552.226","start_date":"2025-12-04","end_date":"2025-12-13","description":"tytfrtfrrrt"}
+[2025-12-06 20:44:49] RAW_BODY: name=H%E1%BA%ADu&location=jhftdrty&budget=51552.226&start_date=2025-12-04&end_date=2025-12-13&description=tytfrtfrrrt
+[2025-12-06 20:44:49] hasCongtrinh=1 in db=quanlytiendo
+[2025-12-06 20:44:49] EXECUTE congtrinh INSERT with params: {":mact":"CT251206204449073",":tenct":"Hậu",":diadiem":"jhftdrty",":ngansach":51552.226,":mota":"tytfrtfrrrt",":ngaybd":"2025-12-04",":ngaykt":"2025-12-13"}
+[2025-12-06 20:44:49] Inserted into congtrinh MACT=CT251206204449073
+[2025-12-06 20:53:12] LIST: list error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6' OFFSET '0'' at line 1
+[2025-12-06 21:25:11] UPDATE: EXEC: UPDATE congtrinh SET TENCT = :name, DIADIEM = :location, NGANSACH = :budget, MOTA = :description, NGAYBD = :start_date, NGAYKT = :end_date WHERE MACT = :mact params: {":name":"Vinhomes",":location":"Gia Lâm",":budget":10000000000,":description":"Xây dựng nhà ở",":start_date":"2025-12-04",":end_date":"2026-12-04",":mact":"CT251206204449073"}
+[2025-12-06 21:42:32] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT251206204449073
+[2025-12-06 21:42:51] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT251206204449073
+[2025-12-07 06:42:04] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT251206204449073
+[2025-12-07 06:42:06] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT251206204449073
+[2025-12-07 16:55:35] REQUEST: POST /quanlytiendo/save_project.php
+[2025-12-07 16:55:35] POST: {"mact":"CT001","name":"Xây dựng tòa Hòa Bình","location":"Gia Lâm, Hà Nội","budget":"50000000.000","start_date":"2020-12-12","end_date":"2025-12-23","description":"công tình đã đi vào hoạt động"}
+[2025-12-07 16:55:35] RAW_BODY: mact=CT001&name=X%C3%A2y+d%E1%BB%B1ng+t%C3%B2a+H%C3%B2a+B%C3%ACnh&location=Gia+L%C3%A2m%2C+H%C3%A0+N%E1%BB%99i&budget=50000000.000&start_date=2020-12-12&end_date=2025-12-23&description=c%C3%B4ng+t%C3%ACnh+%C4%91%C3%A3+%C4%91i+v%C3%A0o+ho%E1%BA%A1t+%C4%91%E1%BB%99ng
+[2025-12-07 16:55:35] hasCongtrinh=1 in db=quanlytiendo
+[2025-12-07 16:55:35] EXECUTE congtrinh INSERT with params: {":mact":"CT001",":tenct":"Xây dựng tòa Hòa Bình",":diadiem":"Gia Lâm, Hà Nội",":ngansach":50000000,":mota":"công tình đã đi vào hoạt động",":ngaybd":"2020-12-12",":ngaykt":"2025-12-23"}
+[2025-12-07 16:55:35] Inserted into congtrinh MACT=CT001
+[2025-12-08 05:34:29] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT251206204449073
+[2025-12-08 05:34:30] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT001
+[2025-12-08 17:06:42] REQUEST: POST /quanlytiendo/save_project.php
+[2025-12-08 17:06:42] POST: {"mact":"CT001","name":"hậu","location":"drgg","budget":"7564.535","start_date":"2025-12-02","end_date":"2025-12-17","description":"hhtgerger"}
+[2025-12-08 17:06:42] RAW_BODY: mact=CT001&name=h%E1%BA%ADu&location=drgg&budget=7564.535&start_date=2025-12-02&end_date=2025-12-17&description=hhtgerger
+[2025-12-08 17:06:42] hasCongtrinh=1 in db=quanlytiendo
+[2025-12-08 17:06:48] REQUEST: POST /quanlytiendo/save_project.php
+[2025-12-08 17:06:48] POST: {"mact":"CT002","name":"hậu","location":"drgg","budget":"7564.535","start_date":"2025-12-02","end_date":"2025-12-17","description":"hhtgerger"}
+[2025-12-08 17:06:48] RAW_BODY: mact=CT002&name=h%E1%BA%ADu&location=drgg&budget=7564.535&start_date=2025-12-02&end_date=2025-12-17&description=hhtgerger
+[2025-12-08 17:06:48] hasCongtrinh=1 in db=quanlytiendo
+[2025-12-08 17:06:48] EXECUTE congtrinh INSERT with params: {":mact":"CT002",":tenct":"hậu",":diadiem":"drgg",":ngansach":7564.535,":mota":"hhtgerger",":ngaybd":"2025-12-02",":ngaykt":"2025-12-17"}
+[2025-12-08 17:06:48] Inserted into congtrinh MACT=CT002
+[2025-12-08 17:49:46] REQUEST: POST /quanlytiendo/save_project.php
+[2025-12-08 17:49:46] POST: {"mact":"CT003","name":"nhà ở","location":"fff","budget":"73652.324","start_date":"2025-12-04","end_date":"2025-12-18","description":"tregt5t"}
+[2025-12-08 17:49:46] RAW_BODY: mact=CT003&name=nh%C3%A0+%E1%BB%9F&location=fff&budget=73652.324&start_date=2025-12-04&end_date=2025-12-18&description=tregt5t
+[2025-12-08 17:49:46] hasCongtrinh=1 in db=quanlytiendo
+[2025-12-08 17:49:46] EXECUTE congtrinh INSERT with params: {":mact":"CT003",":tenct":"nhà ở",":diadiem":"fff",":ngansach":73652.324,":mota":"tregt5t",":ngaybd":"2025-12-04",":ngaykt":"2025-12-18"}
+[2025-12-08 17:49:46] Inserted into congtrinh MACT=CT003
+[2025-12-11 04:58:44] REQUEST: POST /quanlytiendo/save_project.php
+[2025-12-11 04:58:44] POST: {"name":"Xây dựng đường xá","location":"Cầu Giấy","budget":"300000000","start_date":"2025-12-01","end_date":"2026-01-10","description":"có tể","status":"Đang thực hiện","mact":"CT020"}
+[2025-12-11 04:58:44] RAW_BODY: name=X%C3%A2y+d%E1%BB%B1ng+%C4%91%C6%B0%E1%BB%9Dng+x%C3%A1&location=C%E1%BA%A7u+Gi%E1%BA%A5y&budget=300000000&start_date=2025-12-01&end_date=2026-01-10&description=c%C3%B3+t%E1%BB%83&status=%C4%90ang+th%E1%BB%B1c+hi%E1%BB%87n&mact=CT020
+[2025-12-11 04:58:44] hasCongtrinh=1 in db=quanlytiendo
+[2025-12-11 04:58:44] EXECUTE congtrinh INSERT with params: {":mact":"CT020",":tenct":"Xây dựng đường xá",":diadiem":"Cầu Giấy",":ngansach":300000000,":mota":"có tể",":ngaybd":"2025-12-01",":ngaykt":"2026-01-10"}
+[2025-12-11 04:58:44] Inserted into congtrinh MACT=CT020
+[2025-12-11 05:33:22] REQUEST: POST /quanlytiendo/save_project.php
+[2025-12-11 05:33:22] POST: {"name":"THiết kế thi công","location":"Đan Phượng","budget":"54000000000","start_date":"2023-01-10","end_date":"2025-12-11","description":"đã xong","status":"Hoàn thành","mact":"CT016"}
+[2025-12-11 05:33:22] RAW_BODY: name=THi%E1%BA%BFt+k%E1%BA%BF+thi+c%C3%B4ng&location=%C4%90an+Ph%C6%B0%E1%BB%A3ng&budget=54000000000&start_date=2023-01-10&end_date=2025-12-11&description=%C4%91%C3%A3+xong&status=Ho%C3%A0n+th%C3%A0nh&mact=CT016
+[2025-12-11 05:33:22] hasCongtrinh=1 in db=quanlytiendo
+[2025-12-11 05:33:22] EXECUTE congtrinh INSERT with params: {":mact":"CT016",":tenct":"THiết kế thi công",":diadiem":"Đan Phượng",":ngansach":54000000000,":mota":"đã xong",":ngaybd":"2023-01-10",":ngaykt":"2025-12-11"}
+[2025-12-11 05:33:22] Inserted into congtrinh MACT=CT016
+[2025-12-11 05:39:21] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT003
+[2025-12-11 05:39:21] UPDATE: EXEC: UPDATE congtrinh SET TENCT = :name, DIADIEM = :location, NGANSACH = :budget, MOTA = :description, NGAYBD = :start_date, NGAYKT = :end_date WHERE MACT = :mact params: {":name":"Xây dựng công trình thủy điện",":location":"Hòa Bình",":budget":76000000000,":description":"dự kiến hoàn thành bị sai lệch",":start_date":"2024-05-30",":end_date":"2025-12-03",":mact":"CT003"}
+[2025-12-11 16:47:53] DELETE: EXEC DELETE congtrinh MACT=CT251206204449073
+[2025-12-11 16:47:53] DELETE: error: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`quanlytiendo`.`hangmuc`, CONSTRAINT `FK_HANGMUC_CONGTRINH` FOREIGN KEY (`MACT`) REFERENCES `congtrinh` (`MACT`))
+[2025-12-11 16:49:38] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT251206204449073
+[2025-12-11 16:49:38] UPDATE: EXEC: UPDATE congtrinh SET TENCT = :name, DIADIEM = :location, NGANSACH = :budget, MOTA = :description, NGAYBD = :start_date, NGAYKT = :end_date WHERE MACT = :mact params: {":name":"Xây dựng homestay",":location":"Sóc Sơn",":budget":50000000,":description":"Xây dựng homestay xanh sạch đẹp",":start_date":"2023-11-04",":end_date":"2026-01-06",":mact":"CT251206204449073"}
+[2025-12-11 16:49:51] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT251206204449073
+[2025-12-11 16:49:51] UPDATE: EXEC: UPDATE congtrinh SET TENCT = :name, DIADIEM = :location, NGANSACH = :budget, MOTA = :description, NGAYBD = :start_date, NGAYKT = :end_date WHERE MACT = :mact params: {":name":"Xây dựng homestay",":location":"Sóc Sơn",":budget":50000000,":description":"Xây dựng homestay xanh sạch đẹp",":start_date":"2023-11-04",":end_date":"2026-01-06",":mact":"CT251206204449073"}
+[2025-12-11 18:34:01] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT002
+[2025-12-11 18:34:01] UPDATE: EXEC: UPDATE congtrinh SET TENCT = :name, DIADIEM = :location, NGANSACH = :budget, MOTA = :description, NGAYBD = :start_date, NGAYKT = :end_date WHERE MACT = :mact params: {":name":"Xây dựng khu nhà ở công nhân",":location":"Hải Phòng",":budget":25000000000,":description":"Xây dựng khu nhà lưu trú cho công nhân",":start_date":"2025-12-02",":end_date":"2025-12-17",":mact":"CT002"}
+[2025-12-12 19:38:54] DELETE: EXEC DELETE congtrinh MACT=CT001
+[2025-12-12 19:38:54] DELETE: error: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`quanlytiendo`.`hangmuc`, CONSTRAINT `FK_HANGMUC_CONGTRINH` FOREIGN KEY (`MACT`) REFERENCES `congtrinh` (`MACT`) ON UPDATE CASCADE)
+[2025-12-12 19:41:01] UPDATE: congtrinh has no status column; cannot persist status for MACT=CT001
+[2025-12-12 19:41:01] UPDATE: EXEC: UPDATE congtrinh SET TENCT = :name, DIADIEM = :location, NGANSACH = :budget, MOTA = :description, NGAYBD = :start_date, NGAYKT = :end_date WHERE MACT = :mact params: {":name":"Xây dựng tòa Hòa Bình",":location":"Gia Lâm, Hà Nội",":budget":50000000,":description":"công tình đã đi vào hoạt động",":start_date":"2020-12-12",":end_date":"2025-12-23",":mact":"CT001"}
+[2025-12-12 19:45:06] DELETE: EXEC DELETE congtrinh MACT=CT001
+[2025-12-12 19:45:07] DELETE: error: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`quanlytiendo`.`hangmuc`, CONSTRAINT `FK_HANGMUC_CONGTRINH` FOREIGN KEY (`MACT`) REFERENCES `congtrinh` (`MACT`) ON UPDATE CASCADE)
+[2025-12-12 19:47:27] DELETE: Deleting child rows from hangmuc.MACT for parent MACT=CT001
+[2025-12-12 19:47:27] DELETE: Child delete error: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`quanlytiendo`.`tiendo`, CONSTRAINT `FK_TIENDO_HANGMUC` FOREIGN KEY (`MAHM`) REFERENCES `hangmuc` (`MAHM`) ON UPDATE CASCADE)
+[2025-12-12 19:48:02] DELETE: Deleting child rows from hangmuc.MACT for parent MACT=CT018
+[2025-12-12 19:48:02] DELETE: Child delete error: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`quanlytiendo`.`tiendo`, CONSTRAINT `FK_TIENDO_HANGMUC` FOREIGN KEY (`MAHM`) REFERENCES `hangmuc` (`MAHM`) ON UPDATE CASCADE)
+[2025-12-12 19:54:02] DELETE: Deleting child rows from hangmuc.MACT for parent MACT=CT021
+[2025-12-12 19:54:02] DELETE: Deleted 0 rows from hangmuc
+[2025-12-12 19:54:02] DELETE: EXEC DELETE congtrinh MACT=CT021
+[2025-12-12T23:30:08+01:00] api_chart_congtrinh.php called
+[2025-12-12T23:30:12+01:00] api_chart_hangmuc.php called
+[2025-12-12T23:30:14+01:00] api_chart_congtrinh.php called
+[2025-12-12T23:30:22+01:00] api_chart_congtrinh.php called
+[2025-12-12T23:30:23+01:00] api_chart_congtrinh.php called
+[2025-12-12T23:30:39+01:00] api_chart_congtrinh.php called
+[2025-12-12T23:32:49+01:00] api_chart_congtrinh.php called
+[2025-12-12T23:32:51+01:00] api_chart_congtrinh.php called
+[2025-12-12T23:36:27+01:00] api_chart_congtrinh.php called
+[2025-12-12T23:36:32+01:00] api_chart_hangmuc.php called
+[2025-12-12 23:45:37] DELETE: Deleting child rows from hangmuc.MACT for parent MACT=CT020
+[2025-12-12 23:45:37] DELETE: Deleted 0 rows from hangmuc
+[2025-12-12 23:45:37] DELETE: EXEC DELETE congtrinh MACT=CT020
+[2025-12-12T23:45:41+01:00] api_chart_congtrinh.php called
+2025-12-12T23:56:28+01:00 delete_tiendo: POST: {"id":"TD017"}
+2025-12-12T23:56:28+01:00 delete_tiendo: Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+[2025-12-12T23:56:38+01:00] api_chart_congtrinh.php called
+2025-12-12T23:59:43+01:00 delete_tiendo: POST: {"id":"TD017"}
+2025-12-12T23:59:43+01:00 delete_tiendo: Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-13T00:11:12+01:00 delete_tiendo: POST: {"id":"TD017"}
+2025-12-13T00:11:12+01:00 delete_tiendo: Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-13T00:11:18+01:00 delete_tiendo: POST: {"id":"TD017"}
+2025-12-13T00:11:18+01:00 delete_tiendo: Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+[2025-12-13T00:13:42+01:00] api_chart_congtrinh.php called
+[2025-12-13T00:15:27+01:00] api_chart_congtrinh.php called
+[2025-12-13T14:10:48+01:00] api_chart_congtrinh.php called
+2025-12-13T14:29:05+01:00 delete_tiendo: POST: {"matd":"TD017"}
+2025-12-13T14:29:06+01:00 delete_tiendo: Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'where clause'
+2025-12-13T14:29:15+01:00 delete_tiendo: POST: {"matd":"TD017"}
+2025-12-13T14:29:15+01:00 delete_tiendo: Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'where clause'
+2025-12-13T14:33:39+01:00 delete_tiendo: POST: {"matd":"TD017"}
+2025-12-13T14:33:39+01:00 delete_tiendo: DELETE affected=1 where=["TD017"]
+[2025-12-13T14:37:01+01:00] api_chart_congtrinh.php called
+[2025-12-13T14:37:03+01:00] api_chart_tiendo.php called
+[2025-12-13T14:37:08+01:00] api_chart_congtrinh.php called
+[2025-12-13T14:37:09+01:00] api_chart_hangmuc.php called
+[2025-12-13T14:37:11+01:00] api_chart_congtrinh.php called
+[2025-12-13T14:37:12+01:00] api_chart_hangmuc.php called
+[2025-12-13T14:37:13+01:00] api_chart_nhansu.php called
+[2025-12-13T14:37:15+01:00] api_chart_tiendo.php called
+[2025-12-13T14:37:17+01:00] api_chart_tiendo.php called
+[2025-12-13T14:37:18+01:00] api_chart_congtrinh.php called
+[2025-12-13T14:37:19+01:00] api_chart_hangmuc.php called
+[2025-12-13T14:37:21+01:00] api_chart_nhansu.php called
+[2025-12-13T14:37:24+01:00] api_chart_tiendo.php called
+[2025-12-13T14:37:27+01:00] api_chart_hangmuc.php called
+[2025-12-13 14:38:17] DELETE: Deleting child rows from hangmuc.MACT for parent MACT=CT019
+[2025-12-13 14:38:17] DELETE: Deleted 0 rows from hangmuc
+[2025-12-13 14:38:17] DELETE: EXEC DELETE congtrinh MACT=CT019
+2025-12-13T14:42:10+01:00 delete_tiendo: POST: {"matd":"TD016"}
+2025-12-13T14:42:10+01:00 delete_tiendo: DELETE affected=1 where=["TD016"]
+[2025-12-13T14:59:18+01:00] api_chart_congtrinh.php called
+[2025-12-13T14:59:19+01:00] api_chart_hangmuc.php called
+[2025-12-13T14:59:21+01:00] api_chart_nhansu.php called
+[2025-12-13T14:59:22+01:00] api_chart_tiendo.php called
+[2025-12-13T14:59:24+01:00] api_chart_hangmuc.php called
+[2025-12-13T15:04:12+01:00] api_chart_congtrinh.php called
+[2025-12-13T15:04:15+01:00] api_chart_hangmuc.php called
+[2025-12-13T15:04:17+01:00] api_chart_nhansu.php called
+[2025-12-13T15:04:18+01:00] api_chart_tiendo.php called
+[2025-12-15T10:51:47+01:00] api_chart_congtrinh.php called
+[2025-12-15T10:52:00+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:15:32+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:15:41+01:00] api_chart_hangmuc.php called
+[2025-12-15T11:15:43+01:00] api_chart_nhansu.php called
+[2025-12-15T11:15:46+01:00] api_chart_nhansu.php called
+[2025-12-15T11:15:47+01:00] api_chart_nhansu.php called
+[2025-12-15T11:15:47+01:00] api_chart_nhansu.php called
+[2025-12-15T11:15:52+01:00] api_chart_tiendo.php called
+[2025-12-15T11:15:54+01:00] api_chart_nhansu.php called
+[2025-12-15T11:15:57+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:15:59+01:00] api_chart_nhansu.php called
+[2025-12-15T11:16:02+01:00] api_chart_tiendo.php called
+[2025-12-15T11:16:10+01:00] api_chart_nhansu.php called
+[2025-12-15T11:16:10+01:00] api_chart_hangmuc.php called
+[2025-12-15T11:16:11+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:17:06+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:17:07+01:00] api_chart_hangmuc.php called
+[2025-12-15T11:17:08+01:00] api_chart_nhansu.php called
+[2025-12-15T11:17:12+01:00] api_chart_tiendo.php called
+[2025-12-15T11:17:19+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:18:28+01:00] api_chart_hangmuc.php called
+[2025-12-15T11:18:29+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:18:33+01:00] api_chart_hangmuc.php called
+[2025-12-15T11:18:34+01:00] api_chart_nhansu.php called
+[2025-12-15T11:20:28+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:20:33+01:00] api_chart_nhansu.php called
+[2025-12-15T11:20:37+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:20:45+01:00] api_chart_hangmuc.php called
+[2025-12-15T11:20:49+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:31:15+01:00] api_chart_congtrinh.php called
+[2025-12-15T11:31:24+01:00] api_chart_hangmuc.php called
+[2025-12-15T11:31:36+01:00] api_chart_nhansu.php called
+[2025-12-15T11:31:46+01:00] api_chart_tiendo.php called
+[2025-12-15T11:31:47+01:00] api_chart_nhansu.php called
+[2025-12-15T11:31:49+01:00] api_chart_tiendo.php called
+[2025-12-15T11:31:58+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:35:10+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:35:12+01:00] api_chart_hangmuc.php called
+[2025-12-18T04:35:12+01:00] api_chart_nhansu.php called
+[2025-12-18T04:38:10+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:38:12+01:00] api_chart_nhansu.php called
+[2025-12-18T04:41:15+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:41:17+01:00] api_chart_hangmuc.php called
+[2025-12-18T04:41:18+01:00] api_chart_nhansu.php called
+[2025-12-18T04:41:26+01:00] api_chart_tiendo.php called
+[2025-12-18T04:41:28+01:00] api_chart_nhansu.php called
+[2025-12-18T04:41:40+01:00] api_chart_hangmuc.php called
+[2025-12-18T04:41:46+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:41:48+01:00] api_chart_nhansu.php called
+[2025-12-18T04:41:49+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:41:50+01:00] api_chart_hangmuc.php called
+[2025-12-18T04:41:51+01:00] api_chart_nhansu.php called
+[2025-12-18T04:41:54+01:00] api_chart_tiendo.php called
+[2025-12-18T04:41:58+01:00] api_chart_hangmuc.php called
+[2025-12-18T04:41:58+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:41:59+01:00] api_chart_nhansu.php called
+[2025-12-18T04:43:12+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:43:34+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:45:04+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:45:06+01:00] api_chart_nhansu.php called
+[2025-12-18T04:45:10+01:00] api_chart_hangmuc.php called
+[2025-12-18T04:45:11+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:45:12+01:00] api_chart_nhansu.php called
+[2025-12-18T04:45:14+01:00] api_chart_tiendo.php called
+[2025-12-18T04:45:16+01:00] api_chart_nhansu.php called
+[2025-12-18T04:48:30+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:48:32+01:00] api_chart_nhansu.php called
+[2025-12-18T04:48:37+01:00] api_chart_nhansu.php called
+[2025-12-18T04:48:40+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:48:42+01:00] api_chart_nhansu.php called
+[2025-12-18T04:50:28+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:50:29+01:00] api_chart_nhansu.php called
+[2025-12-18T04:52:37+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:52:38+01:00] api_chart_nhansu.php called
+[2025-12-18T04:52:39+01:00] api_chart_nhansu.php called
+[2025-12-18T04:56:04+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:56:07+01:00] api_chart_nhansu.php called
+[2025-12-18T04:56:14+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:56:16+01:00] api_chart_nhansu.php called
+[2025-12-18T04:58:48+01:00] api_chart_congtrinh.php called
+[2025-12-18T04:58:50+01:00] api_chart_nhansu.php called
+[2025-12-18T05:27:06+01:00] api_chart_congtrinh.php called
+[2025-12-18T05:27:09+01:00] api_chart_hangmuc.php called
+[2025-12-18T05:27:11+01:00] api_chart_nhansu.php called
+[2025-12-18T05:27:22+01:00] api_chart_tiendo.php called
+[2025-12-22T09:06:15+01:00] api_chart_congtrinh.php called
+[2025-12-22T09:06:17+01:00] api_chart_hangmuc.php called
+[2025-12-22T09:06:18+01:00] api_chart_nhansu.php called
+[2025-12-22T09:06:19+01:00] api_chart_tiendo.php called
+[2025-12-22T09:06:22+01:00] api_chart_nhansu.php called
+[2025-12-22T15:28:46+01:00] api_chart_congtrinh.php called
+[2025-12-22T15:37:38+01:00] api_chart_congtrinh.php called
+[2025-12-22T15:37:39+01:00] api_chart_hangmuc.php called
+[2025-12-22T15:37:40+01:00] api_chart_nhansu.php called
+[2025-12-22T15:37:41+01:00] api_chart_tiendo.php called
+[2025-12-22T15:37:42+01:00] api_chart_congtrinh.php called
+[2025-12-22T16:39:26+01:00] api_chart_congtrinh.php called
+[2025-12-23T09:48:43+01:00] api_chart_congtrinh.php called
+[2025-12-23T09:48:48+01:00] api_chart_congtrinh.php called
+2025-12-23T10:00:08+01:00 delete_tiendo: POST: {"matd":"TD014"}
+2025-12-23T10:03:36+01:00 delete_tiendo: POST: {"matd":"TD014"}
+[2025-12-23 10:14:58] DELETE: Deleting child rows from hangmuc.MACT for parent MACT=CT018
+[2025-12-23 10:14:58] DELETE: Deleted 0 rows from hangmuc
+[2025-12-23 10:14:58] DELETE: EXEC DELETE congtrinh MACT=CT018
+2025-12-23T10:58:17+01:00 delete_tiendo: POST: {"matd":"TD014"}
+[2025-12-23T11:20:02+01:00] api_chart_congtrinh.php called
+[2025-12-23T11:22:30+01:00] api_chart_hangmuc.php called
+[2025-12-23T11:22:51+01:00] api_chart_tiendo.php called
+[2025-12-23T11:23:06+01:00] api_chart_nhansu.php called
+[2025-12-23T11:50:31+01:00] api_chart_congtrinh.php called
+[2025-12-23T11:51:20+01:00] api_chart_congtrinh.php called
+2025-12-23T11:51:32+01:00 delete_tiendo: POST: {"matd":"TD014"}
+2025-12-23T11:51:32+01:00 delete_tiendo: DELETE affected=1 where=["TD014"]
+[2025-12-23T16:06:22+01:00] api_chart_congtrinh.php called
+[2025-12-23T16:06:25+01:00] api_chart_hangmuc.php called
+[2025-12-23T16:06:27+01:00] api_chart_tiendo.php called
+[2025-12-23T16:06:30+01:00] api_chart_hangmuc.php called
+[2025-12-23T16:06:31+01:00] api_chart_congtrinh.php called
+[2025-12-23T16:06:33+01:00] api_chart_hangmuc.php called
+[2025-12-23T16:06:35+01:00] api_chart_tiendo.php called
+[2025-12-23T16:06:37+01:00] api_chart_hangmuc.php called
+[2025-12-23T16:06:40+01:00] api_chart_congtrinh.php called
+[2025-12-23T16:06:41+01:00] api_chart_tiendo.php called
+[2025-12-23T16:06:50+01:00] api_chart_hangmuc.php called
+[2025-12-23T16:06:59+01:00] api_chart_congtrinh.php called
+[2025-12-23T16:07:10+01:00] api_chart_hangmuc.php called
+[2025-12-23T16:07:11+01:00] api_chart_tiendo.php called
+[2025-12-23T16:07:13+01:00] api_chart_congtrinh.php called
+[2025-12-23T16:08:27+01:00] api_chart_hangmuc.php called
+[2025-12-23T16:08:29+01:00] api_chart_congtrinh.php called
+[2025-12-23T16:09:48+01:00] api_chart_hangmuc.php called
+[2025-12-23T16:10:11+01:00] api_chart_tiendo.php called
+2025-12-25T13:24:55+01:00 delete_tiendo: POST: {"matd":"TD013"}
+2025-12-25T17:19:10+01:00 delete_tiendo: POST: {"matd":"TD013"}
+[2025-12-26T10:32:58+01:00] api_chart_congtrinh.php called

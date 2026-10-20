@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Đăng nhập hệ thống</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/tailwindcss">
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      /* Đồng bộ palette và phông chữ với trang Tổng quan */
+      :root {
+        --retro-bg: #fdfbf8; /* background */
+        --retro-surface: #eae5df; /* card / surface */
+        --retro-border: #2a221c; /* border / accents */
+        --retro-text: #4f311c; /* main text */
+        --retro-text-light: #8b7d72; /* subtext */
+        --retro-primary: #8b542a; /* primary buttons */
+        --retro-success: #638459; /* success */
+        --retro-warning: #b88c4a; /* warning */
+        --retro-danger: #a05f5f; /* danger */
+        --retro-input-bg: #ffffff; /* inputs */
+      }
+      /* keep dark mapping similar but consistent */
+      .dark {
+        --retro-bg: #2a221c;
+        --retro-surface: #3b332c;
+        --retro-border: #f0e9e4;
+        --retro-text: #f0e9e4;
+        --retro-text-light: #c8bfb6;
+        --retro-primary: #8b542a;
+        --retro-secondary: #5c7e7e;
+        --retro-success: #638459;
+        --retro-warning: #b88c4a;
+        --retro-danger: #a05f5f;
+        --retro-input-bg: #453b34;
+      }
+
+      /* Small helper to keep the illustration responsive */
+      .login-illustration {
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "var(--retro-primary)",
+              "background-light": "var(--retro-bg)",
+              "background-dark": "var(--retro-bg)",
+              "retro-surface": "var(--retro-surface)",
+              "retro-border": "var(--retro-border)",
+              "retro-text": "var(--retro-text)",
+              "retro-text-light": "var(--retro-text-light)",
+              "retro-input-bg": "var(--retro-input-bg)",
+              "retro-success": "var(--retro-success)",
+              "retro-warning": "var(--retro-warning)",
+              "retro-danger": "var(--retro-danger)",
+              "retro-secondary": "var(--retro-secondary)",
+            },
+            fontFamily: {
+              display: ["'Times New Roman'", "serif"],
+              heading: ["'Times New Roman'", "serif"],
+              body: ["'Times New Roman'", "serif"],
+            },
+            borderRadius: { DEFAULT: "0", lg: "0", xl: "0", full: "9999px" },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-retro-text dark:text-retro-text h-full"
+  >
+    <div
+      class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <main class="flex flex-1 items-center justify-center p-4">
+          <div
+            class="flex w-full max-w-2xl mx-auto overflow-hidden border-2 border-retro-border bg-retro-surface dark:bg-retro-surface shadow-retro justify-center"
+          >
+            <div class="w-full p-8 sm:p-12 max-w-md mx-auto">
+              <div
+                class="layout-content-container flex flex-col max-w-[960px] flex-1"
+              >
+                <!-- Illustration (đã dùng biến màu) -->
+                <div class="mb-4 flex items-center justify-center">
+                  <svg
+                    class="login-illustration"
+                    viewBox="0 0 320 160"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="Hình minh họa quản lý công trình: mũ bảo hộ và cần cẩu"
+                  >
+                    <defs>
+                      <linearGradient id="g" x1="0" x2="1">
+                        <stop
+                          offset="0"
+                          stop-color="var(--retro-secondary)"
+                          stop-opacity="0.95"
+                        />
+                        <stop
+                          offset="1"
+                          stop-color="var(--retro-primary)"
+                          stop-opacity="0.95"
+                        />
+                      </linearGradient>
+                    </defs>
+
+                    <!-- Simple skyline / building blocks -->
+                    <rect
+                      x="10"
+                      y="78"
+                      width="60"
+                      height="62"
+                      fill="rgba(44,62,80,0.06)"
+                    />
+                    <rect
+                      x="80"
+                      y="58"
+                      width="46"
+                      height="82"
+                      fill="rgba(44,62,80,0.08)"
+                    />
+                    <rect
+                      x="136"
+                      y="68"
+                      width="52"
+                      height="72"
+                      fill="rgba(44,62,80,0.07)"
+                    />
+                    <rect
+                      x="196"
+                      y="50"
+                      width="92"
+                      height="90"
+                      fill="rgba(44,62,80,0.06)"
+                    />
+
+                    <!-- Crane arm -->
+                    <rect
+                      x="160"
+                      y="8"
+                      width="8"
+                      height="80"
+                      fill="url(#g)"
+                      rx="2"
+                    />
+                    <rect
+                      x="160"
+                      y="8"
+                      width="120"
+                      height="8"
+                      fill="url(#g)"
+                      rx="2"
+                    />
+
+                    <!-- Hook -->
+                    <line
+                      x1="268"
+                      y1="16"
+                      x2="268"
+                      y2="46"
+                      stroke="var(--retro-border)"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                    <rect
+                      x="258"
+                      y="46"
+                      width="20"
+                      height="10"
+                      rx="2"
+                      fill="var(--retro-border)"
+                    />
+
+                    <!-- Hard hat -->
+                    <g transform="translate(40,12)">
+                      <path
+                        d="M60 70 C28 70 10 54 10 40 C10 26 26 16 46 16 C66 16 80 26 80 40 C80 54 72 70 60 70 Z"
+                        fill="var(--retro-primary)"
+                      />
+                      <path
+                        d="M16 40 C28 46 46 48 60 48 C74 48 92 46 104 40"
+                        stroke="var(--retro-border)"
+                        stroke-width="3"
+                        fill="none"
+                        opacity="0.18"
+                      />
+                      <rect
+                        x="44"
+                        y="32"
+                        width="32"
+                        height="8"
+                        rx="2"
+                        fill="var(--retro-secondary)"
+                        opacity="0.95"
+                      />
+                    </g>
+
+                    <!-- Blueprint roll -->
+                    <g transform="translate(10,96) scale(0.9)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="66"
+                        height="36"
+                        rx="3"
+                        fill="rgba(139,84,42,0.06)"
+                        stroke="var(--retro-secondary)"
+                      />
+                      <line
+                        x1="8"
+                        y1="8"
+                        x2="58"
+                        y2="8"
+                        stroke="var(--retro-secondary)"
+                        stroke-width="2"
+                      />
+                      <line
+                        x1="8"
+                        y1="16"
+                        x2="58"
+                        y2="16"
+                        stroke="var(--retro-secondary)"
+                        stroke-width="2"
+                      />
+                      <circle
+                        cx="14"
+                        cy="26"
+                        r="3"
+                        fill="var(--retro-secondary)"
+                      />
+                    </g>
+
+                    <!-- subtle ground line -->
+                    <line
+                      x1="6"
+                      y1="150"
+                      x2="314"
+                      y2="150"
+                      stroke="var(--retro-border)"
+                      stroke-width="1"
+                      opacity="0.6"
+                    />
+                  </svg>
+                </div>
+
+                <p
+                  class="font-heading text-retro-text tracking-tight text-[24px] leading-tight text-left pb-2"
+                >
+                  HỆ THỐNG QUẢN LÝ TIẾN ĐỘ
+                </p>
+
+                <h1
+                  class="font-heading text-retro-text tracking-tight text-[24px] leading-tight text-left pb-2"
+                >
+                  <b>ĐĂNG NHẬP</b>
+                </h1>
+
+                <form
+                  class="flex flex-col gap-6 text-lg"
+                  id="loginForm"
+                  method="POST"
+                >
+                  <div
+                    id="successMessage"
+                    style="
+                      display: none;
+                      color: var(--retro-success);
+                      padding: 10px;
+                      border: 2px solid var(--retro-success);
+                      background: rgba(99, 132, 89, 0.08);
+                    "
+                  ></div>
+                  <div
+                    id="errorMessage"
+                    style="
+                      display: none;
+                      color: var(--retro-danger);
+                      padding: 10px;
+                      border: 2px solid var(--retro-danger);
+                      background: rgba(160, 95, 95, 0.06);
+                    "
+                  ></div>
+
+                  <div
+                    style="
+                      color: var(--retro-secondary);
+                      padding: 10px;
+                      border: 2px solid var(--retro-secondary);
+                      background: rgba(138, 84, 42, 0.04);
+                      font-size: 14px;
+                    "
+                  >
+                    <label class="flex flex-col w-full">
+                      <p
+                        class="text-retro-text text-lg font-medium leading-normal pb-2"
+                      >
+                        Email người dùng
+                      </p>
+                      <input
+                        id="emailInput"
+                        class="form-input w-full h-12 p-[15px] border-2 border-retro-border bg-retro-input-bg shadow-retro-inset text-retro-text"
+                        placeholder="admin@congty.com"
+                        type="email"
+                        required
+                      />
+                    </label>
+
+                    <label class="flex flex-col w-full">
+                      <p
+                        class="text-retro-text text-lg font-medium leading-normal pb-2"
+                      >
+                        Mật khẩu
+                      </p>
+                      <div class="flex w-full items-stretch">
+                        <input
+                          id="passwordInput"
+                          class="form-input w-full h-12 p-[15px] border-2 border-retro-border border-r-0 bg-retro-input-bg shadow-retro-inset text-retro-text"
+                          placeholder="Nhập mật khẩu của bạn"
+                          type="password"
+                          required
+                        />
+                        <button
+                          class="border-2 border-retro-border bg-retro-input-bg px-3 hover:bg-retro-surface/80"
+                          type="button"
+                          id="togglePassword"
+                          aria-label="Hiển thị mật khẩu"
+                        >
+                          <span class="material-symbols-outlined"
+                            >visibility</span
+                          >
+                        </button>
+                      </div>
+                    </label>
+                  </div>
+                  <!-- role selector removed intentionally; server determines role -->
+
+                  <div class="flex items-center justify-between pt-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input
+                        class="form-checkbox h-5 w-5"
+                        type="checkbox"
+                        id="rememberMe"
+                      />
+                      <span class="text-retro-text-light">Ghi nhớ</span>
+                    </label>
+                    <a
+                      class="text-retro-primary hover:underline"
+                      href="#"
+                      onclick="alert('Vui lòng liên hệ quản trị viên để khôi phục mật khẩu'); return false;"
+                      >Quên mật khẩu?</a
+                    >
+                  </div>
+
+                  <button
+                    class="w-full h-14 bg-primary text-xl text-retro-surface font-bold mt-4 hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed border-2 border-retro-border shadow-[2px_2px_0px_0px_var(--retro-border)]"
+                    type="submit"
+                    id="loginBtn"
+                  >
+                    <span id="loginBtnText">Đăng nhập</span>
+                  </button>
+                </form>
+
+                <script>
+                  // Toggle password visibility
+                  document
+                    .getElementById("togglePassword")
+                    .addEventListener("click", function () {
+                      const pwInput = document.getElementById("passwordInput");
+                      const icon = this.querySelector(
+                        ".material-symbols-outlined"
+                      );
+                      if (pwInput.type === "password") {
+                        pwInput.type = "text";
+                        icon.textContent = "visibility_off";
+                      } else {
+                        pwInput.type = "password";
+                        icon.textContent = "visibility";
+                      }
+                    });
+
+                  function show(type, text) {
+                    const e = document.getElementById(
+                      type === "error" ? "errorMessage" : "successMessage"
+                    );
+                    const other = document.getElementById(
+                      type === "error" ? "successMessage" : "errorMessage"
+                    );
+                    other.style.display = "none";
+                    e.textContent = (type === "error" ? "❌ " : "✅ ") + text;
+                    e.style.display = "block";
+                  }
+
+                  // Submit -> call backend
+                  document
+                    .getElementById("loginForm")
+                    .addEventListener("submit", async function (ev) {
+                      ev.preventDefault();
+                      try {
+                        const email = document
+                          .getElementById("emailInput")
+                          .value.trim();
+                        const password =
+                          document.getElementById("passwordInput").value;
+                        const remember =
+                          document.getElementById("rememberMe").checked;
+                        const loginBtn = document.getElementById("loginBtn");
+                        const loginBtnText =
+                          document.getElementById("loginBtnText");
+
+                        if (!email || !password) {
+                          show("error", "Vui lòng nhập email và mật khẩu.");
+                          return;
+                        }
+
+                        loginBtn.disabled = true;
+                        loginBtnText.textContent = "Đang xử lý...";
+
+                        // IMPORTANT: do NOT send a role from the client.
+                        // The server will authenticates the user and determine role from DB.
+                        const body = new URLSearchParams({
+                          email,
+                          password,
+                        }).toString();
+
+                        const res = await fetch("login.php", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type":
+                              "application/x-www-form-urlencoded;charset=UTF-8",
+                          },
+                          credentials: "include",
+                          body,
+                        });
+
+                        let data;
+                        const raw = await res.text();
+                        try {
+                          data = raw
+                            ? JSON.parse(raw)
+                            : {
+                                success: false,
+                                error: "Empty response from server",
+                              };
+                        } catch (jsonErr) {
+                          console.error("Server non-JSON response:", raw);
+                          data = {
+                            success: false,
+                            error:
+                              "Phản hồi từ server không hợp lệ: " +
+                              (raw ? raw.substring(0, 500) : ""),
+                          };
+                        }
+
+                        if (data && data.success) {
+                          show("success", "Đăng nhập thành công.");
+                          if (remember)
+                            localStorage.setItem("rememberedEmail", email);
+                          else localStorage.removeItem("rememberedEmail");
+
+                          setTimeout(() => {
+                            if (data.redirect) {
+                              window.location.href = data.redirect;
+                            } else {
+                              // default landing page
+                              window.location.href = "tongquan.html";
+                            }
+                          }, 800);
+                        } else {
+                          show(
+                            "error",
+                            data && data.error
+                              ? data.error
+                              : "Đăng nhập thất bại"
+                          );
+                        }
+                      } catch (err) {
+                        console.error(err);
+                        show(
+                          "error",
+                          "Lỗi kết nối: " +
+                            (err && err.message ? err.message : err)
+                        );
+                      } finally {
+                        const loginBtn = document.getElementById("loginBtn");
+                        const loginBtnText =
+                          document.getElementById("loginBtnText");
+                        if (loginBtn) loginBtn.disabled = false;
+                        if (loginBtnText)
+                          loginBtnText.textContent = "Đăng nhập";
+                      }
+                    });
+
+                  // load remembered email and silently seed demo accounts on page load
+                  document.addEventListener("DOMContentLoaded", function () {
+                    const rememberedEmail =
+                      localStorage.getItem("rememberedEmail");
+                    if (rememberedEmail) {
+                      document.getElementById("emailInput").value =
+                        rememberedEmail;
+                      document.getElementById("rememberMe").checked = true;
+                    }
+
+                    // NOTE: keep seed_users.php only for dev. Ensure it does not create insecure accounts in production.
+                    fetch("seed_users.php", {
+                      method: "GET",
+                      credentials: "include",
+                    })
+                      .then(() => console.log("Seeded demo users (silent)"))
+                      .catch((e) => console.warn("Seed users failed:", e));
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+2025-12-12 11:56:33 POST: {"MATD":"TD019","MAHM":"HM019","KHOILUONG_THUCHIEN":"0","PHANTRAM":"100","NGAYBDTT":"2025-12-04","NGAYKTTT":"2026-01-05","GHICHU":"Hoàn thành móng nhà dự án","id":"TD019"}
+2025-12-12 11:56:33 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 11:56:37 POST: {"MATD":"TD019","MAHM":"HM019","KHOILUONG_THUCHIEN":"0","PHANTRAM":"100","NGAYBDTT":"2025-12-04","NGAYKTTT":"2026-01-05","GHICHU":"Hoàn thành móng nhà dự án","id":"TD019"}
+2025-12-12 11:56:37 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 19:04:23 POST: {"id":"TD017","MAHM":"HM017","MATD":"TD017","PHANTRAM":"40","NGAYBDTT":"2025-12-01","NGAYKTTT":"2025-12-10","GHICHU":"Tiến độ đang chậm","mahm_id":"HM017"}
+2025-12-12 19:04:23 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 19:04:24 POST: {"id":"TD017","MAHM":"HM017","MATD":"TD017","PHANTRAM":"40","NGAYBDTT":"2025-12-01","NGAYKTTT":"2025-12-10","GHICHU":"Tiến độ đang chậm","mahm_id":"HM017"}
+2025-12-12 19:04:24 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 19:04:30 POST: {"id":"TD017","MAHM":"HM017","MATD":"TD017","PHANTRAM":"40","NGAYBDTT":"2025-12-01","NGAYKTTT":"2025-12-10","GHICHU":"Tiến độ đang chậm","mahm_id":"HM017"}
+2025-12-12 19:04:30 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-13 14:54:20 POST: {"id":"TD013","MAHM":"HM013","MATD":"TD013","PHANTRAM":"100","NGAYBDTT":"2025-03-06","NGAYKTTT":"2025-04-01","GHICHU":"Hoàn thành sân bãi","mahm_id":"HM013"}
+2025-12-13 14:54:20 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'where clause'
+2025-12-13 14:54:21 POST: {"id":"TD013","MAHM":"HM013","MATD":"TD013","PHANTRAM":"100","NGAYBDTT":"2025-03-06","NGAYKTTT":"2025-04-01","GHICHU":"Hoàn thành sân bãi","mahm_id":"HM013"}
+2025-12-13 14:54:21 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'where clause'
+2025-12-13 14:54:27 POST: {"id":"TD013","MAHM":"HM013","MATD":"TD013","PHANTRAM":"100","NGAYBDTT":"2025-03-06","NGAYKTTT":"2025-04-01","GHICHU":"Hoàn thành sân bãi","mahm_id":"HM013"}
+2025-12-13 14:54:27 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'where clause'
+2025-12-13 14:56:09 POST: {"id":"TD014","MAHM":"HM014","MATD":"TD014","PHANTRAM":"50","NGAYBDTT":"2025-02-28","NGAYKTTT":"2025-12-18","GHICHU":"Thi công đang diễn ra","mahm_id":"HM014"}
+2025-12-13 14:56:09 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'field list'
+2025-12-13 14:56:10 POST: {"id":"TD014","MAHM":"HM014","MATD":"TD014","PHANTRAM":"50","NGAYBDTT":"2025-02-28","NGAYKTTT":"2025-12-18","GHICHU":"Thi công đang diễn ra","mahm_id":"HM014"}
+2025-12-13 14:56:10 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'field list'
+2025-12-13 14:56:10 POST: {"id":"TD014","MAHM":"HM014","MATD":"TD014","PHANTRAM":"50","NGAYBDTT":"2025-02-28","NGAYKTTT":"2025-12-18","GHICHU":"Thi công đang diễn ra","mahm_id":"HM014"}
+2025-12-13 14:56:10 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'field list'
+2025-12-13 14:56:10 POST: {"id":"TD014","MAHM":"HM014","MATD":"TD014","PHANTRAM":"50","NGAYBDTT":"2025-02-28","NGAYKTTT":"2025-12-18","GHICHU":"Thi công đang diễn ra","mahm_id":"HM014"}
+2025-12-13 14:56:10 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'field list'
+2025-12-13 14:56:10 POST: {"id":"TD014","MAHM":"HM014","MATD":"TD014","PHANTRAM":"50","NGAYBDTT":"2025-02-28","NGAYKTTT":"2025-12-18","GHICHU":"Thi công đang diễn ra","mahm_id":"HM014"}
+2025-12-13 14:56:10 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'field list'
+2025-12-13 14:59:15 POST: {"id":"TD014","MAHM":"HM014","MATD":"TD014","PHANTRAM":"50","NGAYBDTT":"2025-02-28","NGAYKTTT":"2025-12-25","GHICHU":"Thi công đang diễn ra","mahm_id":"HM014"}
+2025-12-13 14:59:15 Updated SQL: UPDATE tiendo SET `MATD` = ?, `MAHM` = ?, `NGAYBDTT` = ?, `NGAYKTTT` = ?, `PHANTRAM` = ?, `GHICHU` = ? WHERE `MATD` = ? LIMIT 1 params: ["TD014","HM014","2025-02-28","2025-12-25",50,"Thi công đang diễn ra","TD014"]
+2025-12-25 13:25:07 POST: {"id":"TD010","MAHM":"HM010","MATD":"TD010","PHANTRAM":"50","NGAYBDTT":"2025-02-01","NGAYKTTT":"","GHICHU":"Đang thực hiện khu tái định cư","mahm_id":"HM010"}
+2025-12-25 13:25:09 POST: {"id":"TD010","MAHM":"HM010","MATD":"TD010","PHANTRAM":"50","NGAYBDTT":"2025-02-01","NGAYKTTT":"","GHICHU":"Đang thực hiện khu tái định cư","mahm_id":"HM010"}
+2025-12-25 13:25:09 POST: {"id":"TD010","MAHM":"HM010","MATD":"TD010","PHANTRAM":"50","NGAYBDTT":"2025-02-01","NGAYKTTT":"","GHICHU":"Đang thực hiện khu tái định cư","mahm_id":"HM010"}

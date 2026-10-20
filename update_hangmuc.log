@@ -1,0 +1,42 @@
+2025-12-11T17:55:38+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:55:38+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:55:38+01:00 Affected rows: 0
+2025-12-11T17:56:03+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:56:03+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:56:03+01:00 Affected rows: 0
+2025-12-11T17:56:04+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:56:04+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:56:04+01:00 Affected rows: 0
+2025-12-11T17:56:04+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:56:04+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:56:04+01:00 Affected rows: 0
+2025-12-11T17:56:04+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:56:04+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:56:04+01:00 Affected rows: 0
+2025-12-11T17:59:21+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:59:21+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:59:21+01:00 Affected rows: 0
+2025-12-11T17:59:50+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:59:50+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:59:50+01:00 Affected rows: 0
+2025-12-11T17:59:50+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:59:50+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:59:50+01:00 Affected rows: 0
+2025-12-11T17:59:50+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:59:50+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:59:50+01:00 Affected rows: 0
+2025-12-11T17:59:51+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:59:51+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:59:51+01:00 Affected rows: 0
+2025-12-11T17:59:51+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:59:51+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:59:51+01:00 Affected rows: 0
+2025-12-11T17:59:51+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-11T17:59:51+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-11T17:59:51+01:00 Affected rows: 0
+2025-12-12T02:54:39+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-12T02:54:39+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","Thực hiện nền móng cho dự án nhà ở Vinhomes","Hoàn thành","HM019"]
+2025-12-12T02:54:40+01:00 Affected rows: 0
+2025-12-12T03:44:20+01:00 SELECT to find row: SELECT `MAHM` FROM hangmuc WHERE (MAHM = ?) LIMIT 1 params: ["HM019"]
+2025-12-12T03:44:20+01:00 Executing UPDATE: UPDATE hangmuc SET TENHM = ?, MACT = ?, MANV = ?, MOTA = ?, TRANGTHAI = ? WHERE `MAHM` = ? params: ["Xây dựng móng nhà","CT020","NV004","Thực hiện nền móng cho dự án nhà ở Vinhomes","Chậm tiến độ","HM019"]
+2025-12-12T03:44:20+01:00 Affected rows: 1

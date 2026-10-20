@@ -1,0 +1,112 @@
+2025-12-09T04:51:14+01:00 FATAL: {"type":1,"message":"Uncaught Error: Call to a member function execute() on null in C:\\xampp\\htdocs\\quanlytiendo\\save_tiendo.php:105\nStack trace:\n#0 {main}\n  thrown","file":"C:\\xampp\\htdocs\\quanlytiendo\\save_tiendo.php","line":105}
+2025-12-09T05:05:34+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T05:05:42+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T05:26:31+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T06:42:06+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T06:42:11+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T06:42:26+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T07:05:54+01:00 POST: {"matd":"TD001","mahm":"HM001","start_date":"2023-01-15","end_date":"2025-12-19","progress":"75","status":"in_progress","note":"fdrregre"}
+2025-12-09T07:05:54+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T07:43:01+01:00 POST: {"matd":"TD001","mahm":"HM001","start_date":"2023-01-15","end_date":"2025-12-11","progress":"75","status":"in_progress","note":"gvrfef"}
+2025-12-09T07:43:01+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T07:43:09+01:00 POST: {"matd":"TD001","mahm":"HM003","start_date":"2023-01-15","end_date":"2025-12-11","progress":"75","status":"in_progress","note":"gvrfef"}
+2025-12-09T07:43:09+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T07:43:41+01:00 POST: {"matd":"TD001","mahm":"HM003","start_date":"2023-01-15","end_date":"2025-12-10","progress":"75","status":"in_progress","note":"vfvr"}
+2025-12-09T07:43:41+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T07:44:22+01:00 POST: {"matd":"TD001","mahm":"HM003","start_date":"2023-01-15","end_date":"2025-12-26","progress":"75","status":"in_progress","note":"xsahcdgeefwe"}
+2025-12-09T07:44:22+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T07:49:57+01:00 POST: {"matd":"TD001","mahm":"HM003","start_date":"2023-01-15","end_date":"2025-12-19","progress":"75","status":"in_progress","note":"g\u1ebbwfwef"}
+2025-12-09T07:49:57+01:00 Tried hangmuc lookup by column mahm value=HM003 result={"MAHM":"HM003","MACT":"CT003","MANV":"NV001","TENHM":"mm","MOTA":"rbgreger","NGAYBATDAU":"2025-12-04","NGAYKETTHUC":"0000-00-00","TRANGTHAI":null}
+2025-12-09T07:49:57+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T07:52:53+01:00 Received mahm param: {"mahm":"HM003","mahm_id":""}
+2025-12-09T07:52:53+01:00 POST: {"matd":"TD001","mahm":"HM003","start_date":"2023-01-12","end_date":"2025-12-18","progress":"75","status":"in_progress","note":"cwddwd"}
+2025-12-09T07:52:53+01:00 Normalized mahm value: HM003
+2025-12-09T07:52:53+01:00 Tried hangmuc lookup by column mahm value=HM003 result={"MAHM":"HM003","MACT":"CT003","MANV":"NV001","TENHM":"mm","MOTA":"rbgreger","NGAYBATDAU":"2025-12-04","NGAYKETTHUC":"0000-00-00","TRANGTHAI":null}
+2025-12-09T07:52:53+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T07:53:46+01:00 Received mahm param: {"mahm":"HM001","mahm_id":""}
+2025-12-09T07:53:46+01:00 POST: {"matd":"TD001","mahm":"HM001","start_date":"2025-12-04","end_date":"2025-12-25","progress":"25","status":"started","note":"dcdcw"}
+2025-12-09T07:53:46+01:00 Normalized mahm value: HM001
+2025-12-09T07:53:46+01:00 Tried hangmuc lookup by column mahm value=HM001 result={"MAHM":"HM001","MACT":"CT251206204449073","MANV":"NV003","TENHM":"vvrvr","MOTA":"bvgrfef","NGAYBATDAU":"2025-12-04","NGAYKETTHUC":"0000-00-00","TRANGTHAI":null}
+2025-12-09T07:53:46+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T07:53:50+01:00 Received mahm param: {"mahm":"HM001","mahm_id":""}
+2025-12-09T07:53:50+01:00 POST: {"matd":"TD001","mahm":"HM001","start_date":"2025-12-04","end_date":"2025-12-25","progress":"25","status":"started","note":"dcdcw"}
+2025-12-09T07:53:50+01:00 Normalized mahm value: HM001
+2025-12-09T07:53:50+01:00 Tried hangmuc lookup by column mahm value=HM001 result={"MAHM":"HM001","MACT":"CT251206204449073","MANV":"NV003","TENHM":"vvrvr","MOTA":"bvgrfef","NGAYBATDAU":"2025-12-04","NGAYKETTHUC":"0000-00-00","TRANGTHAI":null}
+2025-12-09T07:53:50+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T08:04:48+01:00 Received mahm param: {"mahm":"HM001","mahm_id":""}
+2025-12-09T08:04:48+01:00 POST: {"matd":"TD001","mahm":"HM001","start_date":"2025-12-02","end_date":"2025-12-18","progress":"25","status":"started","note":"dcedw"}
+2025-12-09T08:04:48+01:00 Normalized mahm value: HM001
+2025-12-09T08:04:48+01:00 Tried hangmuc lookup by column mahm value=HM001 result={"MAHM":"HM001","MACT":"CT251206204449073","MANV":"NV003","TENHM":"vvrvr","MOTA":"bvgrfef","NGAYBATDAU":"2025-12-04","NGAYKETTHUC":"0000-00-00","TRANGTHAI":null}
+2025-12-09T08:04:48+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09T08:10:21+01:00 Received mahm param: {"mahm":"HM001","mahm_id":""}
+2025-12-09T08:10:21+01:00 POST: {"matd":"TD001","hangmuc_id":"HM001","mahm":"HM001","start_date":"2025-12-10","end_date":"2025-12-19","progress":"0","status":"pending","note":"cfecedd"}
+2025-12-09T08:10:21+01:00 Normalized mahm value: HM001
+2025-12-09T08:10:21+01:00 Tried hangmuc lookup by column mahm value=HM001 result={"MAHM":"HM001","MACT":"CT251206204449073","MANV":"NV003","TENHM":"vvrvr","MOTA":"bvgrfef","NGAYBATDAU":"2025-12-04","NGAYKETTHUC":"0000-00-00","TRANGTHAI":null}
+2025-12-09T08:10:21+01:00 While logging MAHM failure: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'quanlytiendo.categories' doesn't exist
+2025-12-09 08:20:45 POST data: {"matd":"TD001","hangmuc_id":"HM003","mahm":"HM003","start_date":"2025-12-03","end_date":"2025-12-24","progress":"0","status":"pending","note":"edced"}
+2025-12-09 08:20:45 Connected to DB: quanlytiendo
+2025-12-09 08:20:45 Category not found. mahm=HM003, mahm_id=
+2025-12-09 08:25:10 POST data: {"matd":"TD001","hangmuc_id":"HM001","mahm":"HM001","start_date":"2025-12-03","end_date":"2025-12-24","progress":"25","status":"started","note":"bgj"}
+2025-12-09 08:25:10 Resolved identifiers: mahm=HM001 mahm_id=HM001 hangmuc_id=HM001
+2025-12-09 08:25:10 Connected to DB: quanlytiendo
+2025-12-09 08:25:10 Category not found. mahm=HM001, mahm_id=HM001
+2025-12-09 08:25:19 POST data: {"matd":"TD001","hangmuc_id":"HM003","mahm":"HM003","start_date":"2025-12-03","end_date":"2025-12-24","progress":"25","status":"started","note":"bgj"}
+2025-12-09 08:25:19 Resolved identifiers: mahm=HM003 mahm_id=HM003 hangmuc_id=HM003
+2025-12-09 08:25:19 Connected to DB: quanlytiendo
+2025-12-09 08:25:19 Category not found. mahm=HM003, mahm_id=HM003
+2025-12-09 08:59:35 POST data: {"matd":"TD001","hangmuc_id":"HM003","mahm":"HM003","start_date":"2025-12-09","end_date":"2025-12-25","progress":"50","status":"in_progress","note":"gregterg"}
+2025-12-09 08:59:35 Resolved identifiers: mahm=HM003 mahm_id=HM003 hangmuc_id=HM003
+2025-12-09 08:59:35 Connected to DB: quanlytiendo
+2025-12-09 08:59:35 Category not found. mahm=HM003, mahm_id=HM003
+2025-12-09 10:30:25 POST data: {"matd":"TD001","hangmuc_id":"HM001","mahm":"HM001","start_date":"2025-12-10","end_date":"2025-12-18","progress":"25","status":"started","note":"đw"}
+2025-12-09 10:30:25 Resolved identifiers: mahm=HM001 mahm_id=HM001 hangmuc_id=HM001
+2025-12-09 10:30:25 Connected to DB: quanlytiendo
+2025-12-09 10:30:25 Category not found. mahm=HM001, mahm_id=HM001
+2025-12-12 05:10:42 POST data: {"matd":"TD001","mahm":"HM019","start_date":"2025-12-02","end_date":"2025-12-13","progress":"29","note":"Hệ thống xây dựng móng nhà đã đi vào hoạt động"}
+2025-12-12 05:10:42 Resolved identifiers: mahm=HM019 mahm_id= hangmuc_id=
+2025-12-12 05:10:42 Connected to DB: quanlytiendo
+2025-12-12 05:10:42 Category not found. mahm=HM019, mahm_id=
+2025-12-12 05:10:43 POST data: {"matd":"TD001","mahm":"HM019","start_date":"2025-12-02","end_date":"2025-12-13","progress":"29","note":"Hệ thống xây dựng móng nhà đã đi vào hoạt động"}
+2025-12-12 05:10:43 Resolved identifiers: mahm=HM019 mahm_id= hangmuc_id=
+2025-12-12 05:10:43 Connected to DB: quanlytiendo
+2025-12-12 05:10:43 Category not found. mahm=HM019, mahm_id=
+2025-12-12 18:20:45 POST data: {"matd":"TD001","mahm":"HM001","start_date":"2024-06-05","end_date":"2025-12-10","progress":"100","note":"Hoàn thành việc khởi công dự án"}
+2025-12-12 18:20:45 Resolved identifiers: mahm=HM001 mahm_id= hangmuc_id=
+2025-12-12 18:20:45 Connected to DB: quanlytiendo
+2025-12-12 18:20:45 Category not found. mahm=HM001, mahm_id=
+2025-12-12 18:20:46 POST data: {"matd":"TD001","mahm":"HM001","start_date":"2024-06-05","end_date":"2025-12-10","progress":"100","note":"Hoàn thành việc khởi công dự án"}
+2025-12-12 18:20:46 Resolved identifiers: mahm=HM001 mahm_id= hangmuc_id=
+2025-12-12 18:20:46 Connected to DB: quanlytiendo
+2025-12-12 18:20:46 Category not found. mahm=HM001, mahm_id=
+2025-12-12 18:20:52 POST data: {"matd":"TD001","mahm":"HM001","start_date":"2024-06-05","end_date":"2025-12-10","progress":"100","note":"Hoàn thành việc khởi công dự án"}
+2025-12-12 18:20:52 Resolved identifiers: mahm=HM001 mahm_id= hangmuc_id=
+2025-12-12 18:20:52 Connected to DB: quanlytiendo
+2025-12-12 18:20:52 Category not found. mahm=HM001, mahm_id=
+2025-12-12 18:26:12 POST data: {"matd":"TD001","mahm":"HM001","start_date":"2024-03-12","end_date":"2025-12-10","progress":"99","note":"Hoàn thành việc khởi công dự án"}
+2025-12-12 18:26:12 Resolved identifiers: mahm=HM001 mahm_id= hangmuc_id=
+2025-12-12 18:26:12 Connected to DB: quanlytiendo
+2025-12-12 18:26:12 Category not found. mahm=HM001, mahm_id=
+2025-12-12 18:47:20 POST data: {"id":"TD001","MAHM":"HM001","MATD":"TD001","PHANTRAM":"100","NGAYBDTT":"2024-03-12","NGAYKTTT":"2025-12-10","GHICHU":"Đã Hoàn Thành "}
+2025-12-12 18:47:20 Resolved identifiers: mahm=HM001 mahm_id= hangmuc_id=
+2025-12-12 18:47:20 Connected to DB: quanlytiendo
+2025-12-12 18:47:20 Category not found. mahm=HM001, mahm_id=
+2025-12-12 18:47:21 POST data: {"id":"TD001","MAHM":"HM001","MATD":"TD001","PHANTRAM":"100","NGAYBDTT":"2024-03-12","NGAYKTTT":"2025-12-10","GHICHU":"Đã Hoàn Thành "}
+2025-12-12 18:47:21 Resolved identifiers: mahm=HM001 mahm_id= hangmuc_id=
+2025-12-12 18:47:21 Connected to DB: quanlytiendo
+2025-12-12 18:47:21 Category not found. mahm=HM001, mahm_id=
+2025-12-12 18:47:23 POST data: {"id":"TD001","MAHM":"HM001","MATD":"TD001","PHANTRAM":"14","NGAYBDTT":"2024-03-12","NGAYKTTT":"2025-12-10","GHICHU":"Đã Hoàn Thành "}
+2025-12-12 18:47:23 Resolved identifiers: mahm=HM001 mahm_id= hangmuc_id=
+2025-12-12 18:47:23 Connected to DB: quanlytiendo
+2025-12-12 18:47:23 Category not found. mahm=HM001, mahm_id=
+2025-12-12 18:58:42 POST data: {"id":"TD018","MAHM":"HM018","MATD":"TD018","PHANTRAM":"50","NGAYBDTT":"2025-12-04","NGAYKTTT":"","GHICHU":"Đang thực hiện theo tiến độ"}
+2025-12-12 18:58:42 Resolved identifiers: mahm=HM018 mahm_id= hangmuc_id=
+2025-12-12 18:58:42 Connected to DB: quanlytiendo
+2025-12-12 18:58:42 Category not found. mahm=HM018, mahm_id=
+2025-12-12 18:59:02 POST data: {"id":"TD018","MAHM":"HM018","MATD":"TD018","PHANTRAM":"50","NGAYBDTT":"2025-12-04","NGAYKTTT":"2027-07-16","GHICHU":"Đang thực hiện theo tiến độ"}
+2025-12-12 18:59:02 Resolved identifiers: mahm=HM018 mahm_id= hangmuc_id=
+2025-12-12 18:59:02 Connected to DB: quanlytiendo
+2025-12-12 18:59:02 Category not found. mahm=HM018, mahm_id=
+2025-12-25 13:25:00 POST data: {"id":"","MAHM":"HM014","MATD":"TD014","PHANTRAM":"50","NGAYBDTT":"2025-02-28","NGAYKTTT":"","GHICHU":"Xây dựng hạng mục y tế xã","mahm_id":"HM014"}
+2025-12-25 13:25:00 Resolved identifiers: mahm=HM014 mahm_id=HM014 hangmuc_id=
+2025-12-25 13:25:00 Connected to DB: quanlytiendo
+2025-12-25 13:25:00 Category not found. mahm=HM014, mahm_id=HM014

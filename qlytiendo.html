@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quản lý Tiến độ</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "retro-bg": "#FDFBF8",
+              "retro-surface": "#EAE5DF",
+              "retro-border": "#2a221c",
+              "retro-text": "#4f311c",
+              "retro-subtext": "#8B7D72",
+              "retro-primary": "#8B542A",
+              "retro-secondary": "#5C7E7E",
+              "retro-success": "#638459",
+              "retro-danger": "#A05F5F",
+              "status-green-bg": "#dcfce7",
+              "status-green-text": "#166534",
+              "status-red-bg": "#fee2e2",
+              "status-red-text": "#991b1b",
+              "status-yellow-bg": "#fef9c3",
+              "status-yellow-text": "#854d0e",
+              "status-blue-bg": "#dbeafe",
+              "status-blue-text": "#1e40af",
+              "status-gray-bg": "#f3f4f6",
+              "status-gray-text": "#374151",
+            },
+            fontFamily: {
+              display: ["'Times New Roman'", "serif"],
+              body: ["'Times New Roman'", "serif"],
+            },
+            boxShadow: {
+              retro: "4px 4px 0px 0px #2a221c",
+              "retro-sm": "2px 2px 0px 0px #2a221c",
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      // Cache current user role for fast checks
+      window.__currentUserRole = null;
+      (async function () {
+        try {
+          const r = await getUserRole();
+          if (r) window.__currentUserRole = r;
+        } catch (e) {}
+      })();
+    </script>
+    <script src="/quanlytiendo/assets/show_profile.js" defer></script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #eae5df;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #8b542a;
+        border-radius: 4px;
+      }
+      .pixel-bar {
+        background-image: repeating-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.2) 4px,
+          transparent 4px,
+          transparent 8px
+        );
+      }
+      .form-input {
+        width: 100%;
+        border: 2px solid #2a221c;
+        padding: 0.5rem;
+        font-size: 0.875rem;
+        background-color: white;
+        outline: none;
+      }
+      .form-input:focus {
+        border-color: #8b542a;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-retro-bg font-body text-retro-text h-screen overflow-hidden flex"
+  >
+    <aside
+      class="flex w-64 flex-col border-r-4 border-retro-border bg-retro-surface p-4 h-full shrink-0"
+    >
+      <div class="flex items-center gap-3 mb-8">
+        <div
+          class="bg-retro-primary p-2 text-retro-surface border-2 border-retro-border shadow-retro-sm"
+        >
+          <span class="material-symbols-outlined !text-2xl">construction</span>
+        </div>
+        <h1
+          class="text-xl font-bold font-display uppercase tracking-wider leading-6"
+        >
+          HỆ THỐNG<br />QL TIẾN ĐỘ
+        </h1>
+      </div>
+
+      <div class="flex flex-col gap-2 flex-1 overflow-y-auto">
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="tongquan.html"
+          ><span class="material-symbols-outlined">dashboard</span>
+          <p class="text-base font-medium">Tổng quan</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlycongtrinh.html"
+          ><span class="material-symbols-outlined">domain</span>
+          <p class="text-base font-medium">Công trình</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlyhangmuc.html"
+          ><span class="material-symbols-outlined">category</span>
+          <p class="text-base font-medium">Hạng mục</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border shadow-retro-sm"
+          href="qlytiendo.html"
+          ><span class="material-symbols-outlined">trending_up</span>
+          <p class="text-base font-bold">Tiến độ</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlynhanvien.html"
+          ><span class="material-symbols-outlined">group</span>
+          <p class="text-base font-medium">Nhân viên</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="baocao.html"
+          ><span class="material-symbols-outlined">assessment</span>
+          <p class="text-base font-medium">Báo cáo</p></a
+        >
+      </div>
+
+      <div class="mt-auto pt-4 border-t-4 border-retro-border/20">
+        <!-- profile removed -->
+        <button
+          id="logoutBtn"
+          class="w-full flex items-center justify-center gap-2 bg-[#9F5F46] hover:bg-[#8a4f38] text-[#EAE5DF] font-bold py-2.5 px-4 border-2 border-retro-border shadow-retro-sm transition-all"
+        >
+          <span class="material-symbols-outlined text-xl">logout</span>
+          <span class="uppercase tracking-wide text-sm">Đăng xuất</span>
+        </button>
+        <script>
+          document
+            .getElementById("logoutBtn")
+            .addEventListener("click", function () {
+              if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+                window.location.href = "logout.php";
+              }
+            });
+        </script>
+      </div>
+    </aside>
+
+    <main class="flex-1 p-8 overflow-y-auto h-full bg-retro-bg">
+      <div class="max-w-7xl mx-auto pb-10">
+        <div
+          class="flex flex-wrap justify-between items-center gap-4 mb-6 border-b border-retro-primary/20 pb-4"
+        >
+          <div class="flex flex-col gap-1">
+            <p class="text-retro-primary text-4xl font-bold font-display">
+              Quản lý Tiến độ
+            </p>
+            <p class="text-retro-text/70 text-base">
+              Cập nhật và theo dõi % hoàn thành thực tế.
+            </p>
+          </div>
+          <button
+            onclick="openUpdateModal()"
+            class="flex h-12 items-center px-6 bg-retro-primary text-retro-surface font-bold gap-2 border-2 border-retro-border shadow-retro hover:bg-retro-primary/90 hover:translate-y-0.5 hover:shadow-retro-sm transition-all"
+          >
+            <span class="material-symbols-outlined !text-2xl">edit_square</span>
+            <span class="uppercase text-lg">CẬP NHẬT TIẾN ĐỘ</span>
+          </button>
+        </div>
+
+        <div class="mb-6 grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <div
+            class="lg:col-span-5 flex w-full h-10 items-stretch border-2 border-retro-border bg-retro-bg shadow-retro-sm"
+          >
+            <div
+              class="flex items-center justify-center pl-3 pr-2 text-retro-subtext border-r border-retro-border/20"
+            >
+              <span class="material-symbols-outlined">search</span>
+            </div>
+            <input
+              id="searchInput"
+              class="flex-1 bg-transparent border-none focus:ring-0 text-retro-text px-3"
+              placeholder="Tìm kiếm Mã TĐ, Hạng mục..."
+            />
+          </div>
+
+          <!-- status filter removed per request -->
+        </div>
+
+        <div class="mb-4">
+          <pre
+            id="debugJson"
+            class="p-3 text-xs text-retro-subtext bg-white border-2 border-retro-border/20 max-h-40 overflow-auto hidden"
+          ></pre>
+        </div>
+
+        <div class="w-full">
+          <div
+            class="flex overflow-hidden border-2 border-retro-border bg-[#F5EFE7]"
+          >
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left border-collapse min-w-[1000px]">
+                <thead
+                  class="bg-retro-primary/20 border-b-2 border-retro-border"
+                >
+                  <tr>
+                    <th
+                      class="p-4 border-r border-retro-border/20 font-bold text-sm w-[15%]"
+                    >
+                      Mã TĐ
+                    </th>
+                    <th
+                      class="p-4 border-r border-retro-border/20 font-bold text-sm w-[30%]"
+                    >
+                      Hạng Mục
+                    </th>
+                    <th
+                      class="p-4 border-r border-retro-border/20 font-bold text-sm w-[20%]"
+                    >
+                      % Hoàn thành
+                    </th>
+                    <th
+                      class="p-4 border-r border-retro-border/20 font-bold text-sm w-[12%]"
+                    >
+                      Ngày BĐ TT
+                    </th>
+                    <th
+                      class="p-4 border-r border-retro-border/20 font-bold text-sm w-[12%]"
+                    >
+                      Ngày KT TT
+                    </th>
+                    <th class="p-4 font-bold text-sm text-center w-[11%]">
+                      Hành động
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  id="tableBody"
+                  class="divide-y divide-retro-border/30"
+                ></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      // Return normalized user role string (lowercase) or null
+      async function getUserRole() {
+        try {
+          const res = await fetch("/quanlytiendo/current_user.php", {
+            credentials: "include",
+          });
+          const js = await res.json();
+          if (js && js.success && js.user && js.user.role)
+            return String(js.user.role).toLowerCase();
+        } catch (e) {
+          /* ignore */
+        }
+        return null;
+      }
+
+      // warm cache for role immediately
+      window.__currentUserRole = null;
+      (function () {
+        try {
+          getUserRole().then((r) => {
+            if (r) window.__currentUserRole = r;
+          });
+        } catch (e) {}
+      })();
+
+      // RBAC: hide manager-only UI for employees
+      document.addEventListener("DOMContentLoaded", async function () {
+        try {
+          const role = await getUserRole();
+          if (!role) return;
+          const isEmployee = ["employee", "user", "nhanvien", "staff"].includes(
+            role
+          );
+          if (!isEmployee) return;
+
+          // remove delete buttons/links and any elements that call delete functions
+          document
+            .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+            .forEach((el) => el.remove());
+          document.querySelectorAll("button, a").forEach((el) => {
+            const t = (el.textContent || "").toUpperCase();
+            if (t.includes("XÓA") || t.includes("XOA")) el.remove();
+          });
+          // remove elements that call deleteItem(...) in onclick handlers
+          document
+            .querySelectorAll('[onclick*="deleteItem("]')
+            .forEach((el) => el.remove());
+          // remove delete buttons inside table action cells
+          document.querySelectorAll("td").forEach((td) => {
+            const del = td.querySelector('[onclick*="deleteItem("]');
+            if (del) del.remove();
+          });
+        } catch (e) {}
+      });
+    </script>
+
+    <script>
+      // Global sweep to remove delete controls for employee users
+      (async function globalTiendoDeleteSweep() {
+        try {
+          const role = await getUserRole();
+          if (!role) return;
+          const isEmployee = ["employee", "user", "nhanvien", "staff"].includes(
+            role
+          );
+          if (!isEmployee) return;
+          const rm = (root) => {
+            try {
+              const scope = root && root.querySelector ? root : document;
+              scope
+                .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+                .forEach((el) => el.remove());
+              scope.querySelectorAll("button, a").forEach((el) => {
+                const t = (el.textContent || "").toUpperCase();
+                if (t.includes("XÓA") || t.includes("XOA")) el.remove();
+              });
+              scope.querySelectorAll("[onclick]").forEach((el) => {
+                const v = (el.getAttribute("onclick") || "").toString();
+                if (
+                  v.includes("deleteItem(") ||
+                  v.includes("deleteProject(") ||
+                  v.includes("deleteItemHM(")
+                )
+                  el.remove();
+              });
+            } catch (e) {}
+          };
+          rm(document);
+          const mo = new MutationObserver((ms) => {
+            ms.forEach((m) => {
+              if (m.addedNodes && m.addedNodes.length)
+                m.addedNodes.forEach((n) => {
+                  if (n.nodeType === 1) rm(n);
+                });
+            });
+          });
+          mo.observe(document.body, { childList: true, subtree: true });
+        } catch (e) {}
+      })();
+    </script>
+
+    <div
+      id="addModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal('addModal')"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-2xl shadow-retro p-0 flex flex-col"
+      >
+        <div class="p-6 border-b-2 border-retro-border bg-retro-surface">
+          <h3 class="text-2xl font-bold font-display text-retro-primary">
+            CẬP NHẬT TIẾN ĐỘ
+          </h3>
+          <p class="text-sm text-retro-subtext mt-1">
+            Chọn hạng mục để cập nhật tiến độ hiện tại.
+          </p>
+        </div>
+
+        <div class="p-8 overflow-y-auto max-h-[70vh]">
+          <form id="tdForm" class="flex flex-col gap-6">
+            <input type="hidden" name="id" id="td_id" />
+
+            <div class="form-group">
+              <label
+                >Chọn Hạng Mục Cần Update
+                <span class="text-retro-danger">*</span></label
+              >
+              <select
+                name="MAHM"
+                id="MAHM"
+                class="form-input bg-white font-bold text-retro-primary"
+              >
+                <option value="">-- Đang tải danh sách... --</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Mã Tiến Độ (Tự động)</label>
+              <input
+                name="MATD"
+                id="MATD"
+                class="form-input bg-gray-100"
+                readonly
+              />
+            </div>
+
+            <div class="form-group">
+              <label
+                >% Hoàn thành:
+                <span id="percentLabel" class="text-retro-primary font-bold"
+                  >0%</span
+                ></label
+              >
+              <div class="flex items-center gap-3">
+                <input
+                  type="range"
+                  name="PHANTRAM"
+                  id="PHANTRAM"
+                  min="0"
+                  max="100"
+                  class="w-full h-2 bg-retro-surface rounded-lg appearance-none cursor-pointer border border-retro-border"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="form-group">
+                <label>Ngày BĐ Thực Tế</label>
+                <input
+                  type="date"
+                  name="NGAYBDTT"
+                  id="NGAYBDTT"
+                  class="form-input"
+                />
+              </div>
+              <div class="form-group">
+                <label>Ngày KT Thực Tế</label>
+                <input
+                  type="date"
+                  name="NGAYKTTT"
+                  id="NGAYKTTT"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Ghi chú</label>
+              <textarea
+                name="GHICHU"
+                id="GHICHU"
+                rows="2"
+                class="form-input"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div
+          class="p-4 border-t-2 border-retro-border bg-retro-bg flex justify-end gap-3"
+        >
+          <button
+            onclick="closeModal('addModal')"
+            class="px-6 py-2 border-2 border-retro-border font-bold bg-white hover:bg-retro-surface transition-colors"
+          >
+            Hủy
+          </button>
+          <button
+            onclick="saveTiendo()"
+            class="px-6 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border font-bold shadow-retro-sm hover:shadow-none hover:translate-y-0.5 transition-all uppercase"
+          >
+            LƯU CẬP NHẬT
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="detailModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal('detailModal')"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-xl shadow-retro p-0"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3
+            class="text-xl font-bold font-display uppercase text-retro-primary"
+          >
+            CHI TIẾT TIẾN ĐỘ
+          </h3>
+          <button onclick="closeModal('detailModal')" class="text-xl font-bold">
+            &times;
+          </button>
+        </div>
+        <div id="detailContent" class="p-8 space-y-4"></div>
+      </div>
+    </div>
+
+    <div
+      id="toast"
+      class="fixed top-6 right-6 hidden z-50 px-4 py-3 rounded border-2 border-retro-border shadow-retro font-bold text-white bg-retro-success"
+    ></div>
+
+    <script>
+      const API = {
+        list: "list_tiendo.php",
+        save: "save_tiendo.php",
+        delete: "delete_tiendo.php",
+        hangmuc: "list_hangmuc.php",
+      };
+
+      let tiendoList = [];
+      let hangmucList = [];
+
+      // Load Data
+      async function loadData() {
+        const q = document.getElementById("searchInput").value;
+        const _statusEl = document.getElementById("statusFilter");
+        const status = _statusEl ? _statusEl.value : "";
+
+        try {
+          // Fetch song song
+          const [resTD, resHM] = await Promise.all([
+            fetch(
+              `${API.list}?q=${encodeURIComponent(
+                q
+              )}&status=${encodeURIComponent(status)}&pageSize=1000`,
+              { credentials: "include" }
+            ),
+            fetch(`${API.hangmuc}?pageSize=1000`, { credentials: "include" }),
+          ]);
+
+          const jsonTD = await resTD.json();
+          const jsonHM = await resHM.json();
+
+          // show raw responses for debugging when something's wrong
+          const dbg = document.getElementById("debugJson");
+          if (!jsonTD.success || !jsonHM.success) {
+            dbg.textContent = JSON.stringify(
+              { tiendo: jsonTD, hangmuc: jsonHM },
+              null,
+              2
+            );
+            dbg.classList.remove("hidden");
+          } else {
+            dbg.classList.add("hidden");
+          }
+
+          if (jsonHM.success) hangmucList = jsonHM.data || [];
+          if (jsonTD.success) {
+            // normalize returned fields from list_tiendo.php
+            tiendoList = (jsonTD.data || []).map((r) => ({
+              id: r.id ?? r.ID ?? null,
+              MATD: r.code ?? r.MATD ?? r.matd ?? "",
+              PHANTRAM: r.progress ?? r.PHANTRAM ?? r.phantram ?? 0,
+              NGAYBDTT: r.start_date ?? r.NGAYBDTT ?? r.NGAYBD ?? "",
+              NGAYKTTT: r.end_date ?? r.NGAYKTTT ?? r.NGAYKT ?? "",
+              GHICHU: r.note ?? r.GHICHU ?? r.ghichu ?? "",
+              // hang muc references from joined data
+              MAHM: r.mahm_code ?? r.mahm_id ?? r.MAHM ?? r.MAHM_CODE ?? null,
+              MAHM_NAME: r.mahm_name ?? r.MAHM_NAME ?? r.mahm_name ?? null,
+              _raw: r,
+            }));
+
+            await renderTable(tiendoList);
+            fillHangMucDropdown(hangmucList); // Fill dropdown cho nút cập nhật
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      function fillHangMucDropdown(data) {
+        const select = document.getElementById("MAHM");
+        select.innerHTML =
+          '<option value="">-- Chọn hạng mục để cập nhật --</option>';
+        data.forEach((h) => {
+          // determine code/name from list_hangmuc.php output
+          const code = h.code ?? h.MAHM ?? h.mahm ?? h.id ?? "";
+          const name = h.name ?? h.TENHM ?? h.ten ?? "";
+          const hasTD = tiendoList.find(
+            (t) => t.MAHM === code || t.MAHM === (h.MAHM ?? code)
+          );
+          // prefer existing tiến độ percent, otherwise derive from hangmuc status
+          const percentFromHM = getPercentFromHangmuc(h);
+          const percent = hasTD ? hasTD.PHANTRAM : percentFromHM;
+          const label = code
+            ? `${code} ${name ? " - " + name : ""}`
+            : name || code;
+          const opt = document.createElement("option");
+          opt.value = code;
+          opt.textContent = `${label} (${percent}%)`;
+          select.appendChild(opt);
+        });
+      }
+
+      function getStatusFromHangmuc(h) {
+        const s = (h.status ?? h.TRANGTHAI ?? h.trangthai ?? h.tinhtrang ?? "")
+          .toString()
+          .toLowerCase();
+        if (!s) return "";
+        if (
+          s.includes("hoàn") ||
+          s.includes("hoan") ||
+          s.includes("completed") ||
+          s.includes("done") ||
+          s.includes("100")
+        )
+          return "completed";
+        if (
+          s.includes("đang") ||
+          s.includes("dang") ||
+          s.includes("progress") ||
+          s.includes("in_progress") ||
+          s.includes("doing")
+        )
+          return "in_progress";
+        if (
+          s.includes("chưa") ||
+          s.includes("chua") ||
+          s.includes("pending") ||
+          s.includes("0")
+        )
+          return "pending";
+        return s;
+      }
+
+      function getPercentFromHangmuc(h) {
+        // If hangmuc already contains percent field, use it
+        const p =
+          h.PHANTRAM ?? h.percent ?? h.percent_complete ?? h.progress ?? null;
+        if (p !== null && p !== undefined && !isNaN(Number(p)))
+          return Number(p);
+        const status = getStatusFromHangmuc(h);
+        if (status === "completed") return 100;
+        if (status === "in_progress") return 50;
+        if (status === "pending") return 0;
+        return 0;
+      }
+
+      // Tự động load dữ liệu khi chọn hạng mục trong form Cập nhật
+      document.getElementById("MAHM").addEventListener("change", function () {
+        const mahm = this.value;
+        if (!mahm) {
+          document.getElementById("tdForm").reset();
+          return;
+        }
+
+        const tdData = tiendoList.find((t) => t.MAHM === mahm);
+        if (tdData) {
+          document.getElementById("td_id").value = tdData.id;
+          document.getElementById("MATD").value = tdData.MATD;
+          document.getElementById("PHANTRAM").value = tdData.PHANTRAM;
+          document.getElementById("percentLabel").innerText =
+            tdData.PHANTRAM + "%";
+          document.getElementById("NGAYBDTT").value = tdData.NGAYBDTT;
+          document.getElementById("NGAYKTTT").value = tdData.NGAYKTTT;
+          document.getElementById("GHICHU").value = tdData.GHICHU;
+        } else {
+          // Fallback (Logic 1-1 thì luôn có, nhưng cứ check cho chắc)
+          document.getElementById("MATD").value = mahm.replace("HM", "TD");
+          // derive percent from hangmuc status or default
+          const hmObj = hangmucList.find(
+            (h) => (h.code ?? h.MAHM ?? h.mahm ?? String(h.id)) == mahm
+          );
+          let derivedPercent = 0;
+          if (hmObj) {
+            derivedPercent = getPercentFromHangmuc(hmObj);
+            const start =
+              hmObj.start_date ??
+              hmObj.NGAYBD ??
+              hmObj.NGAYBDTT ??
+              hmObj.ngaybd ??
+              "";
+            const end =
+              hmObj.end_date ??
+              hmObj.NGAYKT ??
+              hmObj.NGAYKTTT ??
+              hmObj.ngaykt ??
+              "";
+            if (start) document.getElementById("NGAYBDTT").value = start;
+            if (end) document.getElementById("NGAYKTTT").value = end;
+            // also fill note from hangmuc description if empty
+            if (!document.getElementById("GHICHU").value) {
+              const desc =
+                hmObj.description ??
+                hmObj.mota ??
+                hmObj.MOTA ??
+                hmObj.note ??
+                "";
+              if (desc) document.getElementById("GHICHU").value = desc;
+            }
+          }
+          document.getElementById("PHANTRAM").value = derivedPercent;
+          document.getElementById("percentLabel").innerText =
+            derivedPercent + "%";
+        }
+      });
+
+      // Sync Range Slider text
+      document
+        .getElementById("PHANTRAM")
+        .addEventListener(
+          "input",
+          (e) =>
+            (document.getElementById("percentLabel").innerText =
+              e.target.value + "%")
+        );
+
+      async function renderTable(data) {
+        const tbody = document.getElementById("tableBody");
+        tbody.innerHTML = "";
+        const role = await getUserRole();
+        const isEmployee =
+          role && ["employee", "user", "nhanvien", "staff"].includes(role);
+        data.forEach((item) => {
+          const percent = parseFloat(item.PHANTRAM || 0);
+
+          let barColor = "bg-retro-primary";
+          if (percent >= 100) barColor = "bg-retro-success";
+          else if (percent > 0 && percent < 30) barColor = "bg-retro-danger";
+          else if (percent >= 30 && percent < 70)
+            barColor = "bg-status-yellow-bg";
+          else if (percent >= 70 && percent < 100)
+            barColor = "bg-retro-secondary";
+
+          // badge classes for percent text
+          let badgeClass = "text-sm font-bold w-12 text-right";
+          if (percent >= 100)
+            badgeClass =
+              "text-sm font-bold w-12 text-right bg-retro-success text-white px-2 py-1 rounded";
+          else if (percent > 0 && percent < 30)
+            badgeClass =
+              "text-sm font-bold w-12 text-right bg-retro-danger text-white px-2 py-1 rounded";
+          else if (percent >= 30 && percent < 70)
+            badgeClass =
+              "text-sm font-bold w-12 text-right bg-status-yellow-bg status-yellow-text px-2 py-1 rounded";
+          else if (percent >= 70 && percent < 100)
+            badgeClass =
+              "text-sm font-bold w-12 text-right bg-retro-secondary text-white px-2 py-1 rounded";
+
+          // find hangmuc display info
+          const hmCode = item.MAHM;
+          const hmInfo = hangmucList.find(
+            (h) => (h.code ?? h.MAHM ?? h.mahm) == hmCode
+          );
+          const displayHM = hmInfo
+            ? `<span class="font-bold">${hmCode}</span> - ${
+                hmInfo.name ?? hmInfo.TENHM ?? hmInfo.ten
+              }`
+            : hmCode || "-";
+
+          const tr = document.createElement("tr");
+          tr.className = "border-b-2 border-retro-border hover:bg-retro-bg/50";
+          tr.innerHTML = `
+                    <td class="p-4 font-bold text-retro-text">${item.MATD}</td>
+                    <td class="p-4 font-medium text-retro-primary">${displayHM}</td>
+                    <td class="p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex-1 h-3 bg-white border-2 border-retro-border rounded-full overflow-hidden">
+                                <div class="h-full ${barColor} pixel-bar" style="width:${percent}%"></div>
+                            </div>
+                            <span class="${badgeClass}">${percent}%</span>
+                        </div>
+                    </td>
+                    <td class="p-4 text-retro-subtext font-mono">${formatDate(
+                      item.NGAYBDTT
+                    )}</td>
+                    <td class="p-4 text-retro-subtext font-mono">${formatDate(
+                      item.NGAYKTTT
+                    )}</td>
+                    <td class="p-4 text-center">
+                        <div class="flex items-center justify-center gap-2">
+                            <button title="Xem chi tiết" onclick="viewDetail('${
+                              item.id
+                            }')" class="p-1.5 rounded hover:bg-retro-secondary hover:text-white border border-transparent hover:border-retro-border transition-all">
+                                <span class="material-symbols-outlined text-xl">visibility</span>
+                            </button>
+                            ${
+                              isEmployee
+                                ? ""
+                                : `<button title="Xóa" onclick="deleteItem('${
+                                    item.id ?? ""
+                                  }', '${
+                                    item.MATD ?? ""
+                                  }')" class="p-1.5 rounded hover:bg-retro-danger hover:text-white border border-transparent hover:border-retro-border transition-all">
+                                <span class="material-symbols-outlined text-xl">delete</span>
+                            </button>`
+                            }
+                        </div>
+                    </td>
+                `;
+          tbody.appendChild(tr);
+        });
+        // remove delete controls for employees after dynamic render
+        hideDeleteButtonsIfEmployee();
+      }
+
+      async function hideDeleteButtonsIfEmployee() {
+        try {
+          const r = await fetch("/quanlytiendo/current_user.php", {
+            credentials: "include",
+          });
+          const j = await r.json();
+          if (j && j.success && j.user && j.user.role === "employee") {
+            document
+              .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+              .forEach((e) => e.remove());
+            document.querySelectorAll("button, a").forEach((e) => {
+              const t = (e.textContent || "").toUpperCase();
+              if (t.includes("XÓA") || t.includes("XOA")) e.remove();
+            });
+            document.querySelectorAll("[onclick]").forEach((el) => {
+              const v = (el.getAttribute("onclick") || "").toString();
+              if (
+                v.includes("deleteItem(") ||
+                v.includes("deleteProject(") ||
+                v.includes("deleteItemHM(")
+              )
+                el.remove();
+            });
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      async function viewDetail(id) {
+        try {
+          const res = await fetch(
+            `get_tiendo.php?id=${encodeURIComponent(id)}`
+          );
+          const json = await res.json();
+          if (!json.success) {
+            showToast(json.error || "Không tải được chi tiết", true);
+            return;
+          }
+          const item = json.data;
+          // find hangmuc name if available in cached list
+          const hmInfo = hangmucList.find(
+            (h) =>
+              (h.code ?? h.MAHM ?? h.mahm) ==
+              (item.mahm_id ?? item.mahm_code ?? "")
+          );
+          const displayHM = hmInfo
+            ? hmInfo.name ?? hmInfo.TENHM ?? hmInfo.ten
+            : item.mahm_name || item.mahm_code || "-";
+
+          const html = `
+                <div class="grid grid-cols-2 gap-4 text-retro-text">
+                    <div><p class="text-xs font-bold text-retro-subtext">MÃ TIẾN ĐỘ</p><p class="font-bold text-lg">${
+                      item.code ?? item.id
+                    }</p></div>
+                    <div class="text-right"><p class="text-xs font-bold text-retro-subtext">PHẦN TRĂM</p><p class="font-bold text-2xl text-retro-primary">${
+                      item.progress ?? 0
+                    }%</p></div>
+                    <div class="col-span-2 border-b border-retro-border/20 pb-2"><p class="text-xs font-bold text-retro-subtext">HẠNG MỤC</p><p class="font-bold text-xl">${displayHM}</p></div>
+                    <div><p class="text-xs font-bold text-retro-subtext">BẮT ĐẦU TT</p><p>${formatDate(
+                      item.start_date
+                    )}</p></div>
+                    <div><p class="text-xs font-bold text-retro-subtext">KẾT THÚC TT</p><p>${formatDate(
+                      item.end_date
+                    )}</p></div>
+                    <div class="col-span-2 bg-retro-bg border border-retro-border p-3 mt-2">
+                        <p class="text-xs font-bold text-retro-subtext">GHI CHÚ</p>
+                        <p class="italic">${item.note || "Không có ghi chú"}</p>
+                    </div>
+                </div>
+            `;
+          document.getElementById("detailContent").innerHTML = html;
+          document.getElementById("detailModal").classList.remove("hidden");
+          document.getElementById("detailModal").classList.add("flex");
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi khi tải chi tiết", true);
+        }
+      }
+
+      async function saveTiendo() {
+        const fd = new FormData(document.getElementById("tdForm"));
+        // If editing existing record (id present), call update endpoint
+        const id = (fd.get("id") || "").toString();
+        const endpoint = id ? "update_tiendo.php" : API.save;
+        try {
+          // If possible, also include numeric mahm_id to help backend resolve linking
+          const sel = (fd.get("MAHM") || fd.get("mahm") || "").toString();
+          if (sel) {
+            const hmObj = hangmucList.find(
+              (h) =>
+                (h.code ?? h.MAHM ?? h.mahm ?? String(h.id)) + "" == sel + ""
+            );
+            if (hmObj && (hmObj.id || hmObj.ID || hmObj.mahm_id)) {
+              fd.set("mahm_id", hmObj.id || hmObj.ID || hmObj.mahm_id);
+            }
+          }
+
+          const res = await fetch(endpoint, { method: "POST", body: fd });
+          const json = await res.json();
+          if (json.success) {
+            closeModal("addModal");
+            loadData();
+            showToast(json.message || (id ? "Đã cập nhật!" : "Đã thêm!"));
+          } else {
+            console.error("Save error", json);
+            showToast(json.error || "Lỗi!", true);
+          }
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối!", true);
+        }
+      }
+
+      async function deleteItem(id, matd) {
+        // id may be numeric PK or empty; matd is code like 'TD001'
+        if (
+          !confirm(
+            "Bạn có chắc chắn muốn xóa tiến độ này? Nếu có, bản ghi tiến độ sẽ bị xóa khỏi hệ thống."
+          )
+        )
+          return;
+        const fd = new FormData();
+        // Use numeric id when available, otherwise send matd code
+        if (id && !isNaN(Number(id))) {
+          fd.append("id", id);
+        } else if (matd) {
+          fd.append("matd", matd);
+        } else {
+          showToast("Không có định danh để xóa", true);
+          return;
+        }
+
+        try {
+          const role = window.__currentUserRole || (await getUserRole());
+          const isEmployee =
+            role && ["employee", "user", "nhanvien", "staff"].includes(role);
+          if (isEmployee) {
+            showToast("Bạn không có quyền làm điều này", true);
+            return;
+          }
+
+          const res = await fetch(API.delete, {
+            method: "POST",
+            body: fd,
+            credentials: "include",
+          });
+          const json = await res.json();
+          if (json.success) {
+            loadData();
+            showToast(json.message || "Xóa tiến độ thành công");
+          } else {
+            console.error("Delete error", json);
+            showToast(json.error || "Không thể xóa tiến độ", true);
+          }
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối khi xóa", true);
+        }
+      }
+
+      function formatDate(d) {
+        if (!d) return "--/--/----";
+        return d.split("-").reverse().join("/");
+      }
+      function openUpdateModal() {
+        const form = document.getElementById("tdForm");
+        form.reset();
+        document.getElementById("td_id").value = "";
+        document.getElementById("MATD").value = "";
+        document.getElementById("percentLabel").innerText = "0%";
+        document.getElementById("addModal").classList.remove("hidden");
+        document.getElementById("addModal").classList.add("flex");
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.add("hidden");
+        document.getElementById(id).classList.remove("flex");
+      }
+      function showToast(msg, err = false) {
+        const t = document.getElementById("toast");
+        t.innerText = msg;
+        t.className = `fixed top-6 right-6 z-50 px-4 py-3 rounded border-2 border-retro-border shadow-retro font-bold text-white ${
+          err ? "bg-retro-danger" : "bg-retro-success"
+        }`;
+        t.classList.remove("hidden");
+        setTimeout(() => t.classList.add("hidden"), 3000);
+      }
+      function logout() {
+        if (confirm("Đăng xuất?")) window.location.reload();
+      }
+
+      loadData();
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", loadData);
+      // status filter removed; no event listener needed
+    </script>
+  </body>
+</html>

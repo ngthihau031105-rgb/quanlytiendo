@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thêm Nhân Viên Mới</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+              "retro-bg": "#FDFBF8", // Light warm beige background (Ánh xạ từ background-light)
+              "retro-surface": "#EAE5DF", // Slightly darker surface (Tông màu gần bg, sáng hơn)
+              "retro-border": "#2a221c", // Dark brown border (Ánh xạ từ background-dark)
+              "retro-text": "#4f311c", // Main dark brown text (Ánh xạ từ text-light)
+              "retro-subtext": "#8B7D72", // Subdued brown text (Tông màu trung tính, sẫm hơn text-dark)
+              "retro-primary": "#8B542A", // Muted brown/Orange for accents (Ánh xạ từ primary)
+              "retro-secondary": "#5C7E7E", // Muted slate blue/cyan for secondary accents
+              "retro-success": "#638459", // Muted deep green
+              "retro-warning": "#B88C4A", // Muted gold/ochre
+              "retro-danger": "#A05F5F", // Muted rust red
+          },
+          fontFamily: {
+            "display": ["'Times New Roman'", "Times New Roman"]
+          },
+          borderRadius: {
+            "DEFAULT": "0rem",
+            "lg": "0rem",
+            "xl": "0rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings:
+        'FILL' 1
+    }
+  </style>
+</head>
+<body class="bg-retro-bg font-body text-retro-text">
+  <div class="flex min-h-screen w-full">
+    <aside class="w-64">
+          <div class="flex flex-col gap-2">
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Tongquan.html"
+            >
+              <span class="material-symbols-outlined">dashboard</span>
+              <p class="text-base font-medium">Tổng quan</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Qlycongtrinh.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base">Công trình</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Qlyhangmuc.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base font-medium">Hạng mục</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Qlytiendo.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base font-medium">Tiến độ</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Qlynhanvien.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base font-medium">Nhân viên</p>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10"
+              href="Baocao.html"
+            >
+              <span class="material-symbols-outlined">bar_chart</span>
+              <p class="text-base font-medium">Báo cáo</p>
+            </a>
+
+            <div
+              class="flex items-center gap-3 p-3 mt-4 border-t-2 border-retro-border"
+            >
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover size-10 border-2 border-retro-border"
+                data-alt="Avatar of Hoàng An"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWSx9iC2u_5281W0W6LPCVO3V9h1BEly4caTzCe3dzEvC2S1JI22womgxVJT7uP-nOCz_uwQ9acxSDylCAJalTvnpyVwOYLjPq8cOeDhQmqzMI_I2VtUsVJOZoWs6miYleqew3JE8wDG_VkPou6fKSd2d5_rToznGhrTTDMAsoOkdlMirFtVPz1JvlsNHaPUOBRN3WTiD-Jv5lI-b-SH2oG2HcfX4B1zMheqaBee9Qup6y8iCpHInhO1VLkLVcvy_3fty1Z7QeapzV');
+                "
+              ></div>
+              <div class="flex flex-col">
+                <h1 class="text-base font-bold">Hoàng An</h1>
+                <p class="text-sm text-retro-subtext">Quản lý tiến độ</p>
+              </div>
+              <a
+                class="ml-auto text-retro-subtext hover:text-retro-text"
+                href="#"
+              >
+                <span class="material-symbols-outlined">logout</span>
+              </a>
+      </aside>
+<div class="flex-1 p-8">
+<div class="layout-content-container flex flex-col w-full">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8 border-b border-primary/20 pb-4">
+<div class="flex flex-col gap-2">
+<p class="text-primary dark:text-text-dark text-4xl font-bold leading-tight">Thêm Nhân Viên Mới</p>
+<p class="text-text-light/70 dark:text-text-dark/60 text-base font-normal leading-normal">Điền thông tin vào các trường bên dưới để tạo nhân viên mới.</p>
+</div>
+</div>
+<div class="w-full max-w-2xl mx-auto bg-[#F5EFE7] dark:bg-[#342A24] border border-primary/30 dark:border-primary/40 p-8 shadow-lg">
+<form class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-primary dark:text-text-dark text-base font-bold leading-normal" for="manv">Mã Nhân Viên (MANV)</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light dark:text-text-dark focus:outline-none focus:ring-1 focus:ring-primary/50 border border-primary/30 dark:border-primary/40 bg-background-light dark:bg-background-dark h-12 placeholder:text-text-light/50 dark:placeholder:text-text-dark/50 px-4 text-base font-normal leading-normal" id="manv" placeholder="Ví dụ: NV006" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-primary dark:text-text-dark text-base font-bold leading-normal" for="tennv">Họ Tên (TENNV)</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light dark:text-text-dark focus:outline-none focus:ring-1 focus:ring-primary/50 border border-primary/30 dark:border-primary/40 bg-background-light dark:bg-background-dark h-12 placeholder:text-text-light/50 dark:placeholder:text-text-dark/50 px-4 text-base font-normal leading-normal" id="tennv" placeholder="Nhập họ và tên nhân viên" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-primary dark:text-text-dark text-base font-bold leading-normal" for="chucvu">Chức Vụ (CHUCVU)</label>
+<select id="chucvu" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light dark:text-text-dark focus:outline-none focus:ring-1 focus:ring-primary/50 border border-primary/30 dark:border-primary/40 bg-background-light dark:bg-background-dark h-12 px-4 text-base font-normal leading-normal">
+  <option value="">-- Chọn chức vụ --</option>
+  <option>Nhân viên</option>
+  <option>Nhân viên thi công</option>
+  <option>Công nhân</option>
+  <option>Kỹ sư</option>
+  <option>Kỹ sư giám sát</option>
+  <option>Giám sát</option>
+  <option>Tổ trưởng</option>
+  <option>Phó quản lý</option>
+  <option>Quản lý</option>
+  <option>Trưởng phòng</option>
+  <option>Giám đốc dự án</option>
+  <option>Kế toán công trình</option>
+  <option>Nhân viên vật tư</option>
+  <option>Nhân viên an toàn lao động</option>
+  <option>Thư ký công trình</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-primary dark:text-text-dark text-base font-bold leading-normal" for="sdt">Số Điện Thoại (SDT)</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light dark:text-text-dark focus:outline-none focus:ring-1 focus:ring-primary/50 border border-primary/30 dark:border-primary/40 bg-background-light dark:bg-background-dark h-12 placeholder:text-text-light/50 dark:placeholder:text-text-dark/50 px-4 text-base font-normal leading-normal" id="sdt" placeholder="Nhập số điện thoại" type="tel"/>
+</div>
+<div class="flex justify-end items-center gap-4 mt-6 pt-6 border-t border-primary/20 dark:border-primary/30">
+  <button onclick="history.back()" class="flex items-center justify-center gap-2 h-10 px-4 bg-transparent text-primary dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/10 dark:hover:bg-primary/20 border border-primary" type="button">
+    <span class="truncate">Hủy</span>
+  </button>
+  <button id="submitBtn" type="button" class="flex min-w-[84px] items-center justify-center overflow-hidden rounded-none h-10 px-4 bg-retro-primary text-retro-bg text-sm font-bold leading-normal tracking-wide gap-2 border-2 border-retro-bg shadow-retro-sm active:shadow-none active:translate-x-0.5 active:translate-y-0.5">
+    <span class="material-symbols-outlined !text-lg">add</span>
+    <span class="truncate">THÊM MỚI NHÂN VIÊN</span>
+  </button>
+</div>
+</form>
+<script>
+// Client-side validation and submission for Add Employee
+function normalizeVietnamPhone(v){
+  if(!v) return '';
+  let s = String(v).trim();
+  s = s.replace(/[^0-9+]/g,'');
+  if(s.startsWith('+84')){ s = '0' + s.slice(3); }
+  if(s.startsWith('84') && s.length>2){ s = '0'+s.slice(2); }
+  if(!s.startsWith('0')) s = '0'+s;
+  s = s.replace(/[^0-9]/g,'');
+  return s;
+}
+
+document.getElementById('submitBtn').addEventListener('click', async function(){
+  const manv = document.getElementById('manv').value.trim();
+  const tennv = document.getElementById('tennv').value.trim();
+  const chucvu = document.getElementById('chucvu').value.trim();
+  const sdtRaw = document.getElementById('sdt').value.trim();
+  const sdt = normalizeVietnamPhone(sdtRaw);
+
+  if(!manv || !tennv || !chucvu || !sdt){
+    alert('Vui lòng điền đầy đủ Mã NV, Họ tên, Chức vụ và Số điện thoại.');
+    return;
+  }
+
+  if(!(sdt.length===10 || sdt.length===11) || !/^0\d{9,10}$/.test(sdt)){
+    alert('Số điện thoại không hợp lệ. Vui lòng nhập đầu số Việt Nam (ví dụ: 0912345678 hoặc +84912345678).');
+    return;
+  }
+
+  let role = 'employee';
+  const cv = chucvu.toLowerCase();
+  if(cv.includes('quản lý') && cv.includes('hạng mục')) role = 'category_manager';
+  else if(cv.includes('quản lý')) role = 'manager';
+  else if(cv.includes('nhân viên')) role = 'employee';
+
+  const payload = { manv, name: tennv, position: chucvu, phone: sdt, role };
+
+  try{
+    const body = new URLSearchParams(payload).toString();
+    const res = await fetch('/quanlytiendo/add_employee.php', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }, body });
+    const js = await res.json();
+    if(js && js.success){
+      alert(js.message || 'Thêm mới nhân viên thành công');
+      document.getElementById('manv').value=''; document.getElementById('tennv').value=''; document.getElementById('chucvu').value=''; document.getElementById('sdt').value='';
+      window.location.href = 'Qlynhanvien.html';
+    } else {
+      alert('Lỗi: ' + (js && js.error ? js.error : 'Thêm thất bại'));
+    }
+  }catch(e){ alert('Lỗi kết nối: '+ (e && e.message ? e.message : e)); }
+});
+</script>
+</body></html>

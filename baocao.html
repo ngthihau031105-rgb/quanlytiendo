@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Báo cáo Quản trị - Retro Style</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "retro-bg": "#FDFBF8",
+              "retro-surface": "#EAE5DF",
+              "retro-border": "#2a221c",
+              "retro-text": "#4f311c",
+              "retro-primary": "#8B542A",
+              "retro-secondary": "#5C7E7E",
+              "retro-warning": "#B88C4A",
+              "retro-danger": "#A05F5F",
+            },
+            fontFamily: {
+              display: ["'Times New Roman'", "serif"],
+              body: ["'Times New Roman'", "serif"],
+            },
+            boxShadow: {
+              retro: "4px 4px 0px 0px #2a221c",
+              "retro-sm": "2px 2px 0px 0px #2a221c",
+            },
+            animation: { "fade-up": "fadeUp 0.5s ease-out" },
+            keyframes: {
+              fadeUp: {
+                "0%": { opacity: 0, transform: "translateY(10px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="/quanlytiendo/assets/show_profile.js" defer></script>
+    <script src="/quanlytiendo/assets/deny_nav.js" defer></script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .tab-btn {
+        transition: all 0.3s;
+      }
+      .tab-btn.active {
+        background-color: #8b542a;
+        color: #eae5df;
+        border-color: #2a221c;
+        transform: translateY(-2px);
+        box-shadow: 2px 2px 0px 0px #2a221c;
+      }
+      @media print {
+        aside,
+        .no-print {
+          display: none !important;
+        }
+        main {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+        }
+        .print-break {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-retro-bg font-body text-retro-text h-screen overflow-hidden flex"
+  >
+    <aside
+      class="flex w-64 flex-col border-r-4 border-retro-border bg-retro-surface p-4 h-full shrink-0"
+    >
+      <div class="flex items-center gap-3 mb-8">
+        <div
+          class="bg-retro-primary p-2 text-retro-surface border-2 border-retro-border shadow-retro-sm"
+        >
+          <span class="material-symbols-outlined !text-2xl">construction</span>
+        </div>
+        <h1
+          class="text-xl font-bold font-display uppercase tracking-wider leading-6"
+        >
+          HỆ THỐNG<br />QUẢN LÝ TIẾN ĐỘ
+        </h1>
+      </div>
+
+      <div class="flex flex-col gap-2 flex-1 overflow-y-auto">
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="tongquan.html"
+          ><span class="material-symbols-outlined">dashboard</span>
+          <p class="text-base font-medium">Tổng quan</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlycongtrinh.html"
+          ><span class="material-symbols-outlined">domain</span>
+          <p class="text-base font-medium">Công trình</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlyhangmuc.html"
+          ><span class="material-symbols-outlined">category</span>
+          <p class="text-base font-medium">Hạng mục</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlytiendo.html"
+          ><span class="material-symbols-outlined">trending_up</span>
+          <p class="text-base font-medium">Tiến độ</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors"
+          href="qlynhanvien.html"
+          ><span class="material-symbols-outlined">group</span>
+          <p class="text-base font-medium">Nhân viên</p></a
+        >
+        <a
+          class="flex items-center gap-3 px-3 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border shadow-retro-sm"
+          href="baocao.html"
+          ><span class="material-symbols-outlined">assessment</span>
+          <p class="text-base font-bold">Báo cáo</p></a
+        >
+      </div>
+
+      
+        <button
+          onclick="if(confirm('Đăng xuất?')) window.location.reload();"
+          class="w-full flex items-center justify-center gap-2 bg-[#9F5F46] hover:bg-[#8a4f38] text-[#EAE5DF] font-bold py-2.5 px-4 border-2 border-retro-border shadow-retro-sm active:translate-x-0.5 active:translate-y-0.5 transition-all"
+        >
+          <span class="material-symbols-outlined text-xl">logout</span>
+          <span class="uppercase tracking-wide text-sm">Đăng xuất</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="flex-1 p-8 overflow-y-auto h-full bg-retro-bg">
+      <div class="max-w-7xl mx-auto pb-10">
+        <div
+          class="flex justify-between items-end mb-8 border-b-2 border-retro-primary/20 pb-4"
+        >
+          <div>
+            <h2 class="text-4xl font-bold font-display text-retro-primary">
+              Báo Cáo Quản Trị
+            </h2>
+            <p class="text-retro-text/70 mt-1">
+              Dữ liệu thời gian thực cập nhật ngày:
+              <span id="currentDate" class="font-bold"></span>
+            </p>
+          </div>
+          <button
+            onclick="window.print()"
+            class="no-print flex items-center gap-2 px-5 py-2.5 bg-retro-surface border-2 border-retro-border shadow-retro hover:bg-white transition-all font-bold text-sm uppercase"
+          >
+            <span class="material-symbols-outlined">print</span> Xuất Báo Cáo
+          </button>
+        </div>
+
+        <div class="grid grid-cols-4 gap-4 mb-8 no-print">
+          <button
+            onclick="switchTab('congtrinh')"
+            id="btn-congtrinh"
+            class="tab-btn py-3 border-2 border-retro-border bg-retro-surface font-bold text-retro-text uppercase tracking-wide flex flex-col items-center gap-1 active"
+          >
+            <span class="material-symbols-outlined">domain</span> Công Trình
+          </button>
+          <button
+            onclick="switchTab('hangmuc')"
+            id="btn-hangmuc"
+            class="tab-btn py-3 border-2 border-retro-border bg-retro-surface font-bold text-retro-text uppercase tracking-wide flex flex-col items-center gap-1"
+          >
+            <span class="material-symbols-outlined">category</span> Hạng Mục
+          </button>
+          <button
+            onclick="switchTab('tiendo')"
+            id="btn-tiendo"
+            class="tab-btn py-3 border-2 border-retro-border bg-retro-surface font-bold text-retro-text uppercase tracking-wide flex flex-col items-center gap-1"
+          >
+            <span class="material-symbols-outlined">trending_up</span> Tiến Độ
+          </button>
+        </div>
+
+        <div id="dashboard-content" class="animate-fade-up">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+          >
+            <div
+              class="bg-retro-surface p-4 border-2 border-retro-border shadow-retro flex items-center justify-between"
+            >
+              <div>
+                <p
+                  class="text-xs font-bold text-retro-subtext uppercase"
+                  id="card-label-1"
+                >
+                  ...
+                </p>
+                <p
+                  class="text-3xl font-bold font-display text-retro-primary mt-1"
+                  id="card-val-1"
+                >
+                  ...
+                </p>
+              </div>
+              <span
+                class="material-symbols-outlined text-4xl text-retro-primary/20"
+                >analytics</span
+              >
+            </div>
+            <div
+              class="bg-retro-surface p-4 border-2 border-retro-border shadow-retro flex items-center justify-between"
+            >
+              <div>
+                <p
+                  class="text-xs font-bold text-retro-subtext uppercase"
+                  id="card-label-2"
+                >
+                  ...
+                </p>
+                <p
+                  class="text-3xl font-bold font-display text-retro-secondary mt-1"
+                  id="card-val-2"
+                >
+                  ...
+                </p>
+              </div>
+              <span
+                class="material-symbols-outlined text-4xl text-retro-secondary/20"
+                >attach_money</span
+              >
+            </div>
+            <div
+              class="bg-retro-surface p-4 border-2 border-retro-border shadow-retro flex items-center justify-between"
+            >
+              <div>
+                <p
+                  class="text-xs font-bold text-retro-subtext uppercase"
+                  id="card-label-3"
+                >
+                  ...
+                </p>
+                <p
+                  class="text-3xl font-bold font-display text-retro-warning mt-1"
+                  id="card-val-3"
+                >
+                  ...
+                </p>
+              </div>
+              <span
+                class="material-symbols-outlined text-4xl text-retro-warning/20"
+                >warning</span
+              >
+            </div>
+            <div
+              class="bg-retro-surface p-4 border-2 border-retro-border shadow-retro flex items-center justify-between"
+            >
+              <div>
+                <p
+                  class="text-xs font-bold text-retro-subtext uppercase"
+                  id="card-label-4"
+                >
+                  ...
+                </p>
+                <p
+                  class="text-3xl font-bold font-display text-retro-danger mt-1"
+                  id="card-val-4"
+                >
+                  ...
+                </p>
+              </div>
+              <span
+                class="material-symbols-outlined text-4xl text-retro-danger/20"
+                >schedule</span
+              >
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <div
+              class="lg:col-span-2 border-2 border-retro-border bg-white p-5 shadow-retro print-break"
+            >
+              <h3
+                class="font-bold uppercase text-retro-primary mb-4 border-b border-retro-border/10 pb-2 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-lg">bar_chart</span>
+                <span id="title-c2">Biểu đồ chính</span>
+              </h3>
+              <div class="h-[350px] relative"><canvas id="c2"></canvas></div>
+            </div>
+
+            <div class="flex flex-col gap-6 lg:col-span-1">
+              <div
+                class="flex-1 border-2 border-retro-border bg-white p-5 shadow-retro print-break"
+              >
+                <h3
+                  class="font-bold uppercase text-retro-secondary mb-4 border-b border-retro-border/10 pb-2 text-sm flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-lg"
+                    >pie_chart</span
+                  >
+                  <span id="title-c1">Biểu đồ tròn</span>
+                </h3>
+                <div class="h-[200px] relative flex justify-center">
+                  <canvas id="c1"></canvas>
+                </div>
+              </div>
+              <div
+                class="flex-1 border-2 border-retro-border bg-white p-5 shadow-retro print-break"
+              >
+                <h3
+                  class="font-bold uppercase text-retro-warning mb-4 border-b border-retro-border/10 pb-2 text-sm flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-lg"
+                    >show_chart</span
+                  >
+                  <span id="title-c3">Biểu đồ phụ</span>
+                </h3>
+                <div class="h-[200px] relative flex justify-center">
+                  <canvas id="c3"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p
+            class="text-center text-xs italic text-retro-subtext mt-8 mb-4 no-print"
+          >
+            * Click vào các thành phần biểu đồ để xem danh sách chi tiết
+            (Drill-down)
+          </p>
+
+          <!-- Employee list for Nhân sự report -->
+          <div id="nhansu-list" class="mt-6 bg-white border-2 border-retro-border p-4 shadow-retro hidden print-break">
+            <h3 class="font-bold uppercase text-retro-primary mb-3">Danh sách nhân viên</h3>
+            <div id="nhansu-list-body" class="overflow-auto max-h-64">
+              <!-- populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      // RBAC: if user is employee, show an access-denied message and clear content
+      document.addEventListener('DOMContentLoaded', async function(){
+        try{
+          const r = await fetch('/quanlytiendo/current_user.php',{credentials:'include'});
+          const j = await r.json();
+          if (j && j.success && j.user && j.user.role === 'employee'){
+            const main = document.querySelector('main') || document.body;
+            main.innerHTML = '';
+            const msg = document.createElement('div');
+            msg.className = 'w-full h-screen flex items-center justify-center p-6';
+            msg.innerHTML = `<div class="bg-white border-4 border-red-500 p-8 text-center max-w-lg shadow-lg"><h2 class="text-2xl font-bold mb-4">Quyền truy cập bị từ chối</h2><p class="mb-4">Bạn không có quyền truy cập vào chức năng Báo cáo.</p><button onclick="window.location.href='tongquan.html'" class="px-4 py-2 bg-retro-primary text-retro-surface font-bold">Quay về Tổng quan</button></div>`;
+            main.appendChild(msg);
+            return;
+          }
+        }catch(e){ console.warn('current_user fetch failed', e); }
+      });
+    </script>
+
+    <div
+      id="detailModal"
+      class="fixed inset-0 hidden items-center justify-center z-50 no-print"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal()"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-4xl shadow-retro p-0 flex flex-col max-h-[85vh]"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3
+            class="text-xl font-bold font-display uppercase text-retro-primary"
+          >
+            CHI TIẾT: <span id="modal-filter" class="text-black"></span>
+          </h3>
+          <button
+            onclick="closeModal()"
+            class="text-2xl font-bold hover:text-retro-danger"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="p-0 overflow-auto">
+          <table class="w-full text-left border-collapse">
+            <thead
+              class="bg-retro-surface border-b-2 border-retro-border sticky top-0 font-bold text-sm uppercase"
+            >
+              <tr id="modal-head"></tr>
+            </thead>
+            <tbody
+              id="modal-body"
+              class="divide-y divide-retro-border/20 text-sm"
+            ></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("currentDate").innerText =
+        new Date().toLocaleDateString("vi-VN");
+
+      // CONFIG CHART & COLORS
+      const retroColors = [
+        "#8B542A",
+        "#5C7E7E",
+        "#B88C4A",
+        "#638459",
+        "#A05F5F",
+        "#2a221c",
+      ];
+      Chart.defaults.font.family = "'Times New Roman', serif";
+      Chart.defaults.color = "#4f311c";
+      let charts = {};
+
+      // CONFIG DATA MAPPING (Đã sửa lỗi logic tab Nhân Sự)
+      const CONFIG = {
+        congtrinh: {
+          api: "api_chart_congtrinh.php",
+          cards: [
+            { label: "Tổng số công trình", key: "total", unit: "" },
+            {
+              label: "Tổng ngân sách",
+              key: "budget",
+              unit: " VNĐ",
+              format: true,
+            },
+            { label: "Đang hoạt động", key: "active", unit: "" },
+            {
+              label: "Chậm tiến độ",
+              key: "late",
+              unit: "",
+              color: "text-retro-danger",
+            },
+          ],
+          charts: [
+            {
+              id: "c2",
+              type: "bar",
+              title: "Top 5 Ngân sách",
+              detailType: "ct_ngansach",
+            }, // Main chart
+            {
+              id: "c1",
+              type: "doughnut",
+              title: "Tỷ lệ Trạng thái",
+              detailType: "ct_trangthai",
+            }, // Small 1
+            {
+              id: "c3",
+              type: "bar",
+              title: "Mật độ Hạng mục",
+              detailType: "ct_matdo",
+              indexAxis: "y",
+            }, // Small 2
+          ],
+        },
+        hangmuc: {
+          api: "api_chart_hangmuc.php",
+          cards: [
+            { label: "Tổng hạng mục", key: "total", unit: "" },
+            { label: "Đã hoàn thành", key: "completed", unit: "" },
+            { label: "Đang bị trễ", key: "late", unit: "" },
+            { label: "Sắp triển khai", key: "upcoming", unit: "" },
+          ],
+          charts: [
+            {
+              id: "c2",
+              type: "bar",
+              title: "Phân bố Trạng thái",
+              detailType: "hm_trangthai",
+            },
+            {
+              id: "c1",
+              type: "pie",
+              title: "Đúng hạn vs Trễ",
+              detailType: "hm_trehan",
+            },
+            {
+              id: "c3",
+              type: "line",
+              title: "Mật độ theo tháng",
+              detailType: "hm_thang",
+            },
+          ],
+        },
+        nhansu: {
+          api: "api_chart_nhansu.php",
+          cards: [
+            { label: "Tổng nhân sự", key: "total", unit: "" },
+            { label: "Kỹ sư", key: "engineers", unit: "" },
+            { label: "Giám sát", key: "supervisors", unit: "" },
+            { label: "Công nhân", key: "workers", unit: "" },
+          ],
+          charts: [
+            // Main chart: show workload for all employees (not restricted to top N)
+            {
+              id: "c2",
+              type: "bar",
+              title: "Workload (Việc/Người)",
+              detailType: "ns_workload",
+              indexAxis: "y",
+            },
+            // Small chart: role composition
+            {
+              id: "c1",
+              type: "doughnut",
+              title: "Cơ cấu Chức vụ",
+              detailType: "ns_chucvu",
+            },
+            {
+              id: "c3",
+              type: "bar",
+              title: "Hạng mục phụ trách (Số lượng)",
+              detailType: "ns_hm",
+            },
+          ],
+        },
+        tiendo: {
+          api: "api_chart_tiendo.php",
+          cards: [
+            { label: "Tổng bản ghi TĐ", key: "total_td", unit: "" },
+            { label: "% Hoàn thành TB", key: "avg_pct", unit: "%" },
+            { label: "Đã xong (100%)", key: "finished", unit: "" },
+            { label: "Nguy cơ (<50%)", key: "at_risk", unit: "" },
+          ],
+          charts: [
+            {
+              id: "c2",
+              type: "bar",
+              title: "Tiến độ TB theo Công trình",
+              detailType: "ct_matdo",
+            },
+            {
+              id: "c1",
+              type: "pie",
+              title: "Phân nhóm %",
+              detailType: "td_nhom",
+            },
+            {
+              id: "c3",
+              type: "bar",
+              title: "Top Hạng mục chậm",
+              detailType: "hm_trehan",
+              color: "#A05F5F",
+            },
+          ],
+        },
+      };
+
+      function switchTab(tab) {
+        // UI Update
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById("btn-" + tab).classList.add("active");
+
+        // Animation Reset
+        const content = document.getElementById("dashboard-content");
+        content.classList.remove("animate-fade-up");
+        void content.offsetWidth; // Trigger Reflow
+        content.classList.add("animate-fade-up");
+
+        loadTabData(tab);
+      }
+
+      async function loadTabData(tab) {
+        const conf = CONFIG[tab];
+        try {
+          const res = await fetch(conf.api);
+          const json = await res.json();
+
+          if (json.success) {
+            // 1. UPDATE CARDS
+            conf.cards.forEach((card, idx) => {
+              const i = idx + 1;
+              document.getElementById(`card-label-${i}`).innerText = card.label;
+              let val = json.data.summary[card.key];
+              if (card.format) {
+                if (val >= 1000000000) {
+                  val = (val / 1000000000).toFixed(1) + " Tỷ";
+                } else if (val >= 1000000) {
+                  val = (val / 1000000).toFixed(1) + " Tr";
+                } else {
+                  val = Number(val).toLocaleString();
+                }
+              }
+              document.getElementById(`card-val-${i}`).innerText =
+                val + card.unit;
+              // Reset color
+              document.getElementById(
+                `card-val-${i}`
+              ).className = `text-3xl font-bold font-display mt-1 ${
+                card.color || "text-retro-text"
+              }`;
+            });
+
+            // 2. RENDER CHARTS
+            conf.charts.forEach((cConf, idx) => {
+              // Map data chart1, chart2, chart3 from API response
+              let dataKey = "chart" + (idx + 1);
+              // Fix mapping logic: Chart ID c2 is index 0 in config but might be chart2 in API?
+              // Let's rely on config order matching API array order
+              // API returns: chart1, chart2, chart3.
+              // Config order: c2 (Main), c1 (Small), c3 (Small)
+
+              let apiData = [];
+              if (cConf.id === "c1") apiData = json.data.chart1;
+              if (cConf.id === "c2") apiData = json.data.chart2;
+              if (cConf.id === "c3") apiData = json.data.chart3;
+
+              document.getElementById("title-" + cConf.id).innerText =
+                cConf.title;
+              renderChart(cConf, apiData);
+            });
+              // Show employee list when Nhân sự tab is active
+              if (tab === "nhansu") {
+                document.getElementById("nhansu-list").classList.remove("hidden");
+                fetchEmployeeListForReport();
+              } else {
+                document.getElementById("nhansu-list").classList.add("hidden");
+              }
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+        // Helper: pick first existing field from a row
+        function pickField(row, candidates) {
+          for (let c of candidates) {
+            if (row[c] !== undefined) return row[c];
+            // try lowercase key
+            const lc = Object.keys(row).find((k) => k.toLowerCase() === c.toLowerCase());
+            if (lc) return row[lc];
+          }
+          return "";
+        }
+
+        async function fetchEmployeeListForReport() {
+          const body = document.getElementById("nhansu-list-body");
+          body.innerHTML = '<div class="p-4 text-center">Đang tải danh sách...</div>';
+          try {
+            const res = await fetch("list_nhanvien.php?page=1&pageSize=1000");
+            const json = await res.json();
+            if (!json.success) {
+              body.innerHTML = '<div class="p-4 text-center italic">Không tải được danh sách.</div>';
+              return;
+            }
+            renderEmployeeList(json.data || json.rows || []);
+          } catch (e) {
+            console.error(e);
+            body.innerHTML = '<div class="p-4 text-center italic">Lỗi khi tải dữ liệu.</div>';
+          }
+        }
+
+        function renderEmployeeList(rows) {
+          const body = document.getElementById("nhansu-list-body");
+          if (!rows || rows.length === 0) {
+            body.innerHTML = '<div class="p-4 text-center italic">Không có nhân viên.</div>';
+            return;
+          }
+          const headers = ["Mã NV", "Họ tên", "Chức vụ", "SĐT"];
+          const table = document.createElement("table");
+          table.className = "w-full text-left border-collapse text-sm";
+          const thead = document.createElement("thead");
+          thead.innerHTML = `<tr class=\"bg-retro-surface font-bold uppercase\">${headers
+            .map((h) => `<th class=\"p-2 border-r border-retro-border\">${h}</th>`)
+            .join("")}</tr>`;
+          table.appendChild(thead);
+          const tbody = document.createElement("tbody");
+          rows.forEach((r) => {
+            const manv = pickField(r, ["MANV", "manv", "ma", "id"]);
+            const ten = pickField(r, ["TENNV", "tennv", "ten", "name"]);
+            const cv = pickField(r, ["CHUCVU", "chucvu", "role", "position"]);
+            const sdt = pickField(r, ["SDT", "sdt", "phone", "mobile"]);
+            const tr = document.createElement("tr");
+            tr.className = "hover:bg-retro-primary/5 transition-colors";
+            tr.innerHTML = `<td class=\"p-2 border-r border-retro-border/20\">${manv}</td><td class=\"p-2 border-r border-retro-border/20\">${ten}</td><td class=\"p-2 border-r border-retro-border/20\">${cv}</td><td class=\"p-2\">${sdt}</td>`;
+            tbody.appendChild(tr);
+          });
+          table.appendChild(tbody);
+          body.innerHTML = "";
+          body.appendChild(table);
+        }
+
+      function renderChart(conf, data) {
+        const ctx = document.getElementById(conf.id).getContext("2d");
+        if (charts[conf.id]) charts[conf.id].destroy();
+
+        if (!data || data.length === 0) return; // Tránh lỗi nếu không có data
+
+        const labels = data.map((d) => d.label);
+        const values = data.map((d) =>
+          d.value !== undefined ? d.value : d.count
+        );
+        // Stacked fix logic
+        let datasets = [];
+        if (
+          conf.id === "c3" &&
+          document.getElementById("btn-nhansu").classList.contains("active")
+        ) {
+          // Xử lý riêng cho chart Nhân sự C3 (Stacked giả lập)
+          const done = data.map((d) => d.done);
+          const pending = data.map((d) => d.pending);
+          datasets = [
+            { label: "Đã xong", data: done, backgroundColor: "#638459" },
+            { label: "Chưa xong", data: pending, backgroundColor: "#A05F5F" },
+          ];
+        } else {
+          datasets = [
+            {
+              label: "Giá trị",
+              data: values,
+              backgroundColor: conf.color
+                ? conf.color
+                : conf.type === "pie" || conf.type === "doughnut"
+                ? retroColors
+                : "#8B542A",
+              borderColor: "#2a221c",
+              borderWidth: 1,
+            },
+          ];
+        }
+
+        charts[conf.id] = new Chart(ctx, {
+          type: conf.type,
+          data: { labels: labels, datasets: datasets },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            indexAxis: conf.indexAxis || "x",
+            scales: {
+              x: {
+                display: conf.type !== "pie" && conf.type !== "doughnut",
+                stacked: conf.stacked,
+              },
+              y: {
+                display: conf.type !== "pie" && conf.type !== "doughnut",
+                stacked: conf.stacked,
+              },
+            },
+            onClick: (evt, activeElements) => {
+              if (activeElements.length > 0) {
+                const index = activeElements[0].index;
+                openDetail(conf.detailType, labels[index]);
+              }
+            },
+          },
+        });
+      }
+
+      async function openDetail(type, filter) {
+        document.getElementById("modal-filter").innerText = filter;
+        const tbody = document.getElementById("modal-body");
+        const thead = document.getElementById("modal-head");
+        tbody.innerHTML =
+          '<tr><td colspan="4" class="p-4 text-center">Đang tải...</td></tr>';
+
+        document.getElementById("detailModal").classList.remove("hidden");
+        document.getElementById("detailModal").classList.add("flex");
+
+        try {
+          const res = await fetch(
+            `api_report_detail.php?type=${type}&filter=${encodeURIComponent(
+              filter
+            )}`
+          );
+          const json = await res.json();
+
+          if (json.success) {
+            thead.innerHTML = json.headers
+              .map(
+                (h) => `<th class="p-3 border-r border-retro-border">${h}</th>`
+              )
+              .join("");
+            if (json.data.length === 0)
+              tbody.innerHTML =
+                '<tr><td colspan="4" class="p-4 text-center italic">Không có dữ liệu.</td></tr>';
+            else
+              tbody.innerHTML = json.data
+                .map(
+                  (row) =>
+                    `<tr class="hover:bg-retro-primary/5 transition-colors">${row
+                      .map(
+                        (cell) =>
+                          `<td class="p-3 border-r border-retro-border/20 border-b border-retro-border/20">${cell}</td>`
+                      )
+                      .join("")}</tr>`
+                )
+                .join("");
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      function closeModal() {
+        document.getElementById("detailModal").classList.add("hidden");
+        document.getElementById("detailModal").classList.remove("flex");
+      }
+
+      // INIT
+      switchTab("congtrinh");
+    </script>
+  </body>
+</html>

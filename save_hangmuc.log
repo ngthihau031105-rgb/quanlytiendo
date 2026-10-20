@@ -1,0 +1,205 @@
+2025-12-07T08:02:57+01:00 ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ten' in 'field list'
+2025-12-07T08:03:08+01:00 ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ten' in 'field list'
+2025-12-07T08:03:14+01:00 ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ten' in 'field list'
+2025-12-07T08:28:35+01:00 ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ten' in 'field list'
+2025-12-07T08:28:40+01:00 ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ten' in 'field list'
+2025-12-07T08:33:24+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`quanlytiendo`.`hangmuc`, CONSTRAINT `FK_HANGMUC_NHANVIEN` FOREIGN KEY (`MANV`) REFERENCES `nhanvien` (`MANV`))
+2025-12-07T08:33:28+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`quanlytiendo`.`hangmuc`, CONSTRAINT `FK_HANGMUC_NHANVIEN` FOREIGN KEY (`MANV`) REFERENCES `nhanvien` (`MANV`))
+2025-12-07T08:33:33+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`quanlytiendo`.`hangmuc`, CONSTRAINT `FK_HANGMUC_NHANVIEN` FOREIGN KEY (`MANV`) REFERENCES `nhanvien` (`MANV`))
+2025-12-07T17:08:47+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:08:59+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:16:04+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:16:06+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:16:32+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:19:42+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:19:54+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:20:00+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:20:06+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:20:12+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:07+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:07+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:07+01:00 PARAMS: Array
+(
+    [tenhm] => nahf
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-01
+    [mota] => vfvfdgb
+)
+
+2025-12-07T17:23:07+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:31+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:31+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:31+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:31+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:32+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:32+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:32+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:32+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:32+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:32+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:32+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:32+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:33+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:33+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:33+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:33+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:33+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:33+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:33+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:33+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:33+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:33+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:33+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:33+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:35+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:35+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:35+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:35+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:36+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:36+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:36+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:36+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:36+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:36+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:36+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:36+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:23:39+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:23:39+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:23:39+01:00 PARAMS: Array
+(
+    [tenhm] => cdvfv
+    [mact] => CT251206204449073
+    [manv] => NV001
+    [ngaybatdau] => 2025-12-03
+    [mota] => rgregwre
+)
+
+2025-12-07T17:23:39+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:26:04+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:26:04+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:26:04+01:00 PARAMS: Array
+(
+    [tenhm] => nhà ở
+    [mact] => CT001
+    [manv] => NV003
+    [ngaybatdau] => 2025-12-01
+    [mota] => rgtrgerg
+)
+
+2025-12-07T17:26:04+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-07T17:30:44+01:00 --- SQL EXEC ERROR ---
+2025-12-07T17:30:44+01:00 SQL: INSERT INTO hangmuc (`tenhm`,`mact`,`manv`,`ngaybatdau`,`mota`) VALUES (:tenhm,:mact,:manv,:ngaybatdau,:mota)
+2025-12-07T17:30:44+01:00 PARAMS: Array
+(
+    [tenhm] => nhà ở
+    [mact] => CT251206204449073
+    [manv] => NV003
+    [ngaybatdau] => 2025-12-02
+    [mota] => dvgvef
+)
+
+2025-12-07T17:30:44+01:00 EX: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:39:13+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:39:21+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:40:13+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:40:14+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:40:14+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:40:14+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:40:15+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:42+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:43+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:43+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:43+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:44+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:44+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:44+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:44+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:48+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:49+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:49+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:53+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:53+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:43:53+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:44:06+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:46:25+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:46:26+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:46:26+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:46:26+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:46:26+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:46:27+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:46:27+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:46:30+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'
+2025-12-08T02:46:35+01:00 ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'PRIMARY'

@@ -1,0 +1,5 @@
+2025-12-08T02:59:44+01:00 ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'h.id' in 'field list'
+2025-12-08T02:59:46+01:00 ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'h.id' in 'field list'
+2025-12-09T10:30:12+01:00 Connected DB: quanlytiendo
+2025-12-09T10:30:12+01:00 Project table detected: congtrinh
+2025-12-09T10:30:12+01:00 Returning hangmuc rows: 5

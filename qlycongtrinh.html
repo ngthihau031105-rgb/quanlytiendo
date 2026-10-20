@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quản lý Công trình</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Times+New+Roman&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "retro-bg": "#FDFBF8",
+              "retro-surface": "#EAE5DF",
+              "retro-border": "#2a221c",
+              "retro-text": "#4f311c",
+              "retro-subtext": "#8B7D72",
+              "retro-primary": "#8B542A",
+              "retro-secondary": "#5C7E7E",
+              "retro-success": "#638459",
+              "retro-danger": "#A05F5F",
+              "status-green-bg": "#dcfce7",
+              "status-green-text": "#166534",
+              "status-red-bg": "#fee2e2",
+              "status-red-text": "#991b1b",
+              "status-yellow-bg": "#fef9c3",
+              "status-yellow-text": "#854d0e",
+              "status-blue-bg": "#dbeafe",
+              "status-blue-text": "#1e40af",
+              "status-gray-bg": "#f3f4f6",
+              "status-gray-text": "#374151",
+            },
+            fontFamily: {
+              display: ["'Times New Roman'", "serif"],
+              body: ["'Times New Roman'", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      // Cache current user role for fast checks
+      window.__currentUserRole = null;
+      (async function () {
+        try {
+          const r = await getUserRole();
+          if (r) window.__currentUserRole = r;
+        } catch (e) {}
+      })();
+
+      // warm cache for role immediately
+      window.__currentUserRole = null;
+      (function () {
+        try {
+          getUserRole().then((r) => {
+            if (r) window.__currentUserRole = r;
+          });
+        } catch (e) {}
+      })();
+    </script>
+    <script src="/quanlytiendo/assets/show_profile.js" defer></script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #eae5df;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #8b542a;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4f311c;
+      }
+    </style>
+  </head>
+  <body class="bg-retro-bg font-body text-retro-text">
+    <div class="flex min-h-screen w-full">
+      <aside
+        class="flex w-64 flex-col border-r-4 border-retro-border bg-retro-surface p-4 h-screen sticky top-0 overflow-hidden"
+      >
+        <div class="flex items-center gap-3 mb-8 shrink-0">
+          <div
+            class="bg-retro-primary p-2 text-retro-surface border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c]"
+          >
+            <span class="material-symbols-outlined !text-2xl"
+              >construction</span
+            >
+          </div>
+          <h1
+            class="text-xl font-bold font-display uppercase tracking-wider leading-6"
+          >
+            HỆ THỐNG<br />QUẢN LÝ TIẾN ĐỘ
+          </h1>
+        </div>
+
+        <div class="flex flex-col gap-2 flex-1 overflow-y-auto">
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Tongquan.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >dashboard</span
+            >
+            <p class="text-base font-medium">Tổng quan</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c]"
+            href="Qlycongtrinh.html"
+          >
+            <span class="material-symbols-outlined">domain</span>
+            <p class="text-base font-bold">Công trình</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Qlyhangmuc.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >category</span
+            >
+            <p class="text-base font-medium">Hạng mục</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Qlytiendo.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >trending_up</span
+            >
+            <p class="text-base font-medium">Tiến độ</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Qlynhanvien.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >group</span
+            >
+            <p class="text-base font-medium">Nhân viên</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Baocao.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >assessment</span
+            >
+            <p class="text-base font-medium">Báo cáo</p>
+          </a>
+        </div>
+
+        <div class="mt-auto pt-4 border-t-4 border-retro-border/20">
+          <!-- profile removed -->
+          <button
+            id="logoutBtn"
+            class="w-full flex items-center justify-center gap-2 bg-[#9F5F46] hover:bg-[#8a4f38] text-[#EAE5DF] font-bold py-2.5 px-4 border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c] transition-all"
+          >
+            <span class="material-symbols-outlined text-xl">logout</span>
+            <span class="uppercase tracking-wide text-sm">Đăng xuất</span>
+          </button>
+          <script>
+            document
+              .getElementById("logoutBtn")
+              .addEventListener("click", function () {
+                if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+                  window.location.href = "logout.php";
+                }
+              });
+          </script>
+        </div>
+      </aside>
+
+      <main class="flex-1 p-8 overflow-x-hidden">
+        <div
+          class="layout-content-container flex flex-col w-full max-w-7xl mx-auto"
+        >
+          <div
+            class="flex flex-wrap justify-between items-center gap-4 mb-6 border-b border-retro-primary/20 pb-4"
+          >
+            <div class="flex flex-col gap-2">
+              <p class="text-retro-primary text-4xl font-bold leading-tight">
+                Quản lý Công trình
+              </p>
+              <p
+                class="text-retro-text/70 text-base font-normal leading-normal"
+              >
+                Quản lý và theo dõi tất cả các công trình đang hoạt động.
+              </p>
+            </div>
+            <button
+              id="createProjectBtn"
+              onclick="openModal('addModal')"
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden h-10 px-4 bg-retro-primary text-retro-surface text-base font-bold leading-normal tracking-wide gap-2 border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c] active:shadow-none active:translate-x-0.5 active:translate-y-0.5 hover:bg-retro-primary/90 transition-all"
+            >
+              <span class="material-symbols-outlined !text-lg">add_circle</span>
+              <span class="truncate uppercase">TẠO CÔNG TRÌNH</span>
+            </button>
+          </div>
+
+          <div class="mb-6 grid grid-cols-1 lg:grid-cols-12 gap-4">
+            <div
+              class="lg:col-span-12 flex w-full h-10 items-stretch border-2 border-retro-border bg-retro-bg shadow-[2px_2px_0px_0px_#B4A596]"
+            >
+              <div
+                class="flex items-center justify-center pl-3 pr-2 text-retro-subtext border-r border-retro-border/20"
+              >
+                <span class="material-symbols-outlined">search</span>
+              </div>
+              <input
+                id="searchInput"
+                class="flex-1 bg-transparent border-none focus:ring-0 text-retro-text placeholder-retro-subtext/70 text-base px-3"
+                placeholder="Tìm kiếm tên, mã công trình..."
+              />
+            </div>
+
+            <!-- Removed status filter and sort controls per request -->
+          </div>
+
+          <div class="w-full">
+            <div
+              class="flex overflow-hidden border-2 border-retro-border bg-[#F5EFE7]"
+            >
+              <div class="overflow-x-auto w-full">
+                <table class="w-full text-left border-collapse min-w-[1000px]">
+                  <thead
+                    class="bg-retro-primary/20 border-b-2 border-retro-border"
+                  >
+                    <tr>
+                      <th
+                        class="p-4 text-retro-text text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Mã CT
+                      </th>
+                      <th
+                        class="p-4 text-retro-text text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Tên công trình
+                      </th>
+                      <th
+                        class="p-4 text-retro-text text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Địa điểm
+                      </th>
+                      <th
+                        class="p-4 text-retro-text text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Ngày BĐ
+                      </th>
+                      <th
+                        class="p-4 text-retro-text text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Dự kiến HT
+                      </th>
+                      <th
+                        class="p-4 text-retro-text text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Trạng thái
+                      </th>
+                      <th
+                        class="p-4 text-retro-text text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Ngân sách
+                      </th>
+                      <th
+                        class="p-4 text-retro-text text-sm font-bold uppercase text-center"
+                      >
+                        Hành động
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="projectsTbody"
+                    class="divide-y divide-retro-border/30"
+                  ></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- pagination removed -->
+        </div>
+      </main>
+    </div>
+
+    <div
+      id="toast"
+      class="fixed top-6 right-6 hidden z-50 px-4 py-3 rounded border-2 border-retro-border shadow-[4px_4px_0px_0px_#000] font-bold"
+    ></div>
+
+    <script>
+      // RBAC: hide manager-only delete UI for employee users
+      async function getUserRole() {
+        try {
+          const res = await fetch("/quanlytiendo/current_user.php", {
+            credentials: "include",
+          });
+          const js = await res.json();
+          if (js && js.success && js.user && js.user.role)
+            return String(js.user.role).toLowerCase();
+        } catch (e) {}
+        return null;
+      }
+
+      // warm cache for role immediately
+      window.__currentUserRole = null;
+      (function () {
+        try {
+          getUserRole().then((r) => {
+            if (r) window.__currentUserRole = r;
+          });
+        } catch (e) {}
+      })();
+
+      document.addEventListener("DOMContentLoaded", async function () {
+        try {
+          const role = await getUserRole();
+          if (!role) return;
+          const isEmployee = ["employee", "user", "nhanvien", "staff"].includes(
+            role
+          );
+          if (!isEmployee) return;
+
+          // remove obvious delete controls
+          document
+            .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+            .forEach((el) => el.remove());
+          document.querySelectorAll("button, a").forEach((el) => {
+            const t = (el.textContent || "").toUpperCase();
+            if (t.includes("XÓA") || t.includes("XOA")) el.remove();
+          });
+          document
+            .querySelectorAll(
+              '[onclick*="deleteProject("] , [onclick*="deleteItem("]'
+            )
+            .forEach((el) => el.remove());
+          // sweep table cells
+          document.querySelectorAll("td").forEach((td) => {
+            const d =
+              td.querySelector('[onclick*="deleteProject("]') ||
+              td.querySelector('[onclick*="deleteItem("]');
+            if (d) d.remove();
+          });
+        } catch (e) {}
+      });
+
+      // global observer to catch dynamic inserts
+      (async function globalProjectDeleteSweep() {
+        try {
+          const role = await getUserRole();
+          if (!role) return;
+          const isEmployee = ["employee", "user", "nhanvien", "staff"].includes(
+            role
+          );
+          if (!isEmployee) return;
+          const rm = (root) => {
+            try {
+              const scope = root && root.querySelector ? root : document;
+              scope
+                .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+                .forEach((el) => el.remove());
+              scope.querySelectorAll("button, a").forEach((el) => {
+                const t = (el.textContent || "").toUpperCase();
+                if (t.includes("XÓA") || t.includes("XOA")) el.remove();
+              });
+              scope.querySelectorAll("[onclick]").forEach((el) => {
+                const v = (el.getAttribute("onclick") || "").toString();
+                if (v.includes("deleteProject(") || v.includes("deleteItem("))
+                  el.remove();
+              });
+            } catch (e) {}
+          };
+          rm(document);
+          const mo = new MutationObserver((ms) => {
+            ms.forEach((m) => {
+              if (m.addedNodes && m.addedNodes.length)
+                m.addedNodes.forEach((n) => {
+                  if (n.nodeType === 1) rm(n);
+                });
+            });
+          });
+          mo.observe(document.body, { childList: true, subtree: true });
+        } catch (e) {}
+      })();
+    </script>
+
+    <div
+      id="addModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal('addModal')"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-2xl shadow-[8px_8px_0px_0px_#2a221c] p-0 flex flex-col max-h-[90vh]"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3
+            id="modalTitle"
+            class="text-xl font-bold uppercase text-retro-primary"
+          >
+            TẠO CÔNG TRÌNH MỚI
+          </h3>
+          <button
+            onclick="closeModal('addModal')"
+            class="text-retro-text hover:text-retro-danger font-bold text-xl"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="p-6 overflow-y-auto">
+          <form id="projectForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input type="hidden" id="ct_id" />
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Mã Công Trình <span class="text-retro-danger">*</span></label
+              >
+              <input
+                type="text"
+                id="ct_code"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary placeholder-retro-subtext/50"
+                placeholder="VD: CT001"
+              />
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Tên Công Trình <span class="text-retro-danger">*</span></label
+              >
+              <input
+                type="text"
+                id="ct_name"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary placeholder-retro-subtext/50"
+                placeholder="VD: Biệt thự nghỉ dưỡng..."
+              />
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1">Địa điểm</label>
+              <input
+                type="text"
+                id="ct_location"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              />
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Ngân sách (VNĐ)</label
+              >
+              <input
+                type="text"
+                id="ct_budget"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+                placeholder="VD: 5,000,000,000"
+              />
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1">Ngày Bắt Đầu</label>
+              <input
+                type="date"
+                id="ct_start"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              />
+            </div>
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Dự kiến Hoàn Thành</label
+              >
+              <input
+                type="date"
+                id="ct_end"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              />
+            </div>
+
+            <div class="col-span-2">
+              <label class="block text-sm font-bold mb-1">Trạng Thái</label>
+              <select
+                id="ct_status"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              >
+                <option value="Đang thực hiện">Đang thực hiện</option>
+                <option value="Hoàn thành">Hoàn thành</option>
+                <option value="Tạm dừng">Tạm dừng</option>
+                <option value="Chậm tiến độ">Chậm tiến độ</option>
+              </select>
+            </div>
+
+            <div class="col-span-2">
+              <label class="block text-sm font-bold mb-1">Mô tả chi tiết</label>
+              <textarea
+                id="ct_desc"
+                rows="3"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary placeholder-retro-subtext/50"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div
+          class="p-4 border-t-2 border-retro-border bg-retro-surface flex justify-end gap-3"
+        >
+          <button
+            onclick="closeModal('addModal')"
+            class="px-4 py-2 border-2 border-retro-border font-bold hover:bg-retro-border hover:text-retro-surface transition-colors"
+          >
+            Hủy bỏ
+          </button>
+          <button
+            onclick="saveProject()"
+            class="px-4 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border font-bold shadow-[2px_2px_0px_0px_#2a221c] active:shadow-none active:translate-x-0.5 active:translate-y-0.5 hover:bg-retro-primary/90"
+          >
+            LƯU THÔNG TIN
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="detailsModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal('detailsModal')"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-xl shadow-[8px_8px_0px_0px_#2a221c] p-0"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3 class="text-xl font-bold uppercase text-retro-text">
+            Chi tiết Công Trình
+          </h3>
+          <button
+            onclick="closeModal('detailsModal')"
+            class="text-retro-text hover:text-retro-danger font-bold text-xl"
+          >
+            &times;
+          </button>
+        </div>
+        <div id="detailContent" class="p-6 space-y-4 text-retro-text"></div>
+        <div
+          class="p-4 border-t-2 border-retro-border bg-retro-surface flex justify-end"
+        >
+          <button
+            onclick="closeModal('detailsModal')"
+            class="px-4 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border font-bold shadow-sm"
+          >
+            Đóng
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hạng mục Modal (List + Actions) -->
+    <div
+      id="hangmucModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal('hangmucModal')"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-4xl shadow-[8px_8px_0px_0px_#2a221c] p-0 max-h-[90vh] overflow-auto"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3 class="text-xl font-bold uppercase text-retro-primary">
+            Hạng mục của: <span id="hm_project_title" class="font-bold"></span>
+          </h3>
+          <div class="flex items-center gap-2">
+            <button
+              onclick="openHangmucCreate()"
+              class="px-3 py-1 bg-retro-primary text-retro-surface border-2 border-retro-border font-bold"
+            >
+              Thêm Hạng Mục
+            </button>
+            <button
+              onclick="closeModal('hangmucModal')"
+              class="text-retro-text hover:text-retro-danger font-bold text-xl"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead class="bg-retro-primary/10 border-b-2 border-retro-border">
+                <tr>
+                  <th class="p-2 text-sm font-bold">Mã HM</th>
+                  <th class="p-2 text-sm font-bold">Tên Hạng Mục</th>
+                  <th class="p-2 text-sm font-bold">Phụ trách</th>
+                  <th class="p-2 text-sm font-bold">BĐ</th>
+                  <th class="p-2 text-sm font-bold">KT</th>
+                  <th class="p-2 text-sm font-bold">Trạng thái</th>
+                  <th class="p-2 text-sm font-bold text-center">Hành động</th>
+                </tr>
+              </thead>
+              <tbody
+                id="hangmucTbody"
+                class="divide-y divide-retro-border/30"
+              ></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hạng mục Edit Modal -->
+    <div
+      id="hangmucEditModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal('hangmucEditModal')"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-lg shadow-[8px_8px_0px_0px_#2a221c] p-0"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3
+            id="hangmucEditTitle"
+            class="text-xl font-bold uppercase text-retro-primary"
+          >
+            Thêm / Sửa Hạng Mục
+          </h3>
+          <button
+            onclick="closeModal('hangmucEditModal')"
+            class="text-retro-text hover:text-retro-danger font-bold text-xl"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="p-4">
+          <form id="hangmucEditForm" class="grid grid-cols-1 gap-3">
+            <input type="hidden" id="hm_edit_id" />
+            <label class="text-sm font-bold">Mã Hạng Mục</label>
+            <input
+              id="hm_edit_code"
+              class="border-2 border-retro-border px-3 py-2"
+            />
+            <label class="text-sm font-bold">Tên Hạng Mục</label>
+            <input
+              id="hm_edit_name"
+              class="border-2 border-retro-border px-3 py-2"
+            />
+            <label class="text-sm font-bold">Người Phụ Trách</label>
+            <input
+              id="hm_edit_manager"
+              class="border-2 border-retro-border px-3 py-2"
+            />
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="text-sm font-bold">Ngày BĐ</label>
+                <input
+                  id="hm_edit_start"
+                  type="date"
+                  class="w-full border-2 border-retro-border px-3 py-2"
+                />
+              </div>
+              <div>
+                <label class="text-sm font-bold">Ngày KT</label>
+                <input
+                  id="hm_edit_end"
+                  type="date"
+                  class="w-full border-2 border-retro-border px-3 py-2"
+                />
+              </div>
+            </div>
+            <label class="text-sm font-bold">Trạng thái</label>
+            <select
+              id="hm_edit_status"
+              class="border-2 border-retro-border px-3 py-2"
+            >
+              <option>Chưa thực hiện</option>
+              <option>Đang thực hiện</option>
+              <option>Tạm dừng</option>
+              <option>Chậm tiến độ</option>
+              <option>Hoàn thành</option>
+              <option>Đã hủy</option>
+            </select>
+            <label class="text-sm font-bold">Mô tả</label>
+            <textarea
+              id="hm_edit_desc"
+              rows="3"
+              class="border-2 border-retro-border px-3 py-2"
+            ></textarea>
+          </form>
+        </div>
+        <div
+          class="p-4 border-t-2 border-retro-border bg-retro-surface flex justify-end gap-3"
+        >
+          <button
+            onclick="closeModal('hangmucEditModal')"
+            class="px-4 py-2 border-2 border-retro-border font-bold"
+          >
+            Hủy
+          </button>
+          <button
+            onclick="saveHangmucFromProject()"
+            class="px-4 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border font-bold"
+          >
+            LƯU
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // --- 1. LOAD DATA FROM SERVER ---
+      // We'll fetch existing projects (công trình) from the server API
+      // and map DB fields to the UI format.
+      let projects = [];
+
+      function saveToLocal() {
+        // keep for compatibility with client-side edits (no-op when using server)
+        try {
+          localStorage.setItem("projects_db", JSON.stringify(projects));
+        } catch (e) {}
+      }
+
+      async function fetchProjectsFromServer() {
+        const qname = document.getElementById("searchInput").value || "";
+
+        // Only search parameter is used now; server-side will handle default sorting
+        const params = new URLSearchParams();
+        // send generic `q` so server will search code or name/description
+        if (qname) params.set("q", qname);
+        params.set("pageSize", "100");
+
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/list_projects.php?" + params.toString(),
+            { credentials: "include" }
+          );
+          const data = await resp.json();
+          if (!data || !data.success) {
+            showToast("Lỗi khi lấy dữ liệu từ server", "error");
+            return;
+          }
+
+          // Map API rows to UI fields expected by renderTable
+          projects = (data.data || []).map((r) => ({
+            id: r.id || r.MACT || r.mact || r.code || "",
+            code: r.code || r.MACT || r.mact || r.id || "",
+            name: r.name || r.TENCT || "",
+            location: r.location || r.DIADIEM || "",
+            start: r.start_date || r.NGAYBD || "",
+            end: r.end_date || r.NGAYKT || "",
+            status: mapStatusFromApi(r.status || r.TRANGTHAI),
+            budget: r.budget || r.NGANSACH || "",
+            desc: r.description || r.MOTA || "",
+          }));
+
+          // Ensure client-side ordering by code to provide stable list
+          projects.sort((x, y) => compareProjectCode(x.code, y.code));
+          await renderTable(projects);
+          // update raw JSON debug if visible
+          const pre = document.getElementById("rawJson");
+          if (pre) pre.textContent = JSON.stringify(data, null, 2);
+        } catch (e) {
+          showToast("Lỗi kết nối server: " + e.message, "error");
+        }
+      }
+
+      function mapStatusFromApi(s) {
+        if (!s) return "";
+        const lower = String(s).toLowerCase();
+        if (
+          lower.includes("completed") ||
+          lower.includes("hoan") ||
+          lower.includes("đã")
+        )
+          return "Hoàn thành";
+        if (
+          lower.includes("in_progress") ||
+          lower.includes("dang") ||
+          lower.includes("đang")
+        )
+          return "Đang thực hiện";
+        if (lower.includes("pending") || lower.includes("cho"))
+          return "Tạm dừng";
+        return s;
+      }
+
+      // Compare project codes like CT002, CT20, CT2512...
+      // Extract first number sequence and compare numerically when possible,
+      // otherwise use localeCompare fallback.
+      function compareProjectCode(aCode, bCode) {
+        const a = String(aCode || "").trim();
+        const b = String(bCode || "").trim();
+        const aNumMatch = a.match(/(\d+)/);
+        const bNumMatch = b.match(/(\d+)/);
+        if (aNumMatch && bNumMatch) {
+          const an = parseInt(aNumMatch[0], 10);
+          const bn = parseInt(bNumMatch[0], 10);
+          if (!isNaN(an) && !isNaN(bn) && an !== bn) return an - bn;
+        }
+        // fallback: compare full strings (numeric option handles mixed cases)
+        return a.localeCompare(b, undefined, {
+          numeric: true,
+          sensitivity: "base",
+        });
+      }
+
+      // --- 2. CORE FUNCTIONS ---
+
+      async function renderTable(data) {
+        const tbody = document.getElementById("projectsTbody");
+        tbody.innerHTML = "";
+
+        if (data.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="8" class="p-8 text-center text-retro-subtext italic">Không tìm thấy dữ liệu phù hợp.</td></tr>`;
+          return;
+        }
+
+        const role = await getUserRole();
+        const isEmployee =
+          role && ["employee", "user", "nhanvien", "staff"].includes(role);
+        data.forEach((item) => {
+          let statusClass = "";
+          switch (item.status) {
+            case "Hoàn thành":
+              statusClass =
+                "bg-status-green-bg text-status-green-text border border-status-green-bg";
+              break;
+            case "Đang thực hiện":
+              statusClass =
+                "bg-status-blue-bg text-status-blue-text border border-status-blue-bg";
+              break;
+            case "Tạm dừng":
+              statusClass =
+                "bg-status-yellow-bg text-status-yellow-text border border-status-yellow-bg";
+              break;
+            case "Chậm tiến độ":
+              statusClass =
+                "bg-status-red-bg text-status-red-text border border-status-red-bg";
+              break;
+            default:
+              statusClass = "bg-retro-subtext text-retro-surface";
+          }
+
+          const tr = document.createElement("tr");
+          tr.className =
+            "hover:bg-retro-primary/5 transition-colors group border-b border-retro-border/10 last:border-0";
+          const safeId = String(item.id || item.code || "").replace(
+            /'/g,
+            "\\'"
+          );
+          tr.innerHTML = `
+                    <td class="p-4 font-mono text-sm text-retro-text border-r border-retro-border/10 font-bold">${
+                      item.code
+                    }</td>
+                    <td class="p-4 text-sm font-bold text-retro-primary border-r border-retro-border/10">${
+                      item.name
+                    }</td>
+                    <td class="p-4 text-sm text-retro-text border-r border-retro-border/10">${
+                      item.location
+                    }</td>
+                    <td class="p-4 text-sm font-mono text-retro-subtext border-r border-retro-border/10">${formatDate(
+                      item.start
+                    )}</td>
+                    <td class="p-4 text-sm font-mono text-retro-subtext border-r border-retro-border/10">${formatDate(
+                      item.end
+                    )}</td>
+                    <td class="p-4 border-r border-retro-border/10">
+                        <span class="inline-block px-2 py-1 text-xs font-bold rounded ${statusClass}">${
+            item.status
+          }</span>
+                    </td>
+                    <td class="p-4 text-sm font-mono text-right text-retro-text border-r border-retro-border/10">${
+                      item.budget
+                    }</td>
+                    <td class="p-4 text-center">
+                        <div class="flex items-center justify-center gap-2 opacity-100 lg:opacity-70 group-hover:opacity-100 transition-opacity">
+                            <button onclick="viewDetail('${safeId}')" class="p-1.5 border border-retro-border rounded bg-white hover:bg-retro-secondary hover:text-white" title="Chi tiết"><span class="material-symbols-outlined text-lg">visibility</span></button>
+                            ${
+                              isEmployee
+                                ? ""
+                                : `<button onclick="editProject('${safeId}')" class="p-1.5 border border-retro-border rounded bg-white hover:bg-retro-primary hover:text-white" title="Sửa"><span class="material-symbols-outlined text-lg">edit</span></button>`
+                            }
+                            ${
+                              isEmployee
+                                ? ""
+                                : `<button onclick="deleteProject('${safeId}')" class="p-1.5 border border-retro-border rounded bg-white hover:bg-retro-danger hover:text-white" title="Xóa"><span class="material-symbols-outlined text-lg">delete</span></button>`
+                            }
+                        </div>
+                    </td>
+                `;
+          tbody.appendChild(tr);
+        });
+        renderPagination(data.length);
+        // ensure delete controls are removed after dynamic render for employee users
+        hideDeleteButtonsIfEmployee();
+      }
+
+      // Return normalized user role string (lowercase) or null
+      async function getUserRole() {
+        try {
+          const res = await fetch("/quanlytiendo/current_user.php", {
+            credentials: "include",
+          });
+          const js = await res.json();
+          if (js && js.success && js.user && js.user.role) {
+            return String(js.user.role).toLowerCase();
+          }
+        } catch (e) {
+          /* ignore */
+        }
+        return null;
+      }
+
+      async function hideDeleteButtonsIfEmployee() {
+        try {
+          const role = await getUserRole();
+          if (!role) return;
+          // treat several role names as employee-equivalent
+          const isEmployee = ["employee", "user", "nhanvien", "staff"].includes(
+            role
+          );
+          if (!isEmployee) return;
+
+          document
+            .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+            .forEach((el) => el.remove());
+          document.querySelectorAll("button, a").forEach((el) => {
+            const t = (el.textContent || "").toUpperCase();
+            if (t.includes("XÓA") || t.includes("XOA")) el.remove();
+          });
+          document.querySelectorAll("[onclick]").forEach((el) => {
+            const v = (el.getAttribute("onclick") || "").toString();
+            if (
+              v.includes("deleteProject(") ||
+              v.includes("deleteHangmuc(") ||
+              v.includes("deleteItem(") ||
+              v.includes("deleteItemHM(")
+            )
+              el.remove();
+          });
+        } catch (e) {
+          /* ignore */
+        }
+      }
+      // RBAC: hide manager-only UI elements for employees (remove delete buttons only)
+      document.addEventListener("DOMContentLoaded", async function () {
+        try {
+          const res = await fetch("/quanlytiendo/current_user.php", {
+            credentials: "include",
+          });
+          const js = await res.json();
+          if (js && js.success && js.user && js.user.role === "employee") {
+            // hide delete buttons (title attribute or symbol)
+            document
+              .querySelectorAll('button[title="Xóa"]')
+              .forEach((b) => b.remove());
+            document.querySelectorAll("button").forEach((b) => {
+              if ((b.textContent || "").toUpperCase().includes("XÓA"))
+                b.remove();
+            });
+            // leave create/add controls visible for employees (they can add/edit)
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      });
+
+      // Global MutationObserver: remove any delete controls inserted dynamically
+      (async function enforceGlobalDeleteSweep() {
+        try {
+          const role = await getUserRole();
+          if (!role) return;
+          const isEmployee = ["employee", "user", "nhanvien", "staff"].includes(
+            role
+          );
+          if (!isEmployee) return;
+
+          const remover = (root) => {
+            try {
+              const scope = root && root.querySelector ? root : document;
+              scope
+                .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+                .forEach((el) => el.remove());
+              scope.querySelectorAll("button, a").forEach((el) => {
+                const t = (el.textContent || "").toUpperCase();
+                if (t.includes("XÓA") || t.includes("XOA")) el.remove();
+              });
+              scope.querySelectorAll("[onclick]").forEach((el) => {
+                const v = (el.getAttribute("onclick") || "").toString();
+                if (
+                  v.includes("deleteProject(") ||
+                  v.includes("deleteItem(") ||
+                  v.includes("deleteItemHM(") ||
+                  v.includes("deleteHangmuc(")
+                )
+                  el.remove();
+              });
+            } catch (e) {}
+          };
+
+          // initial sweep
+          remover(document);
+
+          const mo = new MutationObserver((mutations) => {
+            for (const m of mutations) {
+              if (m.addedNodes && m.addedNodes.length) {
+                m.addedNodes.forEach((n) => {
+                  if (n.nodeType === 1) remover(n);
+                });
+              }
+            }
+          });
+          mo.observe(document.body, { childList: true, subtree: true });
+        } catch (e) {}
+      })();
+
+      // Additional enforcement: remove any delete controls dynamically added for employee users
+      async function enforceDeletePolicy() {
+        try {
+          const role = await getUserRole();
+          const isEmployee =
+            role && ["employee", "user", "nhanvien", "staff"].includes(role);
+          if (!isEmployee) return; // only act for employees
+
+          function removeDeletes(root = document) {
+            root
+              .querySelectorAll('button[title="Xóa"], a[title="Xóa"]')
+              .forEach((el) => el.remove());
+            root.querySelectorAll("button, a").forEach((el) => {
+              const t = (el.textContent || "").toUpperCase();
+              if (t.includes("XÓA") || t.includes("XOA")) el.remove();
+            });
+            root.querySelectorAll("[onclick]").forEach((el) => {
+              const v = (el.getAttribute("onclick") || "").toString();
+              if (
+                v.includes("deleteProject(") ||
+                v.includes("deleteHangmuc(") ||
+                v.includes("deleteItem(") ||
+                v.includes("deleteItemHM(")
+              )
+                el.remove();
+            });
+          }
+
+          // initial sweep
+          removeDeletes(document);
+
+          // watch the projects table for dynamically added rows
+          const tbody = document.getElementById("projectsTbody");
+          if (tbody) {
+            const mo = new MutationObserver((mutations) => {
+              for (const m of mutations) {
+                if (m.addedNodes && m.addedNodes.length)
+                  removeDeletes(m.target);
+              }
+            });
+            mo.observe(tbody, { childList: true, subtree: true });
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      // run enforcement (non-blocking)
+      enforceDeletePolicy();
+
+      // Hide create/edit UI for employee-role users (prevent accidental use)
+      (async function hideCreateAndEditUI() {
+        try {
+          const role = window.__currentUserRole || (await getUserRole());
+          if (!role) return;
+          const isEmployee = ["employee", "user", "nhanvien", "staff"].includes(
+            role
+          );
+          if (!isEmployee) return;
+          // hide create button
+          const createBtn = document.getElementById("createProjectBtn");
+          if (createBtn) createBtn.remove();
+          // remove edit/create/hạng mục related buttons and links
+          document.querySelectorAll("[onclick]").forEach((el) => {
+            const v = (el.getAttribute("onclick") || "").toString();
+            if (
+              v.includes("editProject(") ||
+              v.includes("openModal('addModal')") ||
+              v.includes("editHangmuc(") ||
+              v.includes("openHangmucCreate(") ||
+              v.includes("openHangmucModal(")
+            )
+              el.remove();
+          });
+          // remove textual edit/create/delete/hạng mục buttons
+          document.querySelectorAll("button, a").forEach((el) => {
+            const t = (el.textContent || "").toUpperCase();
+            if (
+              t.includes("SỬA") ||
+              t.includes("SUA") ||
+              t.includes("THÊM HẠNG MỤC") ||
+              (t.includes("THÊM") && t.includes("CÔNG TRÌNH"))
+            )
+              el.remove();
+          });
+        } catch (e) {}
+      })();
+
+      // --- 3. FILTER & SORT ---
+      function filterData() {
+        // Server-driven filter: call API with current inputs
+        fetchProjectsFromServer();
+      }
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", filterData);
+      // Only attach listeners if the elements exist (we removed two controls)
+      const statusEl = document.getElementById("statusFilter");
+      if (statusEl) statusEl.addEventListener("change", filterData);
+      const sortEl = document.getElementById("dateSort");
+      if (sortEl) sortEl.addEventListener("change", filterData);
+
+      // --- 4. CRUD OPERATIONS ---
+
+      // Xem chi tiết (fetch latest from server to ensure up-to-date)
+      async function viewDetail(id) {
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/list_projects.php?pageSize=500"
+          );
+          const json = await resp.json();
+          if (!json || !json.success) {
+            showToast("Không thể tải dữ liệu công trình", "error");
+            return;
+          }
+          const rows = json.data || [];
+          const found = rows.find((r) =>
+            [r.id, r.MACT, r.mact, r.code]
+              .map((v) => (v === undefined || v === null ? "" : String(v)))
+              .includes(String(id))
+          );
+          if (!found) {
+            showToast("Không tìm thấy công trình", "error");
+            return;
+          }
+
+          const item = {
+            code: found.code || found.MACT || found.mact || found.id || "",
+            name: found.name || found.TENCT || "",
+            location: found.location || found.DIADIEM || "",
+            start: found.start_date || found.NGAYBD || "",
+            end: found.end_date || found.NGAYKT || "",
+            status: mapStatusFromApi(found.status || found.TRANGTHAI),
+            budget: found.budget || found.NGANSACH || "",
+            desc: found.description || found.MOTA || "",
+          };
+
+          const html = `
+                <div class="grid grid-cols-2 gap-4">
+                    <div><span class="font-bold text-retro-subtext uppercase text-xs">Mã Công Trình</span><p class="font-mono text-lg font-bold">${
+                      item.code
+                    }</p></div>
+                    <div><span class="font-bold text-retro-subtext uppercase text-xs">Trạng thái</span><p class="font-bold text-retro-primary">${
+                      item.status
+                    }</p></div>
+                    <div class="col-span-2 border-t border-retro-border/20 my-1"></div>
+                    <div class="col-span-2"><span class="font-bold text-retro-subtext uppercase text-xs">Tên Công Trình</span><p class="text-xl font-bold font-display text-retro-text">${
+                      item.name
+                    }</p></div>
+                    <div><span class="font-bold text-retro-subtext uppercase text-xs">Địa điểm</span><p>${
+                      item.location
+                    }</p></div>
+                    <div><span class="font-bold text-retro-subtext uppercase text-xs">Ngân sách</span><p class="font-mono font-bold">${
+                      item.budget
+                    } VNĐ</p></div>
+                    <div><span class="font-bold text-retro-subtext uppercase text-xs">Ngày Bắt Đầu</span><p class="font-mono">${formatDate(
+                      item.start
+                    )}</p></div>
+                    <div><span class="font-bold text-retro-subtext uppercase text-xs">Dự kiến HT</span><p class="font-mono">${formatDate(
+                      item.end
+                    )}</p></div>
+                    <div class="col-span-2 bg-retro-surface p-3 border border-retro-border rounded">
+                        <span class="font-bold text-retro-subtext uppercase text-xs block mb-1">Mô tả</span>
+                        <p class="italic text-sm">${item.desc}</p>
+                    </div>
+                </div>
+            `;
+          document.getElementById("detailContent").innerHTML = html;
+          openModal("detailsModal");
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối khi tải chi tiết", "error");
+        }
+      }
+
+      // Sửa (lấy dữ liệu mới từ server rồi mở modal để sửa)
+      async function editProject(id) {
+        try {
+          const role = window.__currentUserRole || (await getUserRole());
+          const isEmployee =
+            role && ["employee", "user", "nhanvien", "staff"].includes(role);
+          if (isEmployee) {
+            showToast("Bạn không có quyền làm điều này", "error");
+            return;
+          }
+          const resp = await fetch(
+            "/quanlytiendo/list_projects.php?pageSize=500"
+          );
+          const json = await resp.json();
+          let found = null;
+          if (json && json.success) {
+            const rows = json.data || [];
+            found = rows.find((r) =>
+              [r.id, r.MACT, r.mact, r.code]
+                .map((v) => (v === undefined || v === null ? "" : String(v)))
+                .includes(String(id))
+            );
+          }
+
+          // fallback to cached projects if server didn't return
+          if (!found) {
+            found = projects.find((x) => String(x.id) === String(id));
+          }
+          if (!found) {
+            showToast("Không tìm thấy công trình để sửa", "error");
+            return;
+          }
+
+          const item = {
+            id: found.id || found.MACT || found.mact || found.code || "",
+            code: found.code || found.MACT || found.mact || found.id || "",
+            name: found.name || found.TENCT || "",
+            location: found.location || found.DIADIEM || "",
+            start: found.start_date || found.NGAYBD || "",
+            end: found.end_date || found.NGAYKT || "",
+            status: mapStatusFromApi(found.status || found.TRANGTHAI),
+            budget: found.budget || found.NGANSACH || "",
+            desc: found.description || found.MOTA || "",
+          };
+
+          openModal("addModal");
+          document.getElementById("modalTitle").innerText =
+            "CHỈNH SỬA CÔNG TRÌNH";
+          document.getElementById("ct_id").value = item.id;
+          document.getElementById("ct_code").value = item.code || item.id;
+          document.getElementById("ct_name").value = item.name || "";
+          document.getElementById("ct_location").value = item.location || "";
+          document.getElementById("ct_budget").value = item.budget || "";
+          document.getElementById("ct_start").value = item.start || "";
+          document.getElementById("ct_end").value = item.end || "";
+          document.getElementById("ct_status").value = item.status || "";
+          document.getElementById("ct_desc").value = item.desc || "";
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối khi lấy dữ liệu công trình", "error");
+        }
+      }
+
+      // Lưu (Thêm mới hoặc Cập nhật) — gọi endpoint server
+      async function saveProject() {
+        const id = document.getElementById("ct_id").value;
+        const role = window.__currentUserRole || (await getUserRole());
+        const isEmployee =
+          role && ["employee", "user", "nhanvien", "staff"].includes(role);
+        if (isEmployee) {
+          showToast("Bạn không có quyền làm điều này", "error");
+          return;
+        }
+        const code = document.getElementById("ct_code").value.trim();
+        const name = document.getElementById("ct_name").value.trim();
+
+        if (!code || !name) {
+          showToast("Vui lòng nhập Mã và Tên công trình!", "error");
+          return;
+        }
+
+        const payload = new URLSearchParams();
+        payload.set("name", name);
+        payload.set(
+          "location",
+          document.getElementById("ct_location").value || ""
+        );
+        payload.set("budget", document.getElementById("ct_budget").value || "");
+        payload.set(
+          "start_date",
+          document.getElementById("ct_start").value || ""
+        );
+        payload.set("end_date", document.getElementById("ct_end").value || "");
+        payload.set(
+          "description",
+          document.getElementById("ct_desc").value || ""
+        );
+        payload.set("status", document.getElementById("ct_status").value || "");
+
+        try {
+          if (id) {
+            // update
+            payload.set("id", id);
+            // include mact/code when updating so backend can match by MACT if needed
+            payload.set("mact", code);
+            const resp = await fetch("/quanlytiendo/update_project.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: payload.toString(),
+            });
+            const data = await resp.json();
+            if (data && data.success) {
+              showToast(data.message || "Chỉnh sửa công trình thành công");
+              closeModal("addModal");
+              fetchProjectsFromServer();
+            } else {
+              showToast((data && data.error) || "Lỗi khi cập nhật", "error");
+            }
+          } else {
+            // create
+            // save_project.php expects 'name' etc, and may accept 'mact' for MACT
+            payload.set("mact", code);
+            const resp = await fetch("/quanlytiendo/save_project.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: payload.toString(),
+            });
+            const data = await resp.json();
+            if (data && data.success) {
+              showToast("Thêm công trình thành công");
+              closeModal("addModal");
+              fetchProjectsFromServer();
+            } else {
+              showToast((data && data.error) || "Lỗi khi thêm mới", "error");
+            }
+          }
+        } catch (e) {
+          showToast("Lỗi kết nối: " + e.message, "error");
+        }
+      }
+
+      // Xóa (gọi endpoint server)
+      async function deleteProject(id) {
+        if (!confirm("Bạn có chắc chắn muốn xóa công trình này không?")) return;
+        try {
+          const role = window.__currentUserRole || (await getUserRole());
+          const isEmployee =
+            role && ["employee", "user", "nhanvien", "staff"].includes(role);
+          if (isEmployee) {
+            showToast("Bạn không có quyền làm điều này", "error");
+            return;
+          }
+
+          const payload = new URLSearchParams();
+          payload.set("id", id);
+          // also send mact/code in case backend matches by MACT
+          payload.set("mact", id);
+          const resp = await fetch("/quanlytiendo/delete_project.php", {
+            method: "POST",
+            credentials: "include",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: payload.toString(),
+          });
+          const data = await resp.json();
+          if (data && data.success) {
+            showToast(data.message || "Xóa công trình thành công", "success");
+            fetchProjectsFromServer();
+          } else {
+            showToast((data && data.error) || "Lỗi khi xóa", "error");
+          }
+        } catch (e) {
+          showToast("Lỗi kết nối: " + e.message, "error");
+        }
+      }
+
+      // --- HẠNG MỤC (Project-level) ---
+      let currentProjectForHM = null;
+
+      // Open hangmuc manager modal for project (mact or id)
+      function openHangmucModal(projectId, projectName) {
+        currentProjectForHM = projectId;
+        document.getElementById("hm_project_title").innerText =
+          projectName || projectId;
+        openModal("hangmucModal");
+        fetchHangmucForProject(projectId);
+      }
+
+      async function fetchHangmucForProject(projectId) {
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/list_hangmuc.php?pageSize=500"
+          );
+          const json = await resp.json();
+          if (!json || !json.success) {
+            showToast("Lỗi khi tải hạng mục", "error");
+            return;
+          }
+          const rows = (json.data || []).filter((r) => {
+            const pid = (
+              r.project_id ||
+              r.MACT ||
+              r.congtrinh ||
+              r.project_id ||
+              ""
+            ).toString();
+            const pname = (r.project_name || r.TENCT || "").toString();
+            return (
+              pid === String(projectId) ||
+              pname === String(projectId) ||
+              pname === String(projectId) ||
+              pname ===
+                String(document.getElementById("hm_project_title").innerText)
+            );
+          });
+          renderHangmucTable(rows);
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối khi tải hạng mục", "error");
+        }
+      }
+
+      function renderHangmucTable(rows) {
+        const tbody = document.getElementById("hangmucTbody");
+        tbody.innerHTML = "";
+        if (!rows || rows.length === 0) {
+          tbody.innerHTML =
+            '<tr><td colspan="7" class="p-6 text-center italic text-retro-subtext">Chưa có hạng mục.</td></tr>';
+          return;
+        }
+        rows.forEach((r) => {
+          const id = r.id || r.MAHM || r.mahm || r.code || "";
+          const code = r.code || r.MAHM || r.mahm || r.ma || id;
+          const name = r.name || r.ten || r.TENHM || r.TEN || "";
+          const manager = r.nguoi_phu_trach || r.nguoi || "";
+          const start = r.start_date || r.NGAYBD || r.ngaybd || "";
+          const end = r.end_date || r.NGAYKT || r.ngaykt || "";
+          const status = r.status || r.trangthai || r.TRANGTHAI || "";
+          const tr = document.createElement("tr");
+          tr.className = "hover:bg-retro-primary/5 transition-colors group";
+          tr.innerHTML = `
+            <td class="px-2 py-2 font-mono">${code}</td>
+            <td class="px-2 py-2 font-bold text-retro-primary">${name}</td>
+            <td class="px-2 py-2">${manager}</td>
+            <td class="px-2 py-2">${formatDate(start)}</td>
+            <td class="px-2 py-2">${formatDate(end)}</td>
+            <td class="px-2 py-2">${status}</td>
+            <td class="px-2 py-2 text-center">
+              <div class="flex items-center justify-center gap-2">
+                <button onclick="viewHangmucDetail('${id}')" class="p-1 border rounded">Chi tiết</button>
+                <button onclick="editHangmuc('${id}')" class="p-1 border rounded">Sửa</button>
+                <button onclick="deleteHangmuc('${id}')" class="p-1 border rounded text-red-600">Xóa</button>
+              </div>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      async function viewHangmucDetail(id) {
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/get_hangmuc.php?id=" + encodeURIComponent(id)
+          );
+          const json = await resp.json();
+          if (!json || !json.success) {
+            showToast("Không thể tải chi tiết", "error");
+            return;
+          }
+          const item = json.data || {};
+          const html = `
+            <div class="grid grid-cols-2 gap-4">
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Mã HM</span><p class="font-mono font-bold">${
+                item.code || item.MAHM || item.id || ""
+              }</p></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Trạng thái</span><p class="font-bold text-retro-primary">${
+                item.status || item.TRANGTHAI || ""
+              }</p></div>
+              <div class="col-span-2"><span class="font-bold text-retro-subtext uppercase text-xs">Tên Hạng Mục</span><p class="text-lg font-bold">${
+                item.name || item.TENHM || ""
+              }</p></div>
+              <div class="col-span-2 border-t border-retro-border/20 my-1"></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Thuộc Công Trình</span><p>${
+                item.project_name || item.TENCT || ""
+              }</p></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Người Phụ Trách</span><p>${
+                item.nguoi_phu_trach || item.nguoi || ""
+              }</p></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Ngày Bắt Đầu</span><p>${formatDate(
+                item.NGAYBD || item.start_date || ""
+              )}</p></div>
+              <div><span class="font-bold text-retro-subtext uppercase text-xs">Ngày Kết Thúc</span><p>${formatDate(
+                item.NGAYKT || item.end_date || ""
+              )}</p></div>
+              <div class="col-span-2 bg-retro-surface p-3 border border-retro-border rounded"><span class="font-bold text-retro-subtext uppercase text-xs block mb-1">Mô tả</span><p class="italic text-sm">${
+                item.MOTA || item.mota || item.description || ""
+              }</p></div>
+            </div>
+          `;
+          document.getElementById("detailContent").innerHTML = html;
+          openModal("detailsModal");
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối", "error");
+        }
+      }
+
+      async function editHangmuc(id) {
+        try {
+          const resp = await fetch(
+            "/quanlytiendo/get_hangmuc.php?id=" + encodeURIComponent(id)
+          );
+          const json = await resp.json();
+          if (!json || !json.success) {
+            showToast("Không thể tải hạng mục để sửa", "error");
+            return;
+          }
+          const it = json.data || {};
+          document.getElementById("hangmucEditTitle").innerText =
+            "CHỈNH SỬA HẠNG MỤC";
+          document.getElementById("hm_edit_id").value =
+            it.id || it.MAHM || it.mahm || "";
+          document.getElementById("hm_edit_code").value =
+            it.code || it.MAHM || it.mahm || "";
+          document.getElementById("hm_edit_name").value =
+            it.name || it.TENHM || it.ten || "";
+          document.getElementById("hm_edit_manager").value =
+            it.nguoi_phu_trach || it.nguoi || "";
+          document.getElementById("hm_edit_start").value =
+            it.NGAYBD || it.start_date || "";
+          document.getElementById("hm_edit_end").value =
+            it.NGAYKT || it.end_date || "";
+          document.getElementById("hm_edit_status").value =
+            it.trangthai || it.status || "";
+          document.getElementById("hm_edit_desc").value =
+            it.MOTA || it.mota || it.description || "";
+          openModal("hangmucEditModal");
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối", "error");
+        }
+      }
+
+      function openHangmucCreate() {
+        document.getElementById("hangmucEditTitle").innerText =
+          "THÊM HẠNG MỤC MỚI";
+        document.getElementById("hangmucEditForm").reset();
+        document.getElementById("hm_edit_id").value = "";
+        // prefill project if known
+        if (currentProjectForHM)
+          document.getElementById("hm_edit_desc").value = "";
+        openModal("hangmucEditModal");
+      }
+
+      async function saveHangmucFromProject() {
+        const id = document.getElementById("hm_edit_id").value.trim();
+        const code = document.getElementById("hm_edit_code").value.trim();
+        const name = document.getElementById("hm_edit_name").value.trim();
+        const manager = document.getElementById("hm_edit_manager").value.trim();
+        const start = document.getElementById("hm_edit_start").value;
+        const end = document.getElementById("hm_edit_end").value;
+        const status = document.getElementById("hm_edit_status").value;
+        const mota = document.getElementById("hm_edit_desc").value;
+        if (!name) {
+          alert("Vui lòng nhập tên hạng mục");
+          return;
+        }
+        const payload = new URLSearchParams();
+        payload.set("name", name);
+        payload.set("congtrinh", currentProjectForHM || "");
+        payload.set("nguoi", manager);
+        payload.set("ngaybd", start);
+        payload.set("ngaykt", end);
+        payload.set("mota", mota);
+        payload.set("status", status);
+        try {
+          if (id) {
+            payload.set("id", id);
+            const resp = await fetch("/quanlytiendo/update_hangmuc.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: payload.toString(),
+            });
+            const json = await resp.json();
+            if (json && json.success) {
+              showToast(json.message || "Cập nhật thành công");
+              closeModal("hangmucEditModal");
+              fetchHangmucForProject(currentProjectForHM);
+            } else
+              showToast((json && json.error) || "Lỗi khi cập nhật", "error");
+          } else {
+            payload.set("mahm", code || "");
+            const resp = await fetch("/quanlytiendo/save_hangmuc.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: payload.toString(),
+            });
+            const json = await resp.json();
+            if (json && json.success) {
+              showToast("Thêm hạng mục thành công");
+              closeModal("hangmucEditModal");
+              fetchHangmucForProject(currentProjectForHM);
+            } else
+              showToast((json && json.error) || "Lỗi khi thêm mới", "error");
+          }
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối", "error");
+        }
+      }
+
+      async function deleteHangmuc(id) {
+        if (!confirm("Bạn có chắc chắn muốn xóa hạng mục này không?")) return;
+        try {
+          const payload = new URLSearchParams();
+          payload.set("id", id);
+          const resp = await fetch("/quanlytiendo/delete_hangmuc.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: payload.toString(),
+          });
+          const json = await resp.json();
+          if (json && json.success) {
+            showToast(json.message || "Xóa thành công", "success");
+            fetchHangmucForProject(currentProjectForHM);
+          } else showToast((json && json.error) || "Lỗi khi xóa", "error");
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi kết nối", "error");
+        }
+      }
+
+      // --- 5. UTILS ---
+      function formatDate(dateString) {
+        if (!dateString) return "";
+        const [y, m, d] = dateString.split("-");
+        return `${d}/${m}/${y}`;
+      }
+
+      function showToast(msg, type = "success") {
+        const toast = document.getElementById("toast");
+        toast.className = `fixed top-6 right-6 z-50 px-6 py-3 rounded border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c] font-bold transition-all transform duration-300 ${
+          type === "success"
+            ? "bg-retro-success text-white"
+            : "bg-retro-danger text-white"
+        }`;
+        toast.innerText = msg;
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 3000);
+      }
+
+      function renderPagination(total) {
+        // pagination removed — kept no-op for compatibility
+      }
+
+      // Modal Helpers
+      function openModal(id) {
+        const modal = document.getElementById(id);
+        // block employees from opening the "add" project modal
+        (async function () {
+          if (id === "addModal") {
+            const role = window.__currentUserRole || (await getUserRole());
+            const isEmployee =
+              role && ["employee", "user", "nhanvien", "staff"].includes(role);
+            if (isEmployee) {
+              showToast("Bạn không có quyền làm điều này", "error");
+              return;
+            }
+          }
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+        })();
+        if (id === "addModal") {
+          // Reset form khi mở modal thêm mới (nếu không phải mode sửa)
+          const title = document.getElementById("modalTitle").innerText;
+          if (title !== "CHỈNH SỬA CÔNG TRÌNH") {
+            document.getElementById("projectForm").reset();
+            document.getElementById("ct_id").value = "";
+          }
+        }
+      }
+
+      function closeModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        // Reset title về mặc định khi đóng
+        if (id === "addModal")
+          document.getElementById("modalTitle").innerText =
+            "TẠO CÔNG TRÌNH MỚI";
+      }
+
+      // Logout: redirect to logout.php after confirmation
+      function logout() {
+        if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+          window.location.href = "logout.php";
+        }
+      }
+
+      // --- INIT ---
+      // Load data from server on page open
+      fetchProjectsFromServer();
+    </script>
+  </body>
+</html>

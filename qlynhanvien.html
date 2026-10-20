@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quản lý Nhân Viên</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Times+New+Roman&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "retro-bg": "#FDFBF8",
+              "retro-surface": "#EAE5DF",
+              "retro-border": "#2a221c",
+              "retro-text": "#4f311c",
+              "retro-subtext": "#8B7D72",
+              "retro-primary": "#8B542A",
+              "retro-secondary": "#5C7E7E",
+              "retro-success": "#638459",
+              "retro-danger": "#A05F5F",
+              "status-green-bg": "#dcfce7",
+              "status-green-text": "#166534",
+              "status-red-bg": "#fee2e2",
+              "status-red-text": "#991b1b",
+              "status-yellow-bg": "#fef9c3",
+              "status-yellow-text": "#854d0e",
+              "status-blue-bg": "#dbeafe",
+              "status-blue-text": "#1e40af",
+              "status-gray-bg": "#f3f4f6",
+              "status-gray-text": "#374151",
+            },
+            fontFamily: {
+              display: ["'Times New Roman'", "serif"],
+              body: ["'Times New Roman'", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="/quanlytiendo/assets/show_profile.js" defer></script>
+    <script src="/quanlytiendo/assets/deny_nav.js" defer></script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #eae5df;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #8b542a;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4f311c;
+      }
+    </style>
+  </head>
+  <body class="bg-retro-bg font-body text-retro-text">
+    <div class="flex min-h-screen w-full">
+      <aside
+        class="flex w-64 flex-col border-r-4 border-retro-border bg-retro-surface p-4 h-screen sticky top-0 overflow-hidden"
+      >
+        <div class="flex items-center gap-3 mb-8 shrink-0">
+          <div
+            class="bg-retro-primary p-2 text-retro-surface border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c]"
+          >
+            <span class="material-symbols-outlined !text-2xl"
+              >construction</span
+            >
+          </div>
+          <h1
+            class="text-xl font-bold font-display uppercase tracking-wider leading-6"
+          >
+            HỆ THỐNG<br />QUẢN LÝ TIẾN ĐỘ
+          </h1>
+        </div>
+
+        <div class="flex flex-col gap-2 flex-1 overflow-y-auto">
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Tongquan.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >dashboard</span
+            >
+            <p class="text-base font-medium">Tổng quan</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Qlycongtrinh.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >domain</span
+            >
+            <p class="text-base">Công trình</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Qlyhangmuc.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >category</span
+            >
+            <p class="text-base font-medium">Hạng mục</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Qlytiendo.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >trending_up</span
+            >
+            <p class="text-base font-medium">Tiến độ</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c]"
+            href="Qlynhanvien.html"
+          >
+            <span class="material-symbols-outlined">group</span>
+            <p class="text-base font-bold">Nhân viên</p>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 hover:bg-retro-primary/10 transition-colors group"
+            href="Baocao.html"
+          >
+            <span
+              class="material-symbols-outlined group-hover:scale-110 transition-transform"
+              >assessment</span
+            >
+            <p class="text-base font-medium">Báo cáo</p>
+          </a>
+        </div>
+
+        <div class="mt-auto pt-4 border-t-4 border-retro-border/20">
+          <!-- Profile removed; only logout remains -->
+
+          <button
+            onclick="logout()"
+            class="w-full flex items-center justify-center gap-2 bg-[#9F5F46] hover:bg-[#8a4f38] text-[#EAE5DF] font-bold py-2.5 px-4 border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[2px_2px_0px_0px_#2a221c] transition-all"
+          >
+            <span class="material-symbols-outlined text-xl">logout</span>
+            <span class="uppercase tracking-wide text-sm">Đăng xuất</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="flex-1 p-8 overflow-x-hidden">
+        <div
+          class="layout-content-container flex flex-col w-full max-w-7xl mx-auto"
+        >
+          <div
+            class="flex flex-wrap justify-between items-center gap-4 mb-6 border-b border-retro-primary/20 pb-4"
+          >
+            <div class="flex flex-col gap-2">
+              <p class="text-retro-primary text-4xl font-bold leading-tight">
+                Quản lý Nhân Viên
+              </p>
+              <p
+                class="text-retro-text/70 text-base font-normal leading-normal"
+              >
+                Xem, thêm, sửa đổi và phân công hạng mục cho nhân viên.
+              </p>
+            </div>
+            <button
+              onclick="openModal('addModal')"
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden h-10 px-4 bg-retro-primary text-retro-surface text-base font-bold leading-normal tracking-wide gap-2 border-2 border-retro-border shadow-[2px_2px_0px_0px_#2a221c] active:shadow-none active:translate-x-0.5 active:translate-y-0.5 hover:bg-retro-primary/90 transition-all"
+            >
+              <span class="material-symbols-outlined !text-lg">add_circle</span>
+              <span class="truncate uppercase">THÊM MỚI NHÂN VIÊN</span>
+            </button>
+          </div>
+
+          <div class="mb-6 grid grid-cols-1">
+            <div
+              class="flex w-full h-10 items-stretch border-2 border-retro-border bg-retro-bg shadow-[2px_2px_0px_0px_#B4A596]"
+            >
+              <div
+                class="flex items-center justify-center pl-3 pr-2 text-retro-subtext border-r border-retro-border/20"
+              >
+                <span class="material-symbols-outlined">search</span>
+              </div>
+              <input
+                id="searchInput"
+                class="flex-1 bg-transparent border-none focus:ring-0 text-retro-text placeholder-retro-subtext/70 text-base px-3"
+                placeholder="Tìm kiếm theo Tên, Mã NV hoặc Chức vụ..."
+                value=""
+              />
+            </div>
+          </div>
+
+          <div class="w-full">
+            <div
+              class="flex overflow-hidden border-2 border-retro-border bg-[#F5EFE7]"
+            >
+              <div class="overflow-x-auto w-full">
+                <table class="w-full text-left border-collapse min-w-[1000px]">
+                  <thead
+                    class="bg-retro-primary/20 border-b-2 border-retro-border"
+                  >
+                    <tr>
+                      <th
+                        class="px-4 py-3 text-retro-text w-[10%] text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Mã NV
+                      </th>
+                      <th
+                        class="px-4 py-3 text-retro-text w-[20%] text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Họ Tên
+                      </th>
+                      <th
+                        class="px-4 py-3 text-retro-text w-[15%] text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Chức Vụ
+                      </th>
+                      <th
+                        class="px-4 py-3 text-retro-text w-[15%] text-sm font-bold uppercase border-r border-retro-border/20"
+                      >
+                        Số Điện Thoại
+                      </th>
+                      <!-- Hạng mục phụ trách column removed per request -->
+                      <th
+                        class="px-4 py-3 text-retro-text w-[15%] text-sm font-bold uppercase text-center"
+                      >
+                        Hành Động
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="tableBody"
+                    class="divide-y divide-retro-border/30"
+                  ></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- pagination removed -->
+        </div>
+      </main>
+    </div>
+
+    <div
+      id="toast"
+      class="fixed top-6 right-6 hidden z-50 px-4 py-3 rounded border-2 border-retro-border shadow-[4px_4px_0px_0px_#000] font-bold"
+    ></div>
+
+    <div
+      id="detailsModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div
+        class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"
+        onclick="closeModal('detailsModal')"
+      ></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-lg shadow-[8px_8px_0px_0px_#2a221c] p-0"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3 class="text-xl font-bold uppercase text-retro-text">
+            Chi tiết nhân viên
+          </h3>
+          <button
+            onclick="closeModal('detailsModal')"
+            class="text-retro-text hover:text-retro-danger font-bold text-xl"
+          >
+            &times;
+          </button>
+        </div>
+        <div
+          id="detailsBody"
+          class="p-6 space-y-3 text-retro-text text-base"
+        ></div>
+        <div
+          class="p-4 border-t-2 border-retro-border bg-retro-surface flex justify-end"
+        >
+          <button
+            onclick="closeModal('detailsModal')"
+            class="px-4 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border font-bold shadow-sm hover:bg-retro-primary/90"
+          >
+            Đóng
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="addModal"
+      class="fixed inset-0 hidden items-center justify-center z-50"
+    >
+      <div class="absolute inset-0 bg-retro-text/60 backdrop-blur-sm"></div>
+      <div
+        class="relative bg-retro-bg border-4 border-retro-border w-full max-w-2xl shadow-[8px_8px_0px_0px_#2a221c] p-0 flex flex-col max-h-[90vh]"
+      >
+        <div
+          class="flex items-center justify-between p-4 border-b-2 border-retro-border bg-retro-surface"
+        >
+          <h3
+            id="modalTitle"
+            class="text-xl font-bold uppercase text-retro-primary"
+          >
+            Thêm Nhân viên Mới
+          </h3>
+          <button
+            onclick="closeModal('addModal')"
+            class="text-retro-text hover:text-retro-danger font-bold text-xl"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="p-6 overflow-y-auto">
+          <form id="employeeForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input type="hidden" id="nv_id" />
+
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Mã NV <span class="text-retro-danger">*</span></label
+              >
+              <input
+                id="nv_code"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+                placeholder="NV001"
+              />
+            </button>
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1"
+                >Họ tên <span class="text-retro-danger">*</span></label
+              >
+              <input
+                id="nv_name"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+                placeholder="Nguyễn Văn A"
+              />
+            </div>
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1">Chức vụ</label>
+              <select
+                id="nv_position"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              >
+                <option value="">-- Chọn chức vụ --</option>
+                <option value="Nhân viên">Nhân viên</option>
+                <option value="Nhân viên thi công">Nhân viên thi công</option>
+                <option value="Công nhân">Công nhân</option>
+                <option value="Kỹ sư">Kỹ sư</option>
+                <option value="Kỹ sư giám sát">Kỹ sư giám sát</option>
+                <option value="Giám sát">Giám sát</option>
+                <option value="Tổ trưởng">Tổ trưởng</option>
+                <option value="Phó quản lý">Phó quản lý</option>
+                <option value="Quản lý">Quản lý</option>
+                <option value="Trưởng phòng">Trưởng phòng</option>
+                <option value="Giám đốc dự án">Giám đốc dự án</option>
+                <option value="Kế toán công trình">Kế toán công trình</option>
+                <option value="Nhân viên vật tư">Nhân viên vật tư</option>
+                <option value="Nhân viên an toàn lao động">Nhân viên an toàn lao động</option>
+                <option value="Thư ký công trình">Thư ký công trình</option>
+              </select>
+            </div>
+            <div class="col-span-1">
+              <label class="block text-sm font-bold mb-1">Số điện thoại</label>
+              <input
+                id="nv_phone"
+                class="w-full bg-white border-2 border-retro-border px-3 py-2 text-sm focus:ring-0 focus:border-retro-primary"
+              />
+            </div>
+
+            
+
+            <div
+              class="col-span-2 pt-4 flex justify-end gap-3 border-t-2 border-retro-border/20 mt-2"
+            >
+              <button
+                type="button"
+                onclick="closeModal('addModal')"
+                class="px-4 py-2 border-2 border-retro-border font-bold hover:bg-retro-border hover:text-retro-surface transition-colors"
+              >
+                Hủy
+              </button>
+              <button
+                type="button"
+                onclick="saveEmployee()"
+                class="px-4 py-2 bg-retro-primary text-retro-surface border-2 border-retro-border font-bold shadow-[2px_2px_0px_0px_#2a221c] active:shadow-none active:translate-x-0.5 active:translate-y-0.5 hover:bg-retro-primary/90"
+              >
+                LƯU THÔNG TIN
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // RBAC: if user is employee, show an access-denied message and remove content
+      document.addEventListener('DOMContentLoaded', async function(){
+        try{
+          const r = await fetch('/quanlytiendo/current_user.php',{credentials:'include'});
+          const j = await r.json();
+          if (j && j.success && j.user && j.user.role === 'employee'){
+            const main = document.querySelector('main') || document.body;
+            main.innerHTML = '';
+            const msg = document.createElement('div');
+            msg.className = 'w-full h-screen flex items-center justify-center p-6';
+            msg.innerHTML = `<div class="bg-white border-4 border-red-500 p-8 text-center max-w-lg shadow-lg"><h2 class="text-2xl font-bold mb-4">Quyền truy cập bị từ chối</h2><p class="mb-4">Bạn không có quyền truy cập vào chức năng Quản lý Nhân viên.</p><button onclick="window.location.href='tongquan.html'" class="px-4 py-2 bg-retro-primary text-retro-surface font-bold">Quay về Tổng quan</button></div>`;
+            main.appendChild(msg);
+          }
+        }catch(e){ /* ignore errors */ }
+      });
+      // Client now fetches real data from backend endpoints
+      let employees = [];
+
+      function safeGet(obj, candidates, fallback = '') {
+        for (const k of candidates) {
+          if (obj == null) continue;
+          if (k in obj && obj[k] != null) return obj[k];
+          const lower = k.toLowerCase();
+          for (const key of Object.keys(obj)) {
+            if (key.toLowerCase() === lower) return obj[key];
+          }
+        }
+        return fallback;
+      }
+
+
+      async function fetchEmployees() {
+        try {
+          const res = await fetch('/quanlytiendo/list_nhanvien.php?pageSize=500');
+          const js = await res.json();
+          if (!js.success) throw new Error(js.error || 'Không thể tải danh sách nhân viên');
+          const rows = js.data || js;
+          employees = rows.map((r) => ({
+            id: safeGet(r, ['id','ID','MANV','manv']) || null,
+            manv: safeGet(r, ['MANV','manv','ma_nv','ma']) || safeGet(r, ['id','ID','MANV','manv']) || '',
+            name: safeGet(r, ['TENNV','tennv','name','ten']) || '',
+            position: safeGet(r, ['CHUCVU','chucvu','position']) || '',
+            phone: safeGet(r, ['SDT','sdt','phone','mobile']) || '',
+            assignments: []
+          }));
+        } catch (e) {
+          console.error('fetchEmployees error', e);
+          employees = [];
+        }
+        filterData();
+      }
+
+      // Render Table
+      function renderTable(data) {
+        currentData = Array.isArray(data) ? data : [];
+        const tbody = document.getElementById('tableBody');
+        tbody.innerHTML = '';
+
+        if (!currentData || currentData.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" class="p-8 text-center text-retro-subtext italic">Không có dữ liệu phù hợp.</td></tr>';
+          renderPagination(0);
+          return;
+        }
+
+        const total = currentData.length;
+        const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        if (currentPage > totalPages) currentPage = totalPages;
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const slice = currentData.slice(start, start + PAGE_SIZE);
+
+        slice.forEach((r) => {
+
+          const tr = document.createElement('tr');
+          tr.className = 'hover:bg-retro-primary/5 transition-colors group border-b border-retro-border/10 last:border-0';
+          tr.innerHTML = `
+                <td class="px-4 py-3 border-r border-retro-border/20 font-mono text-sm text-retro-text font-bold">${r.manv || ''}</td>
+                <td class="px-4 py-3 border-r border-retro-border/20 font-bold text-retro-primary text-sm">${r.name || ''}</td>
+                <td class="px-4 py-3 border-r border-retro-border/20 text-sm text-retro-text">${r.position || ''}</td>
+                <td class="px-4 py-3 border-r border-retro-border/20 text-sm text-retro-text font-mono">${r.phone || ''}</td>
+                <td class="px-4 py-3 text-center">
+                    <div class="flex items-center justify-center gap-2 opacity-100 lg:opacity-70 group-hover:opacity-100 transition-opacity">
+                        <button onclick="viewDetail('${r.id}')" class="p-1.5 border border-retro-border rounded bg-white hover:bg-retro-secondary hover:text-white" title="Chi tiết"><span class="material-symbols-outlined text-lg">visibility</span></button>
+                        <button onclick="editEmployee('${r.id}')" class="p-1.5 border border-retro-border rounded bg-white hover:bg-retro-primary hover:text-white" title="Sửa"><span class="material-symbols-outlined text-lg">edit</span></button>
+                        <button onclick="deleteEmployee('${r.id}')" class="p-1.5 border border-retro-border rounded bg-white hover:bg-retro-danger hover:text-white" title="Xóa"><span class="material-symbols-outlined text-lg">delete</span></button>
+                    </div>
+                </td>`;
+          tbody.appendChild(tr);
+        });
+        renderPagination(currentData.length);
+      }
+
+      // Filter Logic
+      function filterData() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const filtered = employees.filter((item) => {
+          const name = (item.name || '').toString().toLowerCase();
+          const manv = (item.manv || '').toString().toLowerCase();
+          const position = (item.position || '').toString().toLowerCase();
+          return name.includes(query) || manv.includes(query) || position.includes(query);
+        });
+        renderTable(filtered);
+      }
+
+      document.getElementById('searchInput').addEventListener('input', filterData);
+
+
+      // Open/Close modal
+      function openModal(id) {
+        document.getElementById(id).classList.remove('hidden');
+        document.getElementById(id).classList.add('flex');
+        if (id === 'addModal') {
+          const title = document.getElementById('modalTitle');
+          if (title.innerText !== 'CHỈNH SỬA NHÂN VIÊN') {
+            document.getElementById('employeeForm').reset();
+            document.getElementById('nv_id').value = '';
+          }
+        }
+      }
+
+      function closeModal(id) {
+        document.getElementById(id).classList.add('hidden');
+        document.getElementById(id).classList.remove('flex');
+        if (id === 'addModal') document.getElementById('modalTitle').innerText = 'THÊM NHÂN VIÊN MỚI';
+      }
+
+      // Save (Add/Edit) => call backend
+      async function saveEmployee() {
+        const id = document.getElementById('nv_id').value;
+        const manv = document.getElementById('nv_code').value.trim();
+        const name = document.getElementById('nv_name').value.trim();
+        const position = document.getElementById('nv_position').value;
+        const phone = document.getElementById('nv_phone').value.trim();
+
+        if (!manv || !name) { showToast('Vui lòng nhập Mã NV và Họ tên!', true); return; }
+
+        try {
+          if (id) {
+            const form = new FormData();
+            form.append('id', id);
+            form.append('manv', manv);
+            form.append('name', name);
+            form.append('position', position);
+            form.append('phone', phone);
+            console.debug('update_nhanvien payload', Object.fromEntries(form.entries()));
+            const resp = await fetch('/quanlytiendo/update_nhanvien.php', { method: 'POST', body: form });
+            const js = await resp.json();
+            if (!js.success) { showToast(js.error || 'Lỗi khi cập nhật', true); console.error(js); return; }
+            showToast('Cập nhật nhân viên thành công');
+          } else {
+            const form = new FormData();
+            form.append('manv', manv);
+            form.append('name', name);
+            form.append('position', position);
+            form.append('phone', phone);
+            console.debug('add_employee payload', Object.fromEntries(form.entries()));
+            const resp = await fetch('/quanlytiendo/add_employee.php', { method: 'POST', body: form });
+            const js = await resp.json();
+            if (!js.success) { showToast(js.error || 'Lỗi khi thêm mới', true); console.error(js); return; }
+            showToast('Thêm nhân viên thành công');
+          }
+          try { localStorage.setItem('dataChanged', Date.now()); } catch(e){}
+          await fetchEmployees();
+          closeModal('addModal');
+        } catch (e) {
+          console.error('saveEmployee error', e);
+          showToast('Lỗi hệ thống khi lưu nhân viên', true);
+        }
+      }
+
+      // Edit: populate modal from employee data
+      function editEmployee(id) {
+        const item = employees.find(x => String(x.id) === String(id));
+        if (!item) return;
+        openModal('addModal');
+        document.getElementById('modalTitle').innerText = 'CHỈNH SỬA NHÂN VIÊN';
+        document.getElementById('nv_id').value = item.id || '';
+        document.getElementById('nv_code').value = item.manv || '';
+        document.getElementById('nv_name').value = item.name || '';
+        document.getElementById('nv_position').value = item.position || '';
+        document.getElementById('nv_phone').value = item.phone || '';
+      }
+
+      // Delete => call backend
+      async function deleteEmployee(id) {
+        if (!confirm('Bạn có chắc muốn xóa nhân viên này?')) return;
+        try {
+          const item = employees.find(x => String(x.id) === String(id));
+          const form = new FormData();
+          if (item && item.id) form.append('id', item.id);
+          else if (item && item.manv) form.append('manv', item.manv);
+          else { showToast('Không có thông tin nhân viên để xóa', true); return; }
+          console.debug('delete_nhanvien payload', Object.fromEntries(form.entries()));
+          const resp = await fetch('/quanlytiendo/delete_nhanvien.php', { method: 'POST', body: form });
+          const js = await resp.json();
+          if (!js.success) { showToast(js.error || 'Lỗi khi xóa', true); console.error(js); return; }
+          showToast('Xóa nhân viên thành công', true);
+          try { localStorage.setItem('dataChanged', Date.now()); } catch(e){}
+          await fetchEmployees();
+        } catch (e) {
+          console.error('deleteEmployee error', e);
+          showToast('Lỗi hệ thống khi xóa nhân viên', true);
+        }
+      }
+
+      // View detail
+      function viewDetail(id) {
+        const d = employees.find(x => String(x.id) === String(id));
+        if (!d) return;
+        const detailsBody = document.getElementById('detailsBody');
+        detailsBody.innerHTML = `
+          <div class="grid grid-cols-2 gap-4">
+            <div><span class="font-bold text-retro-subtext uppercase text-xs">Mã NV</span><p class="font-mono text-lg font-bold">${d.manv||''}</p></div>
+            <div><span class="font-bold text-retro-subtext uppercase text-xs">Số điện thoại</span><p class="font-bold text-retro-text">${d.phone||''}</p></div>
+            <div class="col-span-2 border-t border-retro-border/20 my-1"></div>
+            <div class="col-span-2"><span class="font-bold text-retro-subtext uppercase text-xs">Họ Tên</span><p class="text-xl font-bold font-display text-retro-primary">${d.name||''}</p></div>
+            <div class="col-span-2"><span class="font-bold text-retro-subtext uppercase text-xs">Chức vụ</span><p>${d.position||''}</p></div>
+          </div>`;
+        const modal = document.getElementById('detailsModal'); modal.classList.remove('hidden'); modal.classList.add('flex');
+      }
+
+      // Toast helper
+      function showToast(msg, isError = false) {
+        const t = document.getElementById('toast');
+        t.className = `fixed top-6 right-6 z-50 px-6 py-3 rounded border-2 border-retro-border shadow-[4px_4px_0px_0px_#2a221c] font-bold transition-all transform duration-300 ${isError ? 'bg-retro-danger text-white' : 'bg-retro-success text-white'}`;
+        t.innerText = msg;
+        t.classList.remove('hidden');
+        setTimeout(() => t.classList.add('hidden'), 3000);
+      }
+
+      // Pagination state
+      let currentPage = 1;
+      const PAGE_SIZE = 10;
+      let currentData = [];
+
+      function setPage(page) {
+        currentPage = page;
+        if (currentPage < 1) currentPage = 1;
+        renderTable(currentData);
+      }
+
+      function renderPagination(totalItems) {
+        // pagination removed — kept no-op for compatibility
+      }
+
+      function logout() {
+        if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
+          window.location.href = 'logout.php';
+        }
+      }
+
+      // Init: fetch employees
+      (async function init() {
+        await fetchEmployees();
+      })();
+    </script>
+  </body>
+</html>

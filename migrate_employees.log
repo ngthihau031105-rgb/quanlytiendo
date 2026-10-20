@@ -1,0 +1,11 @@
+[2025-12-07 07:09:16] Connected to DB=quanlytiendo
+[2025-12-07 07:09:16] Created backup table employees_backup_20251207_070916
+[2025-12-07 07:09:16] Detected columns src: {"id":"id","manv":"manv","name":"name","position":"position","phone":"phone","role":"role","created_at":"created_at"} dst: {"manv":"MANV","tennv":"TENNV","chucvu":"CHUCVU","sdt":"SDT"}
+[2025-12-07 07:09:16] Found 3 rows in employees
+[2025-12-07 07:09:17] Migrated=3 Skipped=0
+[2025-12-07 07:10:49] Connected to DB=quanlytiendo
+[2025-12-07 07:10:49] Created backup table employees_backup_20251207_071049
+[2025-12-07 07:10:49] Detected columns src: {"id":"id","manv":"manv","name":"name","position":"position","phone":"phone","role":"role","created_at":"created_at"} dst: {"manv":"MANV","tennv":"TENNV","chucvu":"CHUCVU","sdt":"SDT"}
+[2025-12-07 07:10:49] Found 3 rows in employees
+[2025-12-07 07:10:49] Migrated=0 Skipped=3
+[2025-12-07 07:10:50] Dropped table employees

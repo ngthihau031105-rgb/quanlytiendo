@@ -1,0 +1,45 @@
+2025-12-12 11:47:59 POST: {"id":"TD019"}
+2025-12-12 11:47:59 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 11:48:08 POST: {"id":"TD019"}
+2025-12-12 11:48:08 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 18:47:33 POST: {"id":"TD019"}
+2025-12-12 18:47:33 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 18:47:37 POST: {"id":"TD019"}
+2025-12-12 18:47:37 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 18:47:41 POST: {"id":"TD019"}
+2025-12-12 18:47:41 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 18:48:30 POST: {"id":"TD019"}
+2025-12-12 18:48:30 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 19:47:40 POST: {"id":"TD018"}
+2025-12-12 19:47:40 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 21:20:25 POST: {"id":"TD017"}
+2025-12-12 21:20:25 Error during cascading delete: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 21:20:55 POST: {"id":"TD017"}
+2025-12-12 21:20:55 Error during cascading delete: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 21:21:00 POST: {"id":"TD017"}
+2025-12-12 21:21:00 Error during cascading delete: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 23:23:01 POST: {"id":"TD017"}
+2025-12-12 23:23:01 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 23:56:28 POST: {"id":"TD017"}
+2025-12-12 23:56:28 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-12 23:59:43 POST: {"id":"TD017"}
+2025-12-12 23:59:43 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-13 00:11:12 POST: {"id":"TD017"}
+2025-12-13 00:11:12 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-13 00:11:18 POST: {"id":"TD017"}
+2025-12-13 00:11:18 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+2025-12-13 14:29:05 POST: {"matd":"TD017"}
+2025-12-13 14:29:06 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'where clause'
+2025-12-13 14:29:15 POST: {"matd":"TD017"}
+2025-12-13 14:29:15 Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'code' in 'where clause'
+2025-12-13 14:33:39 POST: {"matd":"TD017"}
+2025-12-13 14:33:39 DELETE affected=1 where=["TD017"]
+2025-12-13 14:42:10 POST: {"matd":"TD016"}
+2025-12-13 14:42:10 DELETE affected=1 where=["TD016"]
+2025-12-23 10:00:08 POST: {"matd":"TD014"}
+2025-12-23 10:03:36 POST: {"matd":"TD014"}
+2025-12-23 10:58:17 POST: {"matd":"TD014"}
+2025-12-23 11:51:32 POST: {"matd":"TD014"}
+2025-12-23 11:51:32 DELETE affected=1 where=["TD014"]
+2025-12-25 13:24:55 POST: {"matd":"TD013"}
+2025-12-25 17:19:10 POST: {"matd":"TD013"}
